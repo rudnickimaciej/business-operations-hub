@@ -44,7 +44,7 @@ DEV also contains unmanaged solutions `Core`, `UI`, `Security`, `Automations`, `
 - Never deploy those solutions, and don't add them to CI/CD.
 - Nothing in `RentMaszyny` may depend on `rdk_` components. Watch the dependency check before export.
 
-TST is being reset and must contain only the managed `RentMaszyny` deployed by the pipeline.
+TST was reset on 2026-09-29 and must contain only the managed `RentMaszyny` deployed by the pipeline.
 
 Implications of the Developer Plan:
 
@@ -60,7 +60,7 @@ or from `CLAUDE.local.md` (git-ignored) if present.
 
 ```text
 .claude/            Claude Code config: settings, skills, agents (versioned)
-.github/workflows/  CI/CD (GitHub Actions + Power Platform Actions)
+pipelines/          Azure DevOps YAML pipelines (Power Platform Build Tools); setup in docs/alm.md
 docs/decisions/     ADRs — read before changing architecture
 solutions/RentMaszyny/  Unpacked solution — THE single source of truth for all components
 config/             Deployment settings per environment (no secrets)
@@ -129,7 +129,7 @@ Remove an item when its ADR is written.
 - Data model (tables, relationships, ownership) — owner proposes first.
 - Security roles and business unit/team structure.
 - Invoice generation method (Word template, Dataverse document template, HTML→PDF) and numbering.
-- CI/CD authentication (service principal / app registration availability in the tenant).
+- CI/CD authentication: client secret vs workload identity federation for the Power Platform service connection.
 
 ## Project tools
 

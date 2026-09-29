@@ -11,7 +11,7 @@ and the process ends with an invoice sent to the customer.
 - Dataverse data modeling and security roles
 - Model-driven app with a Business Process Flow
 - Power Automate with centralized error logging
-- ALM: solution source control, managed deployments DEV → TST, CI/CD with GitHub Actions
+- ALM: solution source control, managed deployments DEV → TST, CI/CD with Azure DevOps Pipelines
 - Architecture decisions documented as ADRs
 
 ## Repository layout
@@ -20,7 +20,8 @@ and the process ends with an invoice sent to the customer.
 |---|---|
 | `solutions/RentMaszyny/` | Unpacked Dataverse solution (single source of truth) |
 | `config/` | Deployment settings per environment |
-| `.github/workflows/` | CI/CD pipelines |
+| `pipelines/` | Azure DevOps pipelines |
+| `docs/alm.md` | How deployment works and how to set it up |
 | `docs/decisions/` | Architecture Decision Records |
 | `scripts/` | Helper scripts |
 

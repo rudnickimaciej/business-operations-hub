@@ -1,0 +1,121 @@
+# ============================================================
+# deploy-rentmaszyny.yml
+#
+# Builds the RentMaszyny solution as MANAGED and deploys it to TST.
+#
+#   Pull request to main  -> Build stage only (validates that the solution packs)
+#   Merge/push to main    -> Build -> Deploy to TST (after approval on the TST environment)
+#
+# The deployed artifact is the one built in the same run, so every TST deployment
+# maps to exactly one commit and one solution version (= build number).
+#
+# One-time setup: see docs/alm.md
+# ============================================================
+
+name: 1.0.$(Date:yyyyMMdd)$(Rev:.r)   # also used as the solution version
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - solutions/RentMaszyny/**
+      - pipelines/deploy-rentmaszyny.yml
+      - config/**
+
+pr:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - solutions/RentMaszyny/**
+      - pipelines/deploy-rentmaszyny.yml
+
+pool:
+  vmImage: windows-latest
+
+variables:
+  solutionName: RentMaszyny
+  solutionSourceFolder: $(Build.SourcesDirectory)/solutions/RentMaszyny/src
+  managedZip: $(Build.ArtifactStagingDirectory)/RentMaszyny_managed.zip
+  tstServiceConnection: PowerPlatform-TST   # Power Platform service connection name in ADO
+
+stages:
+
+  # ── Stage 1: Build ─────────────────────────────────────────────────────────
+  - stage: Build
+    displayName: Build managed solution
+    jobs:
+      - job: Pack
+        displayName: Pack RentMaszyny (managed)
+        steps:
+          - checkout: self
+
+          - task: PowerPlatformToolInstaller@2
+            displayName: Install Power Platform Build Tools
+            inputs:
+              DefaultVersion: true
+
+          # Stamp the build number into Solution.xml so TST shows which build is deployed.
+          # Only the agent's working copy is changed; nothing is committed.
+          - task: PowerShell@2
+            displayName: Set solution version to $(Build.BuildNumber)
+            inputs:
+              pwsh: true            # PowerShell 7: utf8 without BOM
+              targetType: inline
+              script: |
+                $path = "$(solutionSourceFolder)/Other/Solution.xml"
+                $xml  = Get-Content $path -Raw
+                $regex = [regex]'<Version>[^<]+</Version>'
+                if (-not $regex.IsMatch($xml)) { throw "No <Version> element found in $path" }
+                $xml = $regex.Replace($xml, "<Version>$(Build.BuildNumber)</Version>", 1)
+                Set-Content -Path $path -Value $xml -NoNewline -Encoding utf8
+                Write-Host "Solution version set to $(Build.BuildNumber)"
+
+          - task: PowerPlatformPackSolution@2
+            displayName: Pack managed solution
+            inputs:
+              SolutionSourceFolder: $(solutionSourceFolder)
+              SolutionOutputFile: $(managedZip)
+              SolutionType: Managed
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish solution artifact
+            inputs:
+              targetPath: $(managedZip)
+              artifact: solution
+
+  # ── Stage 2: Deploy to TST (acts as PROD) ─────────────────────────────────
+  - stage: DeployTST
+    displayName: Deploy to TST
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), ne(variables['Build.Reason'], 'PullRequest'))
+    jobs:
+      - deployment: Import
+        displayName: Import RentMaszyny (managed) into TST
+        environment: TST            # approvals and checks are configured on this ADO environment
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                # Deployment jobs download pipeline artifacts automatically to $(Pipeline.Workspace)/<artifact>
+                - task: PowerPlatformToolInstaller@2
+                  displayName: Install Power Platform Build Tools
+                  inputs:
+                    DefaultVersion: true
+
+                - task: PowerPlatformImportSolution@2
+                  displayName: Import managed solution
+                  inputs:
+                    authenticationType: PowerPlatformSPN
+                    PowerPlatformSPN: $(tstServiceConnection)
+                    SolutionInputFile: $(Pipeline.Workspace)/solution/RentMaszyny_managed.zip
+                    AsyncOperation: true
+                    MaxAsyncWaitTime: "60"
+                    # Stage-and-upgrade removes components that were deleted in DEV.
+                    # A plain update would leave them behind in TST.
+                    StageAndUpgrade: true
+                    PublishWorkflows: true
+                    OverwriteUnmanagedCustomizations: false
