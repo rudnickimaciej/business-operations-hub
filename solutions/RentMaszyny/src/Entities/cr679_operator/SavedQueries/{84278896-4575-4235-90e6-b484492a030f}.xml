@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{84278896-4575-4235-90e6-b484492a030f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_operatorname" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_operatorid">
+          <cell name="cr679_operatorname" width="300" />
+          <cell name="cr679_qualifications" width="150" />
+          <cell name="cr679_phonenumber" width="150" />
+          <cell name="cr679_currentavailability" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr679_operator">
+          <attribute name="cr679_operatorid" />
+          <attribute name="cr679_operatorname" />
+          <attribute name="createdon" />
+          <order attribute="cr679_operatorname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cr679_qualifications" />
+          <attribute name="cr679_phonenumber" />
+          <attribute name="cr679_currentavailability" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Operators" languagecode="1033" />
+      <LocalizedName description="Operatorzy" languagecode="1045" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

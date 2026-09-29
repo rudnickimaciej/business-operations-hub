@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(pac auth list:*)",
+      "Bash(pac org who:*)",
+      "Bash(pac solution list:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(pac auth select:*)",
+      "Bash(pac solution import:*)",
+      "Bash(pac solution publish:*)",
+      "Bash(pac solution upgrade:*)"
+    ],
+    "deny": [
+      "Bash(pac solution delete:*)",
+      "Bash(pac admin delete:*)",
+      "Bash(pac admin reset:*)",
+      "Read(./.env)",
+      "Read(./**/*.local.json)"
+    ]
+  }
+}

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b78212f8-0c98-f111-b8dc-7ced8d2eb382}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{60a001c9-706d-40bc-a5d2-6be08cbbe721}">
+          <labels>
+            <label description="Nowa karta" languagecode="1033" />
+            <label description="Nowa karta" languagecode="1045" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{9206fe7d-4a49-41ea-ad59-b71c45e6f859}">
+                  <labels>
+                    <label description="Informacje" languagecode="1033" />
+                    <label description="Informacje" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{10dead0c-0537-4bfb-b9c9-662233a5e152}" locklevel="0" colspan="1" rowspan="1" labelid="{33090478-33e1-4bf3-8d71-53b78106a6d9}" visible="false">
+                        <labels>
+                          <label description="Order" languagecode="1033" />
+                          <label description="Order" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_orderid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_orderid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{faed0c2e-5065-40e1-9c7a-73074f9cda2e}" locklevel="0" colspan="1" rowspan="1" labelid="{485563d7-bf47-4c07-9f18-c0d28ad63610}">
+                        <labels>
+                          <label description="Machine" languagecode="1033" />
+                          <label description="Maszyna" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_machineid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_machineid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c546df4a-31f3-4419-ba1b-d973dcd36d6a}" locklevel="0" colspan="1" rowspan="1" labelid="{351714ca-3aaa-4762-a37c-9a13a904ffad}">
+                        <labels>
+                          <label description="Operator" languagecode="1033" />
+                          <label description="Operator" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_operatorid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_operatorid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0e322143-43f1-48d1-97d9-67aa2d9d0881}" locklevel="0" colspan="1" rowspan="1" labelid="{ac26b2a1-398b-4b70-911d-63b004abab59}">
+                        <labels>
+                          <label description="Item Price" languagecode="1033" />
+                          <label description="Stawka godzinowa" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_itemprice" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_itemprice" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0e2ab162-757a-4031-ae87-11fc9840e3fe}" locklevel="0" colspan="1" rowspan="1" labelid="{f21045a4-41b0-4693-ad3c-dc0c01a7db99}">
+                        <labels>
+                          <label description="Notes" languagecode="1033" />
+                          <label description="Notatki" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_notes" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="cr679_notes" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_1_section_5" id="b328686c-8978-44bc-ae14-4bd8d3f8592d" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="false" labelid="{59c4aa37-7536-4274-81ce-f671337c9fbe}">
+                  <labels>
+                    <label description="Nowa sekcja" languagecode="1033" />
+                    <label description="Nowa sekcja" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+                <section name="tab_1_section_6" id="757e8ef9-011e-4265-be36-694640e53680" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{dfaf68de-14b6-4929-9ad1-7b7984a66bc6}" visible="false">
+                  <labels>
+                    <label description="Nowa sekcja" languagecode="1033" />
+                    <label description="Nowa sekcja" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{699d7f94-6357-49ac-914c-78037b32e2d9}">
+                  <labels>
+                    <label description="Nowa sekcja" languagecode="1033" />
+                    <label description="Nowa sekcja" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{51547356-a22e-416f-b49f-588e3b2d05c8}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{cf4f56bd-78b6-4f36-8fc6-64b5748d0ae3}">
+                  <labels>
+                    <label description="Nowa sekcja" languagecode="1033" />
+                    <label description="Nowa sekcja" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{a6077457-c877-46db-a464-ebe2ad003eac}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{6aa27ab2-224b-cddc-5864-0d62a0fb4480}" />
+        <Role Id="{a9d59058-2983-4f78-a53f-9ce9b352f653}" />
+        <Role Id="{6cdd2e36-6862-4edc-afcd-b205f30c4110}" />
+        <Role Id="{53477a7d-a86e-45ae-8284-c4791ca1ef00}" />
+        <Role Id="{7bed559f-20dc-3432-a63c-ec5e44c896a5}" />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="cr679_orderitemquickcreate" libraryUniqueId="{7deebf0a-1b64-4175-97dd-b6540d0db88a}" />
+        <Library name="cr679_formbase" libraryUniqueId="{0ab82aa3-2b4f-4bfd-8803-c24ff9fb9214}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="OrderItemQuickCreate.create" libraryName="cr679_orderitemquickcreate" handlerUniqueId="{3b6956fe-5ec9-4f40-a6f5-127f5ca93963}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Pozycja Zamówienia szybkie tworzenie formularza" languagecode="1033" />
+      <LocalizedName description="Dodaj maszynę do zamówienia" languagecode="1045" />
+    </LocalizedNames>
+  </systemform>
+</forms>

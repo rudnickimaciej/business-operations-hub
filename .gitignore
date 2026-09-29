@@ -1,0 +1,20 @@
+# Build output of the solution project (dotnet build / pac solution pack)
+bin/
+obj/
+*.zip
+
+# Local, personal or secret files
+.env
+*.local.json
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Power BI: commit PBIP projects, not binary files or local caches
+*.pbix
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vs/

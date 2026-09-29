@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.26085.166" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26085.166" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26085.00166">
+  <SolutionManifest>
+    <UniqueName>RentMaszyny</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="RentMaszyny" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>2</Managed>
+    <Publisher>
+      <UniqueName>Cr3422b</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="CDS Default Publisher" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>cr679</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>63010</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="cr679_clients" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_machine" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_operator" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_order" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_orderbpf" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_orderitem" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_timesheet" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_timesheetline" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_usuga" behavior="0" />
+      <RootComponent type="29" id="{4b3a948f-e997-f111-b8dc-7ced8d2eb382}" behavior="0" />
+      <RootComponent type="431" schemaName="cr679_machine cr679_zdjecie" behavior="0" />
+      <RootComponent type="431" schemaName="cr679_timesheet cr679_photo" behavior="0" />
+      <RootComponent type="432" schemaName="cr679_machine" behavior="0" />
+      <RootComponent type="432" schemaName="cr679_timesheet" behavior="0" />
+      <RootComponent type="61" schemaName="cr679_formbase" behavior="0" />
+      <RootComponent type="61" schemaName="cr679_orderitemquickcreate" behavior="0" />
+      <RootComponent type="62" schemaName="cr679_Ren30486c68" behavior="0" />
+      <RootComponent type="80" schemaName="cr679_Ren6f132b80" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" displayName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" solution="msdyn_RichTextEditor (9.0.26083.1012)">
+          <package appName="msdynce_Activities" version="9.0.26084.260820001">msdynce_EnableUCIByDefault (9.0.26084.260820001)</package>
+          <package appName="msdyn_CustomControlsExtended" version="9.0.26083.1012">msdyn_TimelineExtended (9.0.26083.1012)</package>
+        </Required>
+        <Dependent type="80" schemaName="cr679_Ren6f132b80" displayName="Rent-Maszyny" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2608.4009)">
+          <package appName="Base Custom Controls" version="9.0.2608.4009">BaseCustomControlsCore (9.0.2608.4009)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Raport Czasu Pracy" id="{d7bac23e-3baa-43a6-ab29-1669323dc671}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.25">PowerAppsAppFramework_Anchor (1.0.0.25)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=cr679_Ren6f132b80,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="cr679_Ren6f132b80" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

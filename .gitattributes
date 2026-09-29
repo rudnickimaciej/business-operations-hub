@@ -1,0 +1,3 @@
+# Keep exported solution files byte-for-byte as pac produces them (no line-ending conversion),
+# so that re-syncing from DEV does not create whitespace-only diffs.
+solutions/** -text

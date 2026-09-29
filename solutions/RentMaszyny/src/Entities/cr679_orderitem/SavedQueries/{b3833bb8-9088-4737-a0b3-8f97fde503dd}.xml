@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{b3833bb8-9088-4737-a0b3-8f97fde503dd}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_orderitem1" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_orderitemid">
+          <cell name="cr679_machineid" width="150" />
+          <cell name="cr679_operatorid" width="150" />
+          <cell name="cr679_itemprice" width="150" />
+          <cell name="cr679_notes" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr679_orderitem">
+          <attribute name="cr679_orderitemid" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cr679_machineid" />
+          <attribute name="cr679_operatorid" />
+          <attribute name="cr679_itemprice" />
+          <attribute name="cr679_notes" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Pozycje Zamówienia" languagecode="1033" />
+      <LocalizedName description="Active Pozycje Zamówienia" languagecode="1045" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

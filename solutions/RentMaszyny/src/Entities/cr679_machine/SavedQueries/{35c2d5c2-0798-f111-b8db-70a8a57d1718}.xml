@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{35c2d5c2-0798-f111-b8db-70a8a57d1718}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_machinename" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_machineid">
+          <cell name="cr679_machinename" width="200" />
+          <cell name="cr679_category" width="115" />
+          <cell name="cr679_brandandmodel" width="100" />
+          <cell name="cr679_registrationnumber" width="155" />
+          <cell name="cr679_productionyeartext" width="121" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="cr679_machine">
+          <attribute name="cr679_machinename" />
+          <attribute name="cr679_machineid" />
+          <attribute name="cr679_brandandmodel" />
+          <attribute name="cr679_category" />
+          <attribute name="cr679_registrationnumber" />
+          <filter type="and">
+            <condition attribute="cr679_category" operator="in">
+              <value>630100000</value>
+              <value>630100001</value>
+              <value>630100002</value>
+            </condition>
+          </filter>
+          <attribute name="cr679_productionyeartext" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Koparki" languagecode="1033" />
+      <LocalizedName description="Koparki" languagecode="1045" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

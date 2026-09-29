@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{5559e927-a4f3-4d91-9e6f-bb4c8206f04d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_machinename" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_machineid">
+          <cell name="cr679_machinename" width="300" />
+          <cell name="cr679_category" width="150" />
+          <cell name="cr679_brandandmodel" width="150" />
+          <cell name="cr679_registrationnumber" width="150" />
+          <cell name="cr679_productionyeartext" width="121" />
+          <cell name="cr679_status" width="150" />
+          <cell name="cr679_dailyratewithoutoperator" width="150" />
+          <cell name="cr679_dailyratewithoperator" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr679_machine">
+          <attribute name="cr679_machineid" />
+          <attribute name="cr679_machinename" />
+          <attribute name="createdon" />
+          <order attribute="cr679_machinename" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cr679_category" />
+          <attribute name="cr679_brandandmodel" />
+          <attribute name="cr679_registrationnumber" />
+          <attribute name="cr679_status" />
+          <attribute name="cr679_dailyratewithoutoperator" />
+          <attribute name="cr679_dailyratewithoperator" />
+          <attribute name="cr679_productionyeartext" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Maszyny" languagecode="1033" />
+      <LocalizedName description="Wszystkie maszyny" languagecode="1045" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

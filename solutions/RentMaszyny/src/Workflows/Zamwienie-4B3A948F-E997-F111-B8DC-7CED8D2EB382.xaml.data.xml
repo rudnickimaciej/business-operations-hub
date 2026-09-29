@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{4b3a948f-e997-f111-b8dc-7ced8d2eb382}" Name="Zamówienie" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/Zamwienie-4B3A948F-E997-F111-B8DC-7CED8D2EB382.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>4</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <processorder>100</processorder>
+  <RunAs>1</RunAs>
+  <UniqueName>cr679_orderbpf</UniqueName>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>cr679_order</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Zamówienie" />
+  </LocalizedNames>
+  <labels>
+    <steplabels id="{4287f232-05a6-417b-a171-b42765b0d506}">
+      <label languagecode="1033" description="Zapytanie" />
+    </steplabels>
+    <steplabels id="{afc6f7a8-b8cc-4f1b-b026-cbc476734351}">
+      <label languagecode="1033" description="Wybierz klienta" />
+    </steplabels>
+    <steplabels id="{22226857-5fdf-415e-8a63-3ba7925a96ca}">
+      <label languagecode="1033" description="Określ typ usługi" />
+    </steplabels>
+    <steplabels id="{1b4ddb3c-7175-4b55-be22-3f62a0c00d41}">
+      <label languagecode="1033" description="Wskaż wstępny termin rozpoczęcia" />
+    </steplabels>
+    <steplabels id="{79ce3108-d0c1-47d6-a736-f37588c4e5b0}">
+      <label languagecode="1033" description="Wskaż miejsce realizacji" />
+    </steplabels>
+    <steplabels id="{dcec3644-ef88-44f8-b134-7356449e813c}">
+      <label languagecode="1033" description="Potwierdzone" />
+    </steplabels>
+    <steplabels id="{64ad0567-8db9-484c-af11-77afbc9395cf}">
+      <label languagecode="1033" description="Planowany termin rozpoczęcia" />
+    </steplabels>
+    <steplabels id="{53493a4d-8250-4bc1-a302-90b105757fbe}">
+      <label languagecode="1033" description="Planowany termin zakończenia" />
+    </steplabels>
+    <steplabels id="{1b6dce5d-c9af-46b5-aa9a-051764efbff7}">
+      <label languagecode="1033" description="Data wydania sprzętu" />
+    </steplabels>
+    <steplabels id="{f16d7ade-14b5-4e83-ba1d-747904b0a505}">
+      <label languagecode="1033" description="W Trakcie" />
+    </steplabels>
+    <steplabels id="{4c3c7162-7454-46d1-822d-c35d6ed757c0}">
+      <label languagecode="1033" description="Data oddania sprzętu" />
+    </steplabels>
+    <steplabels id="{39130289-5f2a-43f0-9497-479cba87cdf8}">
+      <label languagecode="1033" description="Zakończone" />
+    </steplabels>
+    <steplabels id="{b28ad59f-1a7a-4789-beb6-23ddc07e1b78}">
+      <label languagecode="1033" description="Data wysłania faktury" />
+    </steplabels>
+    <steplabels id="{25a8906d-f743-4c93-ac3a-d8d35164c3cf}">
+      <label languagecode="1033" description="Rozliczenie" />
+    </steplabels>
+    <steplabels id="{eb08dd20-8f0d-423c-b6d0-f2523477caac}">
+      <label languagecode="1033" description="Data opłacenia faktury" />
+    </steplabels>
+  </labels>
+</Workflow>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{6ae4d567-5e7e-4020-ba7a-f5e7cc45bd14}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{7e4c0662-674e-4b9e-a001-28af722e84d6}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{42761ccd-e323-4f27-8854-cb831f45b1c3}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{aff3a0af-f50c-4a0a-aa40-b8c5dc679c48}">
+                        <labels>
+                          <label description="Timesheetline Name" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_timesheetlinename" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_timesheetlinename" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cedfe3c1-b3db-4f31-8a02-72887b6b40bf}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{afcb5ed9-e32b-4c83-9f53-c705b5a79b95}">
+                        <labels>
+                          <label description="Day" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_day" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_day" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{513c26e9-356b-4b83-97a1-f9435c469325}">
+                        <labels>
+                          <label description="Hours Worked" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_hoursworked" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="cr679_hoursworked" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6e35aec3-715e-431f-8e85-185176e320d6}">
+                        <labels>
+                          <label description="Timesheet" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_timesheetid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_timesheetid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

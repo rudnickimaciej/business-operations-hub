@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{9b904eb8-e8d7-4b88-a66b-6f6623a6b718}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_machinename" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_machineid">
+          <cell name="cr679_zdjecie" width="100" />
+          <cell name="cr679_machinename" width="300" />
+          <cell name="cr679_brandandmodel" width="100" />
+          <cell name="cr679_category" width="115" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr679_machine">
+          <attribute name="cr679_machineid" />
+          <attribute name="cr679_machinename" />
+          <order attribute="cr679_machinename" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+          <attribute name="cr679_category" />
+          <attribute name="cr679_zdjecie" />
+          <attribute name="cr679_brandandmodel" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Maszyny" languagecode="1033" />
+      <LocalizedName description="Zepsute maszyny" languagecode="1045" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{718a7b86-3c52-48c6-8ba2-503aeb0cfdb7}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{D28BF036-92FE-4455-9D59-E1C11103F32D}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{B7C9A577-DD9F-469E-89C8-179F6747F262}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{E3F1E868-EBC2-4819-BE85-FD7900651445}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_operatorname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_OperatorName" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5D318568-9E00-4AD8-9AB8-281A3608F60F}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a9b1b041-f43d-46a8-b6b4-132c694e4762}">
+                        <labels>
+                          <label description="Kwalifikacje" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_qualifications" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="cr679_qualifications" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b3c7b04d-4aac-4431-802e-f6bb158ffb7e}">
+                        <labels>
+                          <label description="Telefon" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_phonenumber" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="cr679_phonenumber" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{96958e32-238b-4b92-9999-f3626ba44349}">
+                        <labels>
+                          <label description="Dostępny" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_currentavailability" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="cr679_currentavailability" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

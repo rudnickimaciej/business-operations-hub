@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>cr679_Ren6f132b80</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>be0306e6-630e-4d64-90ab-12d00862e512</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="cr679_clients" />
+    <AppModuleComponent type="1" schemaName="cr679_machine" />
+    <AppModuleComponent type="1" schemaName="cr679_operator" />
+    <AppModuleComponent type="1" schemaName="cr679_order" />
+    <AppModuleComponent type="1" schemaName="cr679_orderbpf" />
+    <AppModuleComponent type="1" schemaName="cr679_orderitem" />
+    <AppModuleComponent type="1" schemaName="cr679_usuga" />
+    <AppModuleComponent type="62" schemaName="cr679_Ren30486c68" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Rent-Maszyny" languagecode="1033" />
+  </LocalizedNames>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

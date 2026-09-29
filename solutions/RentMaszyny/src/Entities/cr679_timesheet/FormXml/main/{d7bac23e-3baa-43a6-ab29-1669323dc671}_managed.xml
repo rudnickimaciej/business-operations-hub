@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d7bac23e-3baa-43a6-ab29-1669323dc671}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{d0406f87-9269-490b-b1ad-2ff6f0577cf3}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{82de5298-1e2b-4dff-a15c-be96f5fd0f16}" columns="11">
+                  <labels>
+                    <label description="Podsumowani" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{f9113e49-c73f-42d3-880d-6b1f229e69c6}" colspan="2">
+                        <labels>
+                          <label description="Nazwa" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_timesheetname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_timesheetname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b7e810e9-816d-46ec-9010-ea1355c6c00a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_month" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="cr679_month" disabled="false" />
+                      </cell>
+                      <cell id="{a9fc8bdf-69fe-41b2-bc97-db470f86e2d2}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_year" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="cr679_year" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ad766c74-9bbe-4199-b3b5-4f763d29598c}" visible="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{161cd90e-e7cd-43eb-af32-39fbc825c09c}" visible="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_date" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_date" />
+                      </cell>
+                      <cell locklevel="0" id="{e56a21dc-3df3-4a00-9029-df33d2896320}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_4" id="2f8c1ed1-1221-4bb1-a727-677f80028473" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Godziny pracy" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{29820bd9-a4e1-4924-8497-4f2355789abd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_totalhours" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="cr679_totalhours" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{f3ac17c9-bb50-40b6-bae1-3d105e693d92}" colspan="1" rowspan="6" auto="false">
+                        <labels>
+                          <label description="Godziny pracy" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="cc_1787427058269" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" uniqueid="{2c728c3a-a031-4419-89c4-c7f216998505}">
+                          <parameters>
+                            <TargetEntityType>cr679_timesheetline</TargetEntityType>
+                            <ViewId>{313BD3E4-2247-4F54-8F9C-196D4A149B52}</ViewId>
+                            <EnableViewPicker>true</EnableViewPicker>
+                            <IsUserView>false</IsUserView>
+                            <RecordsPerPage>31</RecordsPerPage>
+                            <RelationshipName>cr679_timesheetline_cr679_timesheetid_cr679_timesheet</RelationshipName>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <ViewIds>{313BD3E4-2247-4F54-8F9C-196D4A149B52}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="null_section_5" id="bc2f1859-564b-4627-9f2b-0ddcc03924d0" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Klasyfikacja AI" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{b83d3733-1e34-48fc-a801-497fec566168}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_aiscoring" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="cr679_aiscoring" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d58658b2-ffff-45c1-86ba-f5db085e56cd}" locklevel="0" colspan="1" rowspan="20" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_ailinestext" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="cr679_ailinestext" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="null_section_6" id="96158053-fd18-47d3-8e55-365063892e29" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Zdjęcie" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{bd7a0a9d-6e14-4e1c-8a46-4daf51e201b1}" locklevel="0" colspan="1" rowspan="1" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_file" classid="{0A7FF475-B016-4687-9CE5-042BFDBD6519}" datafieldname="cr679_file" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{8a6245a5-cf1b-4caf-84a2-56279694a221}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{5ec9d775-478c-4ebd-b7e8-68f75cc4494d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a3f64221-0152-43bc-94cd-a7b4089677e6}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{60dd7354-36a2-4c29-b997-8c7c23ca3c93}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{d01dfba4-5a90-4690-a086-5b62329e4e47}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{1802186b-04a9-4b72-98e8-dadc3963cca2}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0c09fc37-ad75-4f35-bd44-8c5666e2a351}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a1ff11f9-6a29-4cce-8805-8fb7d81e5c78}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <controlDescriptions>
+        <controlDescription forControl="{2c728c3a-a031-4419-89c4-c7f216998505}">
+          <customControl id="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+            <parameters>
+              <TargetEntityType>cr679_timesheetline</TargetEntityType>
+              <ViewId>{313BD3E4-2247-4F54-8F9C-196D4A149B52}</ViewId>
+              <EnableViewPicker>true</EnableViewPicker>
+              <IsUserView>false</IsUserView>
+              <RecordsPerPage>4</RecordsPerPage>
+            </parameters>
+          </customControl>
+          <customControl id="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+            <parameters>
+              <TargetEntityType>cr679_timesheetline</TargetEntityType>
+              <ViewId>{313BD3E4-2247-4F54-8F9C-196D4A149B52}</ViewId>
+              <EnableViewPicker>true</EnableViewPicker>
+              <IsUserView>false</IsUserView>
+              <RecordsPerPage>4</RecordsPerPage>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{313BD3E4-2247-4F54-8F9C-196D4A149B52}</ViewId>
+                <TargetEntityType>cr679_timesheetline</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>true</EnableViewPicker>
+                <RelationshipName>cr679_timesheetline_cr679_timesheetid_cr679_timesheet</RelationshipName>
+                <FilteredViewIds />
+              </data-set>
+              <EnableGroupBy type="Enum" static="true">yes</EnableGroupBy>
+              <EnableEditing type="Enum" static="true">yes</EnableEditing>
+              <ReflowBehavior type="Enum" static="true">GridOnly</ReflowBehavior>
+              <ListLayoutDirection type="Enum" static="true">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse type="Enum" static="true">false</EnableSubGridAutoCollapse>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <HideNestedGridColumnHeader type="Enum" static="true">no</HideNestedGridColumnHeader>
+              <EnableJumpBar type="Enum" static="true">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{313BD3E4-2247-4F54-8F9C-196D4A149B52}</ViewId>
+                <TargetEntityType>cr679_timesheetline</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>true</EnableViewPicker>
+                <RelationshipName>cr679_timesheetline_cr679_timesheetid_cr679_timesheet</RelationshipName>
+                <FilteredViewIds />
+              </data-set>
+              <EnableGroupBy type="Enum" static="true">yes</EnableGroupBy>
+              <EnableEditing type="Enum" static="true">yes</EnableEditing>
+              <ReflowBehavior type="Enum" static="true">GridOnly</ReflowBehavior>
+              <ListLayoutDirection type="Enum" static="true">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse type="Enum" static="true">false</EnableSubGridAutoCollapse>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <HideNestedGridColumnHeader type="Enum" static="true">no</HideNestedGridColumnHeader>
+              <EnableJumpBar type="Enum" static="true">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Grid.GridControl">
+            <parameters>
+              <data-set name="Grid">
+                <ViewId>{313BD3E4-2247-4F54-8F9C-196D4A149B52}</ViewId>
+                <TargetEntityType>cr679_timesheetline</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>true</EnableViewPicker>
+                <RelationshipName>cr679_timesheetline_cr679_timesheetid_cr679_timesheet</RelationshipName>
+                <FilteredViewIds />
+              </data-set>
+              <EnableGroupBy type="Enum" static="true">yes</EnableGroupBy>
+              <EnableEditing type="Enum" static="true">yes</EnableEditing>
+              <ReflowBehavior type="Enum" static="true">GridOnly</ReflowBehavior>
+              <ListLayoutDirection type="Enum" static="true">Vertical</ListLayoutDirection>
+              <EnableSubGridAutoCollapse type="Enum" static="true">false</EnableSubGridAutoCollapse>
+              <EnableFiltering type="Enum" static="true">yes</EnableFiltering>
+              <HideNestedGridColumnHeader type="Enum" static="true">no</HideNestedGridColumnHeader>
+              <EnableJumpBar type="Enum" static="true">yes</EnableJumpBar>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

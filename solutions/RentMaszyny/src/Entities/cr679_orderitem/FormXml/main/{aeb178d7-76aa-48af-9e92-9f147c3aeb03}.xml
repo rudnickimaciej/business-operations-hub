@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{aeb178d7-76aa-48af-9e92-9f147c3aeb03}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{795A9C81-F97F-4FE1-86B6-C367819F191B}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{A7DB4914-A624-426B-901C-749BECE01801}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{C15F66F3-8F6B-42B8-91F4-BB3701FB7D53}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_orderitem1" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_OrderItem1" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{117E258F-9295-4F01-A222-670420B1A06F}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2fca0309-ccbb-4a31-9193-a08c0683bba0}">
+                        <labels>
+                          <label description="Zamówienie" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_orderid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_orderid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7ce91087-6452-4adb-b827-456ef2c4ccee}">
+                        <labels>
+                          <label description="Maszyna" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_machineid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_machineid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f2e727f4-10c1-4ecc-939f-789fec21deba}">
+                        <labels>
+                          <label description="Operator" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_operatorid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_operatorid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c01d9324-fcb0-4805-8ac3-bffe1a23473b}">
+                        <labels>
+                          <label description="Cena" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_itemprice" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="cr679_itemprice" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f61bee66-1425-49ae-a7e6-9d4225533687}">
+                        <labels>
+                          <label description="Notatka" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_notes" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="cr679_notes" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{4c91c252-0b98-f111-b8dc-7ced8d2eb382}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{7b4141a4-7318-4631-955f-22e91769ce3d}">
+          <labels>
+            <label description="Nowa karta" languagecode="1033" />
+            <label description="Nowa karta" languagecode="1045" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{7d308942-9f56-495c-867d-b4e5b9914349}">
+                  <labels>
+                    <label description="Nowa sekcja" languagecode="1033" />
+                    <label description="Nowa sekcja" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="C0550AC7-0F44-45A4-8EF5-D2911C0689D9" labelid="{6e9b7f39-a249-4030-b3e3-f8d4ca138494}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{66cd8c88-7893-4e44-aa65-c570ba7577fe}" locklevel="0" colspan="1" rowspan="1" labelid="{32166a3d-a571-4d64-8422-f2bb4d8c91fa}">
+                        <labels>
+                          <label description="Client Name" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_clientname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_clientname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{62638835-45b3-4ee9-909d-0b71ee7ca419}" locklevel="0" colspan="1" rowspan="1" labelid="{b4885cc0-54b2-4073-ad60-5b095e95d65d}">
+                        <labels>
+                          <label description="NIP" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_nip" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_nip" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{facc0d72-ee25-4967-835e-e0c83543ac09}" locklevel="0" colspan="1" rowspan="1" labelid="{40d1ddab-26e0-47e2-ae4b-473f203e8c57}">
+                        <labels>
+                          <label description="Phone" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_phone" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_phone" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e81eccc7-6fd7-418c-a9cc-f29f64ab80e6}" locklevel="0" colspan="1" rowspan="1" labelid="{0b7d28b5-6e43-4a69-b52d-38a8c8e41a85}">
+                        <labels>
+                          <label description="Email Address" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_emailaddress" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="cr679_emailaddress" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Klient szybkie wyświetlanie formularza" languagecode="1033" />
+      <LocalizedName description="Klient szybkie wyświetlanie formularza" languagecode="1045" />
+    </LocalizedNames>
+  </systemform>
+</forms>

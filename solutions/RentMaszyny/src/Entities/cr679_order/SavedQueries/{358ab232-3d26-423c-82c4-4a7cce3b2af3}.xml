@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{358ab232-3d26-423c-82c4-4a7cce3b2af3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_ordernumber" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_orderid">
+          <cell name="cr679_name" width="300" />
+          <cell name="cr679_clientid" width="150" />
+          <cell name="cr679_servicetype" width="150" />
+          <cell name="cr679_startdate" width="150" />
+          <cell name="cr679_enddate" width="150" />
+          <cell name="cr679_location" width="150" />
+          <cell name="cr679_status" width="150" />
+          <cell name="cr679_totalprice" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr679_order">
+          <attribute name="cr679_orderid" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cr679_clientid" />
+          <attribute name="cr679_servicetype" />
+          <attribute name="cr679_startdate" />
+          <attribute name="cr679_enddate" />
+          <attribute name="cr679_location" />
+          <attribute name="cr679_status" />
+          <attribute name="cr679_totalprice" />
+          <attribute name="cr679_name" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Aktywne zamówienia" languagecode="1033" />
+      <LocalizedName description="Aktywne zamówienia" languagecode="1045" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

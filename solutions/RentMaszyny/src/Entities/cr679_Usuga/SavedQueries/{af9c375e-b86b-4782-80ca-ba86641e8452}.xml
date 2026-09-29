@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{af9c375e-b86b-4782-80ca-ba86641e8452}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_service1" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_usugaid">
+          <cell name="cr679_service1" width="300" />
+          <cell name="cr679_machineid" width="150" />
+          <cell name="cr679_servicetype" width="150" />
+          <cell name="cr679_inspectiondate" width="150" />
+          <cell name="cr679_insuranceexpirydate" width="150" />
+          <cell name="cr679_notes" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr679_usuga">
+          <attribute name="cr679_usugaid" />
+          <attribute name="cr679_service1" />
+          <attribute name="createdon" />
+          <order attribute="cr679_service1" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="cr679_machineid" />
+          <attribute name="cr679_servicetype" />
+          <attribute name="cr679_inspectiondate" />
+          <attribute name="cr679_insuranceexpirydate" />
+          <attribute name="cr679_notes" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Usługas" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
