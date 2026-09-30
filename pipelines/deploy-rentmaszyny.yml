@@ -33,6 +33,14 @@ pr:
       - solutions/RentMaszyny/**
       - pipelines/deploy-rentmaszyny.yml
 
+parameters:
+  # Stage-and-upgrade needs an existing base solution in TST. Tick this only for the very first
+  # deployment (or after a TST reset); automatic PR/CI runs always use the default.
+  - name: firstDeployment
+    displayName: First deployment (RentMaszyny not installed in TST yet)
+    type: boolean
+    default: false
+
 pool:
   vmImage: windows-latest
 
@@ -116,6 +124,6 @@ stages:
                     MaxAsyncWaitTime: "60"
                     # Stage-and-upgrade removes components that were deleted in DEV.
                     # A plain update would leave them behind in TST.
-                    StageAndUpgrade: true
+                    StageAndUpgrade: ${{ not(parameters.firstDeployment) }}
                     PublishWorkflows: true
                     OverwriteUnmanagedCustomizations: false

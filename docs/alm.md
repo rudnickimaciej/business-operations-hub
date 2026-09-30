@@ -46,5 +46,5 @@ Pipeline: [`pipelines/deploy-rentmaszyny.yml`](../pipelines/deploy-rentmaszyny.y
 |---|---|
 | Import fails with a missing dependency | A component used by the app is not in the solution (e.g. an icon web resource). Add it in DEV and re-sync. |
 | Changes deployed but not visible in TST | Someone customized TST directly; the unmanaged layer hides the managed one. Remove the unmanaged layer in TST. |
-| First import fails in stage-and-upgrade mode | The solution does not exist in TST yet. Run the first deployment with `StageAndUpgrade: false`, then switch it back. |
+| `Cannot create a holding solution for missing base RentMaszyny` | The solution does not exist in TST yet (first deployment or TST reset). Run the pipeline manually with **First deployment** ticked. |
 | `Unauthorized` / `The user is not a member of the organization` | The application user is missing in TST (for example after an environment reset). |
