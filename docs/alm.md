@@ -17,6 +17,10 @@ DEV (unmanaged)  --/solution-sync-->  Git (GitHub, main)  --Azure Pipelines-->  
 
 Pipeline: [`pipelines/deploy-rentmaszyny.yml`](../pipelines/deploy-rentmaszyny.yml).
 
+Form scripts are built from TypeScript in `webresources/`. The Build stage runs the Jest tests, builds the bundles and
+copies each `dist/<name>.js` over `solutions/RentMaszyny/src/WebResources/<name>` before packing. A new web resource
+must first be created in DEV (any placeholder content), added to the solution and synced; the pipeline fails otherwise.
+
 ## One-time setup
 
 ### Entra ID

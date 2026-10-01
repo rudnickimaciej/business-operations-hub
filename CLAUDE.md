@@ -63,6 +63,7 @@ or from `CLAUDE.local.md` (git-ignored) if present.
 pipelines/          Azure DevOps YAML pipelines (Power Platform Build Tools); setup in docs/alm.md
 docs/decisions/     ADRs — read before changing architecture
 solutions/RentMaszyny/  Unpacked solution — THE single source of truth for all components
+webresources/       TypeScript source of JS web resources (webpack, Jest); constants in src/shared/schema.ts
 config/             Deployment settings per environment (no secrets)
 scripts/            Repeatable PowerShell/pac scripts
 ```
@@ -96,6 +97,10 @@ alone is insufficient, plus cost, security and maintenance impact.
 - **Power Automate:** `Try` / `Catch` / `Finally` scopes; descriptive action names; child flows for
   reused logic; think about retries, idempotency and concurrency. Failures are written to the
   `cr679_applicationlog` table with a correlation id (use system `createdon`/`createdby`, don't duplicate them).
+- **Form scripts (TypeScript):** source is `webresources/`, never the JS in `solutions/` or in DEV. The pipeline
+  builds and injects bundles into the solution; the JS copy in `solutions/` is only the last DEV snapshot.
+  Entry files follow `src/<table>/<table>.<form>.ts` (bundle `cr679_<table><form>`, handler `RentMaszyny.<table>.<form>.onLoad`).
+  Use table/column names from `schema.ts`, and cover logic with Jest tests in `webresources/tests/` (mirrors `src/`). Client-side validation is UX only, not enforcement.
 - **Power Apps:** flag every delegation risk; keep business logic out of control properties
   (prefer Dataverse business rules, flows, or plug-ins where appropriate).
 - **Power BI:** star schema, measures documented, RLS considered.

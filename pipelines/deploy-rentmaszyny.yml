@@ -21,6 +21,7 @@ trigger:
   paths:
     include:
       - solutions/RentMaszyny/**
+      - webresources/**
       - pipelines/deploy-rentmaszyny.yml
       - config/**
 
@@ -31,6 +32,7 @@ pr:
   paths:
     include:
       - solutions/RentMaszyny/**
+      - webresources/**
       - pipelines/deploy-rentmaszyny.yml
 
 parameters:
@@ -65,6 +67,32 @@ stages:
             displayName: Install Power Platform Build Tools
             inputs:
               DefaultVersion: true
+
+          # ── TypeScript web resources: test, build, inject into the solution ──
+          - script: npm ci && npm test && npm run build
+            displayName: Test and build TypeScript web resources
+            workingDirectory: webresources
+
+          # Every bundle in dist/ replaces the web resource with the same name in the solution.
+          # The web resource must already exist in the solution (created once in DEV and synced),
+          # otherwise it would not be registered on any form. Fail instead of skipping silently.
+          - task: PowerShell@2
+            displayName: Copy built web resources into the solution
+            inputs:
+              pwsh: true
+              targetType: inline
+              script: |
+                $target = "$(solutionSourceFolder)/WebResources"
+                $bundles = Get-ChildItem "$(Build.SourcesDirectory)/webresources/dist/*.js"
+                if (-not $bundles) { throw "No bundles found in webresources/dist" }
+                foreach ($bundle in $bundles) {
+                  $destination = Join-Path $target $bundle.BaseName
+                  if (-not (Test-Path $destination)) {
+                    throw "Web resource '$($bundle.BaseName)' is not in the solution. Create it in DEV, add it to RentMaszyny and run /solution-sync."
+                  }
+                  Copy-Item $bundle.FullName $destination -Force
+                  Write-Host "Injected $($bundle.Name) -> WebResources/$($bundle.BaseName)"
+                }
 
           # Stamp the build number into Solution.xml so TST shows which build is deployed.
           # Only the agent's working copy is changed; nothing is committed.

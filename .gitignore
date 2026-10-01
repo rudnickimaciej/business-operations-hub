@@ -18,3 +18,8 @@ CLAUDE.local.md
 .DS_Store
 Thumbs.db
 .vs/
+
+# TypeScript web resources
+node_modules/
+webresources/dist/
+coverage/
