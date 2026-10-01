@@ -20,7 +20,8 @@
           <Title LCID="1033" Title="Sprzedaż" />
         </Titles>
         <SubArea Id="subarea_dc5e760c" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_order" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
-        <SubArea Id="subarea_a03b0a8f" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_clients" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_e36279ca" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="account" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_39e37493" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="contact" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
       </Group>
       <Group Id="NewGroup_210099f4" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
@@ -57,6 +58,7 @@
             <Title LCID="1033" Title="Pozycje zamówienia" />
           </Titles>
         </SubArea>
+        <SubArea Id="subarea_acf59dc8" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_invoice" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
       </Group>
     </Area>
   </SiteMap>

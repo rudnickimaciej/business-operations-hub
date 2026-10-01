@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e7c3d9d4-9a99-414c-af6e-b02f8c86cd47}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{e738d3fc-a7a9-4cc2-9d4e-7a136af71b03}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{4511228f-a4e5-4b8d-b2e0-41b24e963818}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                    <label description="OGÓLNE" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0e27e493-2dc8-417c-9ef2-334f4800e195}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_name" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

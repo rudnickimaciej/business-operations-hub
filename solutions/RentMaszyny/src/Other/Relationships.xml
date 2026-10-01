@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <EntityRelationship Name="bpf_cr679_order_cr679_orderbpf" />
-  <EntityRelationship Name="business_unit_cr679_clients" />
+  <EntityRelationship Name="business_unit_cr679_invoice" />
   <EntityRelationship Name="business_unit_cr679_machine" />
   <EntityRelationship Name="business_unit_cr679_operator" />
   <EntityRelationship Name="business_unit_cr679_order" />
@@ -9,15 +9,22 @@
   <EntityRelationship Name="business_unit_cr679_timesheet" />
   <EntityRelationship Name="business_unit_cr679_timesheetline" />
   <EntityRelationship Name="business_unit_cr679_usuga" />
-  <EntityRelationship Name="cr679_order_cr679_clientid_cr679_clients" />
+  <EntityRelationship Name="cr679_account_cr679_invoice_customerid" />
+  <EntityRelationship Name="cr679_account_cr679_order_522" />
+  <EntityRelationship Name="cr679_contact_cr679_invoice_customerid" />
+  <EntityRelationship Name="cr679_contact_cr679_order_522" />
+  <EntityRelationship Name="cr679_invoice_orderid_cr679_order" />
   <EntityRelationship Name="cr679_orderitem_cr679_machineid_cr679_machine" />
   <EntityRelationship Name="cr679_orderitem_cr679_operatorid_cr679_operator" />
   <EntityRelationship Name="cr679_orderitem_cr679_orderid_cr679_order" />
   <EntityRelationship Name="cr679_timesheetline_cr679_timesheetid_cr679_timesheet" />
   <EntityRelationship Name="cr679_usuga_cr679_machineid_cr679_machine" />
+  <EntityRelationship Name="FileAttachment_cr679_invoice_cr679_document" />
   <EntityRelationship Name="FileAttachment_cr679_timesheet_cr679_file" />
-  <EntityRelationship Name="lk_cr679_clients_createdby" />
-  <EntityRelationship Name="lk_cr679_clients_modifiedby" />
+  <EntityRelationship Name="lk_cr679_applicationlog_createdby" />
+  <EntityRelationship Name="lk_cr679_applicationlog_modifiedby" />
+  <EntityRelationship Name="lk_cr679_invoice_createdby" />
+  <EntityRelationship Name="lk_cr679_invoice_modifiedby" />
   <EntityRelationship Name="lk_cr679_machine_createdby" />
   <EntityRelationship Name="lk_cr679_machine_modifiedby" />
   <EntityRelationship Name="lk_cr679_operator_createdby" />
@@ -36,8 +43,9 @@
   <EntityRelationship Name="lk_cr679_timesheetline_modifiedby" />
   <EntityRelationship Name="lk_cr679_usuga_createdby" />
   <EntityRelationship Name="lk_cr679_usuga_modifiedby" />
+  <EntityRelationship Name="organization_cr679_applicationlog" />
   <EntityRelationship Name="organization_cr679_orderbpf" />
-  <EntityRelationship Name="owner_cr679_clients" />
+  <EntityRelationship Name="owner_cr679_invoice" />
   <EntityRelationship Name="owner_cr679_machine" />
   <EntityRelationship Name="owner_cr679_operator" />
   <EntityRelationship Name="owner_cr679_order" />
@@ -45,7 +53,7 @@
   <EntityRelationship Name="owner_cr679_timesheet" />
   <EntityRelationship Name="owner_cr679_timesheetline" />
   <EntityRelationship Name="owner_cr679_usuga" />
-  <EntityRelationship Name="team_cr679_clients" />
+  <EntityRelationship Name="team_cr679_invoice" />
   <EntityRelationship Name="team_cr679_machine" />
   <EntityRelationship Name="team_cr679_operator" />
   <EntityRelationship Name="team_cr679_order" />
@@ -53,10 +61,11 @@
   <EntityRelationship Name="team_cr679_timesheet" />
   <EntityRelationship Name="team_cr679_timesheetline" />
   <EntityRelationship Name="team_cr679_usuga" />
+  <EntityRelationship Name="TransactionCurrency_cr679_invoice" />
   <EntityRelationship Name="TransactionCurrency_cr679_machine" />
   <EntityRelationship Name="TransactionCurrency_cr679_order" />
   <EntityRelationship Name="TransactionCurrency_cr679_orderitem" />
-  <EntityRelationship Name="user_cr679_clients" />
+  <EntityRelationship Name="user_cr679_invoice" />
   <EntityRelationship Name="user_cr679_machine" />
   <EntityRelationship Name="user_cr679_operator" />
   <EntityRelationship Name="user_cr679_order" />

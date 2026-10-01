@@ -187,23 +187,22 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{c39ede9a-347a-4d9b-b292-97df300e0789}" colspan="1" rowspan="1" showlabel="false">
+                      <cell id="{ee50d4f2-b4bb-43a7-89fa-fbdba80a41c1}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
-                        <control id="cr679_clientid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_clientid" />
+                        <control id="cr679_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_customerid" disabled="false" />
                       </cell>
                     </row>
                     <row>
-                      <cell locklevel="0" id="{ac6c6fd5-bd8f-498f-81b3-c47807e09fae}" colspan="1" rowspan="1">
+                      <cell locklevel="0" id="{77ebc431-7bde-43d6-9515-5df46d783521}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Klient" languagecode="1033" />
-                          <label description="New QV control 1786731117677" languagecode="1045" />
+                          <label description="New QV control 1790851511268" languagecode="1033" />
                         </labels>
-                        <control id="QuickviewControl1786731117677" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="cr679_clientid">
+                        <control id="QuickviewControl1790851511268" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="cr679_customerid">
                           <parameters>
                             <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
-                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="cr679_clients"&gt;4c91c252-0b98-f111-b8dc-7ced8d2eb382&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="account"&gt;b028db32-3619-48a5-ac51-cf3f947b0ef3&lt;/QuickFormId&gt;&lt;QuickFormId entityname="contact"&gt;707fc57b-c5e6-471b-a180-e37ed28a38e2&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
                           </parameters>
                         </control>
                       </cell>
@@ -258,7 +257,7 @@
         </rows>
       </footer>
       <Navigation>
-        <NavBar></NavBar>
+        <NavBar />
         <NavBarAreas>
           <NavBarArea Id="Info">
             <Titles>

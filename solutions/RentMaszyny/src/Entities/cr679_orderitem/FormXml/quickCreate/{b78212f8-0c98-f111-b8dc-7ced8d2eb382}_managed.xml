@@ -134,13 +134,12 @@
         <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
       </DisplayConditions>
       <formLibraries>
-        <Library name="cr679_orderitemquickcreate" libraryUniqueId="{7deebf0a-1b64-4175-97dd-b6540d0db88a}" />
-        <Library name="cr679_formbase" libraryUniqueId="{0ab82aa3-2b4f-4bfd-8803-c24ff9fb9214}" />
+        <Library name="cr679_orderitemquickcreate" libraryUniqueId="{65d2d077-6904-401f-846d-a79443e80a53}" />
       </formLibraries>
       <events>
         <event name="onload" application="false" active="false">
           <Handlers>
-            <Handler functionName="OrderItemQuickCreate.create" libraryName="cr679_orderitemquickcreate" handlerUniqueId="{3b6956fe-5ec9-4f40-a6f5-127f5ca93963}" enabled="true" parameters="" passExecutionContext="true" />
+            <Handler functionName="RentMaszyny.orderitem.quickcreate.onLoad" libraryName="cr679_orderitemquickcreate" handlerUniqueId="{80ea79fe-63d3-4b75-a3b7-a2999781d49b}" enabled="true" parameters="" passExecutionContext="true" />
           </Handlers>
         </event>
       </events>

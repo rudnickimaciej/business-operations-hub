@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <WebResourceId>{3d4c9f0b-bf98-f111-b8dc-7ced8d2eb382}</WebResourceId>
+  <WebResourceId>{5ca07d34-69bd-f111-aaad-7c1e52fa8d0a}</WebResourceId>
   <Name>cr679_orderitemquickcreate</Name>
-  <DisplayName>Pozycja Zamówienia QC</DisplayName>
+  <DisplayName>Order Item Quick Create</DisplayName>
   <LanguageCode>0</LanguageCode>
   <WebResourceType>3</WebResourceType>
   <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -11,5 +11,5 @@
   <IsCustomizable>1</IsCustomizable>
   <CanBeDeleted>1</CanBeDeleted>
   <IsHidden>0</IsHidden>
-  <FileName>/WebResources/cr679_orderitemquickcreate3D4C9F0B-BF98-F111-B8DC-7CED8D2EB382</FileName>
+  <FileName>/WebResources/cr679_orderitemquickcreate5CA07D34-69BD-F111-AAAD-7C1E52FA8D0A</FileName>
 </WebResource>

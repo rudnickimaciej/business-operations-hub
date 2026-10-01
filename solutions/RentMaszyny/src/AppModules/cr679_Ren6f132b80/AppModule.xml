@@ -10,7 +10,9 @@
   <ClientType>4</ClientType>
   <NavigationType>0</NavigationType>
   <AppModuleComponents>
-    <AppModuleComponent type="1" schemaName="cr679_clients" />
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="cr679_invoice" />
     <AppModuleComponent type="1" schemaName="cr679_machine" />
     <AppModuleComponent type="1" schemaName="cr679_operator" />
     <AppModuleComponent type="1" schemaName="cr679_order" />

@@ -19,7 +19,8 @@ A construction equipment rental company (excavators, loaders, etc.).
 **An app already exists in DEV** (solution `RentMaszyny`, BPF "Zamówienie" = table `cr679_orderbpf`).
 Inspect the synced source in `solutions/` before proposing changes. Do not assume the data model or BPF stages.
 
-**In scope:** request intake, BPF, machine availability, pricing, invoice document + email, reporting.
+**In scope:** request intake, BPF, machine availability, pricing, invoice document (PDF via Azure Function, see `docs/invoicing.md`), reporting.
+Invoice e-mail is postponed (no Exchange licence).
 **Out of scope:** real accounting/ERP, legal e-invoicing (e.g. KSeF), payments, fleet maintenance.
 
 "CRM" here means a **custom model-driven app on Dataverse**. Dynamics 365 Sales is not available
@@ -68,7 +69,7 @@ config/             Deployment settings per environment (no secrets)
 scripts/            Repeatable PowerShell/pac scripts
 ```
 
-Create `power-bi/` (PBIP format) or `azure/` only when that work actually starts.
+`azure/` holds the invoice generator (Function + Bicep, ADR-004). Create `power-bi/` (PBIP format) only when that work starts.
 **Never** keep copies of apps or flows outside `solutions/`.
 
 ## Non-negotiable rules
@@ -132,8 +133,8 @@ Remove an item when its ADR is written.
 
 - Request intake channel (manual entry, web form, e-mail, Power Pages?).
 - Data model (tables, relationships, ownership) — owner proposes first.
+- Azure DEV resources are hand-made in the portal; convert them to Bicep before creating TST (ADR-004).
 - Security roles and business unit/team structure.
-- Invoice generation method (Word template, Dataverse document template, HTML→PDF) and numbering.
 - CI/CD authentication: client secret vs workload identity federation for the Power Platform service connection.
 
 ## Project tools

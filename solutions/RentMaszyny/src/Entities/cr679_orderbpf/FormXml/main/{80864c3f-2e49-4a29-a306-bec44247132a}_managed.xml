@@ -20,11 +20,11 @@
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{afc6f7a8-b8cc-4f1b-b026-cbc476734351}" showlabel="true" visible="true" labelid="{d3c6db42-c5d6-474b-b8cd-81931456e3b6}">
+                      <cell id="{8e78821a-901a-418e-bbf1-c4eb02041d07}" showlabel="true" visible="true" labelid="{2f060c4f-6f4f-4355-bcb3-8b1c059cc883}">
                         <labels>
                           <label description="Wybierz klienta" languagecode="1033" />
                         </labels>
-                        <control id="bpf_cr679_order_cr679_orderbpf:cr679_clientid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_clientid" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
+                        <control id="bpf_cr679_order_cr679_orderbpf:cr679_customerid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_customerid" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" disabled="false" />
                       </cell>
                     </row>
                     <row>
@@ -74,7 +74,7 @@
                         <labels>
                           <label description="Planowany termin rozpoczęcia" languagecode="1033" />
                         </labels>
-                        <control id="bpf_cr679_order_cr679_orderbpf:cr679_startdate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_startdate" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" disabled="false" />
+                        <control id="bpf_cr679_order_cr679_orderbpf:cr679_startdate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_startdate" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
                     </row>
                     <row>

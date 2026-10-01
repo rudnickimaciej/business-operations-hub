@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a72c7955-442b-4ea4-9499-b10cd18b4256}</formid>
+    <IntroducedVersion>8.0.0.0</IntroducedVersion>
+    <FormPresentation>2</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <DisplayConditions FallbackForm="true" Order="3" solutionaction="Modified" />
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Account for Interactive experience" languagecode="1033" />
+      <LocalizedName description="Klient dla interaktywnego interfejsu" languagecode="1045" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default Interactive experience Account form." languagecode="1033" />
+      <Description description="Domyślny formularz klienta dla interaktywnego interfejsu." languagecode="1045" />
+    </Descriptions>
+  </systemform>
+</forms>

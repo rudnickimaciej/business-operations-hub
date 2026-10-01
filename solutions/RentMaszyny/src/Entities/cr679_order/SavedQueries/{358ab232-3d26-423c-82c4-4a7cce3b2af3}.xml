@@ -11,7 +11,7 @@
       <grid name="resultset" jump="cr679_ordernumber" select="1" icon="1" preview="1">
         <row name="result" id="cr679_orderid">
           <cell name="cr679_name" width="300" />
-          <cell name="cr679_clientid" width="150" />
+          <cell name="cr679_customerid" width="100" />
           <cell name="cr679_servicetype" width="150" />
           <cell name="cr679_startdate" width="150" />
           <cell name="cr679_enddate" width="150" />
@@ -30,7 +30,6 @@
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
           </filter>
-          <attribute name="cr679_clientid" />
           <attribute name="cr679_servicetype" />
           <attribute name="cr679_startdate" />
           <attribute name="cr679_enddate" />
@@ -38,6 +37,7 @@
           <attribute name="cr679_status" />
           <attribute name="cr679_totalprice" />
           <attribute name="cr679_name" />
+          <attribute name="cr679_customerid" />
         </entity>
       </fetch>
     </fetchxml>

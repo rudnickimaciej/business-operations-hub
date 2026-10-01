@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{819a9b8f-8ee6-4fd7-94cc-a9afbf3e53aa}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="cr679_autonumber" select="1" icon="1" preview="1">
+        <row name="result" id="cr679_invoiceid">
+          <cell name="cr679_autonumber" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="cr679_invoice">
+          <attribute name="cr679_invoiceid" />
+          <attribute name="cr679_autonumber" />
+          <attribute name="createdon" />
+          <order attribute="cr679_autonumber" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Faktury" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

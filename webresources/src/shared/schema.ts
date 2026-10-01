@@ -18,7 +18,7 @@ export const Order = {
     id: "cr679_orderid",
     name: "cr679_name",
     orderNumber: "cr679_ordernumber",
-    client: "cr679_clientid",
+    customer: "cr679_customerid", // Customer column: account or contact
     status: "cr679_status",
     serviceType: "cr679_servicetype",
     location: "cr679_location",
@@ -48,10 +48,43 @@ export const OrderItem = {
   },
 } as const;
 
-export const Client = { entity: "cr679_clients" } as const;
+export const Account = { entity: "account" } as const;
+export const Contact = { entity: "contact" } as const;
 export const Machine = { entity: "cr679_machine" } as const;
 export const Operator = { entity: "cr679_operator" } as const;
 export const Service = { entity: "cr679_usuga" } as const;
 export const Timesheet = { entity: "cr679_timesheet" } as const;
 export const TimesheetLine = { entity: "cr679_timesheetline" } as const;
 export const OrderProcess = { entity: "cr679_orderbpf" } as const;
+
+export const Invoice = {
+  entity: "cr679_invoice",
+  fields: {
+    id: "cr679_invoiceid",
+    number: "cr679_autonumber",
+    order: "cr679_orderid",
+    customer: "cr679_customerid", // Customer column: account or contact
+    customerName: "cr679_customername",
+    customerNip: "cr679_customernip",
+    customerAddress: "cr679_customeraddress",
+    issueDate: "cr679_issuedate",
+    dueDate: "cr679_duedate",
+    netAmount: "cr679_netamount",
+    vatRate: "cr679_vatrate",
+    vatAmount: "cr679_vatamount",
+    grossAmount: "cr679_grossamount",
+    documentStatus: "cr679_documentstatus",
+    requestedOn: "cr679_requestedon",
+    generatedOn: "cr679_generatedon",
+    document: "cr679_document",
+    errorMessage: "cr679_errormessage",
+  },
+} as const;
+
+/** Values of cr679_invoice.cr679_documentstatus. */
+export const InvoiceDocumentStatus = {
+  Requested: 630100000,
+  Generating: 630100001,
+  Generated: 630100002,
+  Failed: 630100003,
+} as const;

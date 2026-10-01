@@ -13,10 +13,10 @@
         <Description description="This table contains records of orders linked to clients" languagecode="1033" />
       </Descriptions>
       <attributes>
-        <attribute PhysicalName="cr679_ClientID">
-          <Type>lookup</Type>
-          <Name>cr679_clientid</Name>
-          <LogicalName>cr679_clientid</LogicalName>
+        <attribute PhysicalName="cr679_customerid">
+          <Type>customer</Type>
+          <Name>cr679_customerid</Name>
+          <LogicalName>cr679_customerid</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
           <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -25,7 +25,7 @@
           <IsCustomField>1</IsCustomField>
           <IsAuditEnabled>0</IsAuditEnabled>
           <IsSecured>0</IsSecured>
-          <IntroducedVersion>1.0</IntroducedVersion>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
           <IsCustomizable>1</IsCustomizable>
           <IsRenameable>1</IsRenameable>
           <CanModifySearchSettings>1</CanModifySearchSettings>
@@ -42,8 +42,6 @@
           <IsFilterable>0</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <LookupStyle>single</LookupStyle>
-          <LookupTypes />
           <displaynames>
             <displayname description="Klient" languagecode="1033" />
           </displaynames>
