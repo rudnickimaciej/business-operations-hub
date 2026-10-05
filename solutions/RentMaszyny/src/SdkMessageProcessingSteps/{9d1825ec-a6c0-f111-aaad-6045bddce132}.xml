@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="invoices sb-rentmachines-dev-pol-001: Update of cr679_invoice" SdkMessageProcessingStepId="{9d1825ec-a6c0-f111-aaad-6045bddce132}" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>20bebb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>Microsoft.Crm.ServiceBus.ServiceBusPlugin, Microsoft.Crm.ServiceBus, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</PluginTypeName>
+  <PluginTypeId>ef521e63-cd2b-4170-99f6-447466a7161e</PluginTypeId>
+  <PrimaryEntity>cr679_invoice</PrimaryEntity>
+  <AsyncAutoDelete>1</AsyncAutoDelete>
+  <Description>invoices sb-rentmachines-dev-pol-001: Update of cr679_invoice</Description>
+  <FilteringAttributes>cr679_requestedon</FilteringAttributes>
+  <InvocationSource>1</InvocationSource>
+  <Mode>1</Mode>
+  <Rank>1</Rank>
+  <EventHandler>{08a2aaad-a6c0-f111-aaad-6045bddce132}</EventHandler>
+  <EventHandlerTypeCode>4618</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

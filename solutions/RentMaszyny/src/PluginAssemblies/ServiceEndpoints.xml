@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceEndpoints xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ServiceEndpoint ServiceEndpointId="{08a2aaad-a6c0-f111-aaad-6045bddce132}" Name="invoices sb-rentmachines-dev-pol-001">
+    <ConnectionMode>1</ConnectionMode>
+    <Contract>6</Contract>
+    <Path>invoice-requests</Path>
+    <SolutionNamespace>sb-rentmachines-dev-neu-p6hlz</SolutionNamespace>
+    <UserClaim>1</UserClaim>
+    <IsCustomizable>1</IsCustomizable>
+    <AuthType>2</AuthType>
+    <MessageFormat>2</MessageFormat>
+    <NamespaceAddress>sb://sb-rentmachines-dev-neu-p6hlz.servicebus.windows.net/</NamespaceAddress>
+    <NamespaceFormat>2</NamespaceFormat>
+    <SASKeyName>dataverse-send</SASKeyName>
+    <UseKeyVaultConfiguration>0</UseKeyVaultConfiguration>
+  </ServiceEndpoint>
+</ServiceEndpoints>

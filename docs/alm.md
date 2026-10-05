@@ -52,3 +52,32 @@ must first be created in DEV (any placeholder content), added to the solution an
 | Changes deployed but not visible in TST | Someone customized TST directly; the unmanaged layer hides the managed one. Remove the unmanaged layer in TST. |
 | `Cannot create a holding solution for missing base RentMaszyny` | The solution does not exist in TST yet (first deployment or TST reset). Run the pipeline manually with **First deployment** ticked. |
 | `Unauthorized` / `The user is not a member of the organization` | The application user is missing in TST (for example after an environment reset). |
+
+## Azure infrastructure (invoice generator)
+
+Defined in [`azure/infra/main.bicep`](../azure/infra/main.bicep), one resource group per environment, region North Europe (West Europe does not accept new subscriptions; North Europe is also the cheapest of the EU regions checked),
+in the subscription that belongs to the Dataverse tenant (ADR-004). Resources: Service Bus (Basic) with queue
+`invoice-requests` and a send-only SAS rule for Dataverse, Function App (Flex Consumption, .NET isolated) with a managed
+identity, Storage, Application Insights, Log Analytics, a monthly budget, and the identity's role assignments.
+
+```bash
+# one-time per subscription
+for p in Microsoft.Web Microsoft.ServiceBus Microsoft.Storage Microsoft.Insights Microsoft.OperationalInsights Microsoft.Consumption; do
+  az provider register --namespace $p
+done
+
+az group create --name rg-rentmachines-dev-neu --location northeurope --tags project=business-operations-hub env=dev
+
+export DATAVERSE_URL=<DEV environment URL>        # not stored in the repo
+export BUDGET_CONTACT_EMAIL=<alert e-mail>        # not stored in the repo
+az deployment group what-if --resource-group rg-rentmachines-dev-neu --parameters azure/infra/dev.bicepparam
+az deployment group create  --resource-group rg-rentmachines-dev-neu --parameters azure/infra/dev.bicepparam
+```
+
+After deployment (manual, once per environment):
+
+1. Read the SAS connection string for Dataverse (never commit it):
+   `az servicebus queue authorization-rule keys list -g <rg> --namespace-name <sb> --queue-name invoice-requests --name dataverse-send --query primaryConnectionString -o tsv`
+   and set it on the Service Endpoint in the Plugin Registration Tool.
+2. Get the managed identity's Application ID (`az ad sp show --id <functionPrincipalId output> --query appId -o tsv`)
+   and create a Dataverse application user with the role `Invoice Generator Service`.

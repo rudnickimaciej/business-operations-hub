@@ -31,6 +31,19 @@ Every later time:
 pac solution sync --solution-folder solutions/SOLUTION --packagetype Both --processCanvasApps
 ```
 
+**Known gap (pac 2.11.2): `sync` drops service endpoints and their steps.** If `Other/Solution.xml` lists root
+components of type 95 (service endpoint) or 92 (SDK step), `pac solution sync` leaves `<ServiceEndpoints />` and
+`<SdkMessageProcessingSteps />` empty and does not write their files, so the pipeline would deploy without them.
+After every sync, refresh them from a plain export:
+
+```powershell
+pac solution export --name SOLUTION --path <scratch>/s.zip --overwrite
+pac solution unpack --zipfile <scratch>/s.zip --folder <scratch>/un
+# copy <scratch>/un/PluginAssemblies and <scratch>/un/SdkMessageProcessingSteps over solutions/SOLUTION/src/
+```
+
+Then confirm `git status` shows no deletions in those folders. The export contains the SAS key name only, never the key.
+
 If `sync` fails with "file is used by another process", make sure no shell has its working directory
 inside `solutions/` and retry. If it then fails with `SolutionXmlVersioningException`, the folder was left
 half-written: restore it with `git restore --source=HEAD -- solutions/SOLUTION` and `git clean -fd solutions/SOLUTION`,

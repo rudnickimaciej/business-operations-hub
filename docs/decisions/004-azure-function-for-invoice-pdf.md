@@ -31,13 +31,23 @@ Option 4:
 - DEV resources are first created manually in the Azure portal (learning). Before TST is created, they are
   captured as Bicep (`azure/infra/`) and deployed by a pipeline, so TST is reproducible and never hand-made.
 
+### Tenant placement
+
+All Azure resources live in a subscription in the **same Entra ID tenant as Dataverse** (`rudnicki17`).
+A first attempt used a subscription in another tenant: the Dataverse → Service Bus SAS connection works across
+tenants, but the function's managed identity cannot be a Dataverse application user in a foreign tenant, and
+secret-type environment variables require Key Vault in the Dataverse tenant. Cross-tenant would have required a
+multi-tenant app registration with a federated credential, or a client secret.
+
 ## Consequences
 
 - New operational surface: Service Bus namespace, Function App, Storage, Application Insights per environment.
   Expected cost is a few currency units per month (Service Bus Basic, Flex Consumption).
 - Deployment order: Azure resources before the solution, because the Service Endpoint points to the queue.
-- The Service Endpoint's SAS key is environment-specific. It most likely has to be set after each solution import
-  (to be verified and documented in `docs/alm.md`).
+- The Service Endpoint is exported with its namespace address and SAS key **name**, never the key (verified).
+  The namespace address is DEV-specific, so in TST the endpoint must be re-pointed after import: preferably via
+  Key Vault configuration (secret environment variable), otherwise by a post-deployment script.
+- `pac solution sync` (2.11.2) drops service endpoints and steps from the unpacked source; `/solution-sync` restores them.
 - Failures are visible in three places: invoice status, `cr679_applicationlog`, and Application Insights or the dead-letter queue.
 - QuestPDF Community licence applies (free below USD 1M annual revenue). A commercial use would need a review.
 

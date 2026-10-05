@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.26085.166" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26085.166" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26085.00166">
+<ImportExportXml version="9.2.26091.158" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26091.158" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26091.00158">
   <SolutionManifest>
     <UniqueName>RentMaszyny</UniqueName>
     <LocalizedNames>
@@ -90,6 +90,7 @@
       <RootComponent type="1" schemaName="cr679_timesheet" behavior="0" />
       <RootComponent type="1" schemaName="cr679_timesheetline" behavior="0" />
       <RootComponent type="1" schemaName="cr679_usuga" behavior="0" />
+      <RootComponent type="20" id="{b118a063-91c0-f111-aaaf-7ced8d2eb382}" behavior="0" />
       <RootComponent type="29" id="{4b3a948f-e997-f111-b8dc-7ced8d2eb382}" behavior="0" />
       <RootComponent type="431" schemaName="cr679_machine cr679_zdjecie" behavior="0" />
       <RootComponent type="431" schemaName="cr679_timesheet cr679_photo" behavior="0" />
@@ -98,6 +99,9 @@
       <RootComponent type="61" schemaName="cr679_orderitemquickcreate" behavior="0" />
       <RootComponent type="62" schemaName="cr679_Ren30486c68" behavior="0" />
       <RootComponent type="80" schemaName="cr679_Ren6f132b80" behavior="0" />
+      <RootComponent type="92" id="{7b0335d9-a6c0-f111-aaad-6045bddce132}" behavior="0" />
+      <RootComponent type="92" id="{9d1825ec-a6c0-f111-aaad-6045bddce132}" behavior="0" />
+      <RootComponent type="95" id="{08a2aaad-a6c0-f111-aaad-6045bddce132}" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
@@ -162,20 +166,20 @@
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" displayName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" solution="msdyn_RichTextEditor (9.0.26083.1012)">
-          <package appName="msdynce_Activities" version="9.0.26084.260820001">msdynce_EnableUCIByDefault (9.0.26084.260820001)</package>
+          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
           <package appName="msdyn_CustomControlsExtended" version="9.0.26083.1012">msdyn_TimelineExtended (9.0.26083.1012)</package>
         </Required>
         <Dependent type="80" schemaName="cr679_Ren6f132b80" displayName="Rent-Maszyny" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2608.4009)">
-          <package appName="Base Custom Controls" version="9.0.2608.4009">BaseCustomControlsCore (9.0.2608.4009)</package>
+        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2609.1007)">
+          <package appName="Base Custom Controls" version="9.0.2609.1007">BaseCustomControlsCore (9.0.2609.1007)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2608.4009)">
-          <package appName="Base Custom Controls" version="9.0.2608.4009">BaseCustomControlsCore (9.0.2608.4009)</package>
+        <Required type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2609.1007)">
+          <package appName="Base Custom Controls" version="9.0.2609.1007">BaseCustomControlsCore (9.0.2609.1007)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Raport Czasu Pracy" id="{d7bac23e-3baa-43a6-ab29-1669323dc671}" />
       </MissingDependency>
