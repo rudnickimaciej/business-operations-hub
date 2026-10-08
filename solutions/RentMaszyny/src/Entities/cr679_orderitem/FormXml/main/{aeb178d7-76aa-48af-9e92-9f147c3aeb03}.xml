@@ -10,6 +10,7 @@
         <tab verticallayout="true" id="{795A9C81-F97F-4FE1-86B6-C367819F191B}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
@@ -17,6 +18,7 @@
                 <section showlabel="false" showbar="false" IsUserDefined="0" id="{A7DB4914-A624-426B-901C-749BECE01801}">
                   <labels>
                     <label description="General" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -31,6 +33,7 @@
                       <cell id="{117E258F-9295-4F01-A222-670420B1A06F}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
+                          <label description="Właściciel" languagecode="1045" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -38,7 +41,8 @@
                     <row>
                       <cell id="{2fca0309-ccbb-4a31-9193-a08c0683bba0}">
                         <labels>
-                          <label description="Zamówienie" languagecode="1033" />
+                          <label description="Order" languagecode="1033" />
+                          <label description="Zamówienie" languagecode="1045" />
                         </labels>
                         <control id="cr679_orderid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_orderid" />
                       </cell>
@@ -46,7 +50,8 @@
                     <row>
                       <cell id="{7ce91087-6452-4adb-b827-456ef2c4ccee}">
                         <labels>
-                          <label description="Maszyna" languagecode="1033" />
+                          <label description="Machine" languagecode="1033" />
+                          <label description="Maszyna" languagecode="1045" />
                         </labels>
                         <control id="cr679_machineid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_machineid" />
                       </cell>
@@ -55,6 +60,7 @@
                       <cell id="{f2e727f4-10c1-4ecc-939f-789fec21deba}">
                         <labels>
                           <label description="Operator" languagecode="1033" />
+                          <label description="Operator" languagecode="1045" />
                         </labels>
                         <control id="cr679_operatorid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_operatorid" />
                       </cell>
@@ -62,7 +68,8 @@
                     <row>
                       <cell id="{c01d9324-fcb0-4805-8ac3-bffe1a23473b}">
                         <labels>
-                          <label description="Cena" languagecode="1033" />
+                          <label description="Price" languagecode="1033" />
+                          <label description="Cena" languagecode="1045" />
                         </labels>
                         <control id="cr679_itemprice" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="cr679_itemprice" />
                       </cell>
@@ -70,7 +77,8 @@
                     <row>
                       <cell id="{f61bee66-1425-49ae-a7e6-9d4225533687}">
                         <labels>
-                          <label description="Notatka" languagecode="1033" />
+                          <label description="Note" languagecode="1033" />
+                          <label description="Notatka" languagecode="1045" />
                         </labels>
                         <control id="cr679_notes" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="cr679_notes" />
                       </cell>
@@ -87,9 +95,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

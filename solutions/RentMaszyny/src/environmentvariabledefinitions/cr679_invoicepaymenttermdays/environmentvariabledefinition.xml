@@ -1,7 +1,8 @@
 <environmentvariabledefinition schemaname="cr679_invoicepaymenttermdays">
   <defaultvalue>14</defaultvalue>
-  <displayname default="InvoicePaymentTermDays">
-    <label description="InvoicePaymentTermDays" languagecode="1033" />
+  <displayname default="Invoice Payment Term (Days)">
+    <label description="Invoice Payment Term (Days)" languagecode="1033" />
+    <label description="Termin płatności faktury (dni)" languagecode="1045" />
   </displayname>
   <introducedversion>1.0.0.0</introducedversion>
   <iscustomizable>1</iscustomizable>

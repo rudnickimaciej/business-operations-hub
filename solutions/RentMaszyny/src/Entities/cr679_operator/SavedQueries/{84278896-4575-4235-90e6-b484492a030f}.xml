@@ -37,7 +37,7 @@
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
       <LocalizedName description="Active Operators" languagecode="1033" />
-      <LocalizedName description="Operatorzy" languagecode="1045" />
+      <LocalizedName description="Aktywni operatorzy" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

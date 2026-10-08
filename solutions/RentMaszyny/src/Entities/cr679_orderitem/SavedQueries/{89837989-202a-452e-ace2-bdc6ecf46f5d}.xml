@@ -31,7 +31,7 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Pozycja Zamówienia Associated View" languagecode="1033" />
+      <LocalizedName description="Order Item Associated View" languagecode="1033" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

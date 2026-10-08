@@ -81,6 +81,29 @@ export const Invoice = {
   },
 } as const;
 
+export const Complaint = {
+  entity: "cr679_complaint",
+  fields: {
+    id: "cr679_complaintid",
+    number: "cr679_name",
+    customer: "cr679_customerid", // Customer column: account or contact
+    order: "cr679_orderid",
+    description: "cr679_description",
+    aiSummary: "cr679_aisummary", // prompt column, read-only
+    aiNextSteps: "cr679_ainextsteps", // prompt column, read-only
+    stateCode: "statecode",
+    statusCode: "statuscode",
+  },
+} as const;
+
+/** Values of cr679_complaint.statuscode. */
+export const ComplaintStatus = {
+  New: 1,
+  InProgress: 630100000,
+  WaitingForCustomer: 630100001,
+  Closed: 2,
+} as const;
+
 /** Values of cr679_invoice.cr679_documentstatus. */
 export const InvoiceDocumentStatus = {
   Requested: 630100000,

@@ -21,10 +21,12 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="My Maszyny" languagecode="1033" />
+      <LocalizedName description="My Machines" languagecode="1033" />
+      <LocalizedName description="Moje maszyny" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Active Maszyny owned by me" languagecode="1033" />
+      <Description description="Active Machines owned by me" languagecode="1033" />
+      <Description description="Aktywne maszyny (moje)" languagecode="1045" />
     </Descriptions>
   </savedquery>
 </savedqueries>

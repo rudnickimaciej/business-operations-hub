@@ -4,14 +4,29 @@
  */
 
 export function lookupAttribute(id: string | null) {
+  let value: Xrm.LookupValue[] | null = id ? [{ id, name: "x", entityType: "x" }] : null;
   return {
-    getValue: jest.fn().mockReturnValue(id ? [{ id, name: "x", entityType: "x" }] : null),
+    getValue: jest.fn(() => value),
+    setValue: jest.fn((next: Xrm.LookupValue[] | null) => {
+      value = next;
+    }),
+    addOnChange: jest.fn(),
   };
 }
 
-export function formContext(attributes: Record<string, unknown> = {}) {
+export function lookupControl() {
+  return {
+    addPreSearch: jest.fn(),
+    addCustomFilter: jest.fn(),
+    setNotification: jest.fn(),
+    clearNotification: jest.fn(),
+  };
+}
+
+export function formContext(attributes: Record<string, unknown> = {}, controls: Record<string, unknown> = {}) {
   return {
     getAttribute: jest.fn((name: string) => attributes[name] ?? null),
+    getControl: jest.fn((name: string) => controls[name] ?? null),
     data: { entity: { save: jest.fn(), addOnSave: jest.fn() } },
     ui: { setFormNotification: jest.fn(), clearFormNotification: jest.fn() },
   };

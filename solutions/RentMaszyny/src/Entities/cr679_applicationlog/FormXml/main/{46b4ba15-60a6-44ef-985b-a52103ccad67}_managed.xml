@@ -41,9 +41,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

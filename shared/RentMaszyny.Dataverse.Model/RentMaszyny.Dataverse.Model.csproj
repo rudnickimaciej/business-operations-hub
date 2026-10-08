@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Early-bound Dataverse model shared by the Azure Function (net8.0) and future Dataverse plug-ins (net462).
+    Generated/ is produced by scripts/Update-DataverseModel.ps1 (pac modelbuilder); do not edit it by hand.
+  -->
+  <PropertyGroup>
+    <TargetFrameworks>net462;net8.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <RootNamespace>RentMaszyny.Dataverse.Model</RootNamespace>
+    <!-- Generated code is not written to our warning standards; hand-written files are kept clean by review. -->
+    <NoWarn>$(NoWarn);CS1591;CS8981;CS0108</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.*" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.2.27" />
+  </ItemGroup>
+
+</Project>

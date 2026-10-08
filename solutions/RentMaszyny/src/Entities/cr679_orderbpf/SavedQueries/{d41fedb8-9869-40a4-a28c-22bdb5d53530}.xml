@@ -40,7 +40,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="All Zamówienie" languagecode="1033" />
+      <LocalizedName description="All Order Processes" languagecode="1033" />
+      <LocalizedName description="Wszystkie procesy zamówienia" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

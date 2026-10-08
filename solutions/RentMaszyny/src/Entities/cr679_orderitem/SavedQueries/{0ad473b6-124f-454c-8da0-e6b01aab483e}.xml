@@ -31,7 +31,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Inactive Pozycje Zamówienia" languagecode="1033" />
+      <LocalizedName description="Inactive Order Items" languagecode="1033" />
+      <LocalizedName description="Nieaktywne pozycje zamówienia" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

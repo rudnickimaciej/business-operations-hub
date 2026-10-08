@@ -9,15 +9,16 @@
       <tabs>
         <tab verticallayout="true" id="{792038ED-3A34-452C-A326-E1946D364454}" IsUserDefined="1">
           <labels>
-            <label description="Podsumowanie" languagecode="1033" />
+            <label description="Summary" languagecode="1033" />
+            <label description="Podsumowanie" languagecode="1045" />
           </labels>
           <columns>
             <column width="50%">
               <sections>
                 <section showlabel="true" showbar="false" IsUserDefined="0" id="{0F64971B-9C27-43BD-B510-C12E798518CE}" name="summary_section" columns="11" celllabelposition="Top">
                   <labels>
-                    <label description="Podsumowanie" languagecode="1033" />
-                    <label description="Ogólne" languagecode="1045" />
+                    <label description="Summary" languagecode="1033" />
+                    <label description="Podsumowanie" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -36,7 +37,7 @@
                     <row>
                       <cell id="{e2d3b6f5-0a37-4521-a10b-d1f0e8c53bde}" locklevel="0" colspan="2" rowspan="1">
                         <labels>
-                          <label description="Nazwa zamówienia" languagecode="1033" />
+                          <label description="Order Name" languagecode="1033" />
                           <label description="Nazwa zamówienia" languagecode="1045" />
                         </labels>
                         <control id="cr679_name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_name" disabled="false" />
@@ -45,14 +46,14 @@
                     <row>
                       <cell id="{61d89099-895c-4825-8902-9b9c268c2ae8}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Typ sewisu" languagecode="1033" />
-                          <label description="Ty usługi" languagecode="1045" />
+                          <label description="Service Type" languagecode="1033" />
+                          <label description="Typ usługi" languagecode="1045" />
                         </labels>
                         <control id="cr679_servicetype" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="cr679_servicetype" />
                       </cell>
                       <cell id="{35ab5d07-93d6-4685-90fd-9f688f3f50d1}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Lokalizacja" languagecode="1033" />
+                          <label description="Location" languagecode="1033" />
                           <label description="Miejsce realizacji" languagecode="1045" />
                         </labels>
                         <control id="cr679_location" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="cr679_location" />
@@ -61,13 +62,15 @@
                     <row>
                       <cell id="{dbe7c40f-090d-4ef3-a72f-6a6451e30caf}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Data rozpoczęcia" languagecode="1033" />
+                          <label description="Start Date" languagecode="1033" />
+                          <label description="Data rozpoczęcia" languagecode="1045" />
                         </labels>
                         <control id="cr679_startdate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_startdate" />
                       </cell>
                       <cell id="{a4c59b55-6e84-4ab7-af53-5223372b2a61}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Data zakończenia" languagecode="1033" />
+                          <label description="End Date" languagecode="1033" />
+                          <label description="Data zakończenia" languagecode="1045" />
                         </labels>
                         <control id="cr679_enddate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_enddate" />
                       </cell>
@@ -75,13 +78,15 @@
                     <row>
                       <cell id="{afc02610-e85f-473c-856b-1aa81976e67f}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Data wydania sprzętu" languagecode="1033" />
+                          <label description="Equipment Release Date" languagecode="1033" />
+                          <label description="Data wydania sprzętu" languagecode="1045" />
                         </labels>
                         <control id="cr679_dateofequipment" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="cr679_dateofequipment" disabled="false" />
                       </cell>
                       <cell id="{1948f0f1-2fa7-47f1-83bb-ec6ea50a3799}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Data oddania sprzętu" languagecode="1033" />
+                          <label description="Equipment Return Date" languagecode="1033" />
+                          <label description="Data oddania sprzętu" languagecode="1045" />
                         </labels>
                         <control id="cr679_equipmentreturndate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="cr679_equipmentreturndate" disabled="false" />
                       </cell>
@@ -89,13 +94,15 @@
                     <row>
                       <cell id="{23c2450c-ec01-3434-6ede-4b8ae6198086}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="Data wystawienia faktury" languagecode="1033" />
+                          <label description="Invoice Date" languagecode="1033" />
+                          <label description="Data wystawienia faktury" languagecode="1045" />
                         </labels>
                         <control id="cr679_invoicedate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="cr679_invoicedate" disabled="false" />
                       </cell>
                       <cell id="{b45636b9-30d0-5287-7b3c-064a3232a87c}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="Data opłacenia faktury" languagecode="1033" />
+                          <label description="Invoice Paid Date" languagecode="1033" />
+                          <label description="Data opłacenia faktury" languagecode="1045" />
                         </labels>
                         <control id="cr679_paymentdate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="cr679_paymentdate" disabled="false" />
                       </cell>
@@ -103,7 +110,8 @@
                     <row>
                       <cell id="{411b0a8f-98cc-49a8-87e2-007f709e9295}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Całkowita kwota do zapłaty" languagecode="1033" />
+                          <label description="Total Amount Due" languagecode="1033" />
+                          <label description="Całkowita kwota do zapłaty" languagecode="1045" />
                         </labels>
                         <control id="cr679_totalprice" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="cr679_totalprice" />
                       </cell>
@@ -117,7 +125,7 @@
                       <cell id="{2F5EFBC0-86FD-4AAC-B64E-0E2F9E5C1BFD}" visible="false">
                         <labels>
                           <label description="Owner" languagecode="1033" />
-                          <label description="Ogolne" languagecode="1045" />
+                          <label description="Właściciel" languagecode="1045" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -131,7 +139,7 @@
                 </section>
                 <section name="null_section_4" id="73a526f9-ac06-433c-8941-c5a4506ac8a7" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Pozycje zamówienia" languagecode="1033" />
+                    <label description="Order Items" languagecode="1033" />
                     <label description="Pozycje zamówienia" languagecode="1045" />
                   </labels>
                   <rows>
@@ -145,8 +153,8 @@
                     <row>
                       <cell locklevel="0" id="{8c2c50fc-de82-4c89-8789-5027378b31b9}" rowspan="4" colspan="1" auto="false" showlabel="false">
                         <labels>
-                          <label description="Pozycje Zamówienia" languagecode="1033" />
-                          <label description="New SG control 1786731548359" languagecode="1045" />
+                          <label description="Order Items" languagecode="1033" />
+                          <label description="Pozycje zamówienia" languagecode="1045" />
                         </labels>
                         <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
                           <parameters>
@@ -175,7 +183,7 @@
               <sections>
                 <section name="client_section" id="3cea1926-616e-474a-b845-b668f4cef898" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Klient" languagecode="1033" />
+                    <label description="Customer" languagecode="1033" />
                     <label description="Klient" languagecode="1045" />
                   </labels>
                   <rows>
@@ -189,7 +197,8 @@
                     <row>
                       <cell id="{ee50d4f2-b4bb-43a7-89fa-fbdba80a41c1}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Klient" languagecode="1033" />
+                          <label description="Customer" languagecode="1033" />
+                          <label description="Klient" languagecode="1045" />
                         </labels>
                         <control id="cr679_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_customerid" disabled="false" />
                       </cell>
@@ -197,7 +206,8 @@
                     <row>
                       <cell locklevel="0" id="{77ebc431-7bde-43d6-9515-5df46d783521}" colspan="1" rowspan="1">
                         <labels>
-                          <label description="New QV control 1790851511268" languagecode="1033" />
+                          <label description="Customer Details" languagecode="1033" />
+                          <label description="Szczegóły klienta" languagecode="1045" />
                         </labels>
                         <control id="QuickviewControl1790851511268" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="cr679_customerid">
                           <parameters>
@@ -294,11 +304,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
-      <LocalizedName description="Information" languagecode="1045" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
-      <Description description="A form for this entity." languagecode="1045" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

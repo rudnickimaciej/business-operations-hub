@@ -8,16 +8,19 @@
   <SiteMap IntroducedVersion="7.0.0.0">
     <Area Id="area_e0e5b71f" ResourceId="SitemapDesigner.NewTitle" DescriptionResourceId="SitemapDesigner.NewTitle" ShowGroups="true" IntroducedVersion="7.0.0.0">
       <Titles>
-        <Title LCID="1033" Title="Area1" />
+        <Title LCID="1033" Title="Main" />
+        <Title LCID="1045" Title="Główne" />
       </Titles>
       <Group Id="group_624702d5" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
-          <Title LCID="1033" Title="Pulpit" />
+          <Title LCID="1033" Title="Dashboard" />
+          <Title LCID="1045" Title="Pulpit" />
         </Titles>
       </Group>
       <Group Id="NewGroup_fc91ec41" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
-          <Title LCID="1033" Title="Sprzedaż" />
+          <Title LCID="1033" Title="Sales" />
+          <Title LCID="1045" Title="Sprzedaż" />
         </Titles>
         <SubArea Id="subarea_dc5e760c" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_order" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
         <SubArea Id="subarea_e36279ca" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="account" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
@@ -25,40 +28,28 @@
       </Group>
       <Group Id="NewGroup_210099f4" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
-          <Title LCID="1033" Title="Flota" />
+          <Title LCID="1033" Title="Fleet" />
+          <Title LCID="1045" Title="Flota" />
         </Titles>
         <SubArea Id="subarea_e5e92d84" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_machine" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
-        <SubArea Id="subarea_da61e034" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_operator" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
-          <Titles>
-            <Title LCID="1033" Title="Operatorzy" />
-          </Titles>
-        </SubArea>
+        <SubArea Id="subarea_da61e034" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_operator" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
       </Group>
       <Group Id="NewGroup_f6572d01" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
-          <Title LCID="1033" Title="Raportowanie czasu" />
+          <Title LCID="1033" Title="Time Tracking" />
+          <Title LCID="1045" Title="Raportowanie czasu" />
         </Titles>
-        <SubArea Id="NewSubArea_0ca82a95" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_timesheet" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
-          <Titles>
-            <Title LCID="1033" Title="Raporty czasu pracy" />
-          </Titles>
-        </SubArea>
+        <SubArea Id="NewSubArea_0ca82a95" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_timesheet" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
       </Group>
       <Group Id="NewGroup_f0fce1938" ResourceId="SitemapDesigner.NewGroup" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
         <Titles>
-          <Title LCID="1033" Title="Inne" />
+          <Title LCID="1033" Title="Other" />
+          <Title LCID="1045" Title="Inne" />
         </Titles>
-        <SubArea Id="subarea_196b9581" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_usuga" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
-          <Titles>
-            <Title LCID="1033" Title="Usługi" />
-          </Titles>
-        </SubArea>
-        <SubArea Id="subarea_ce120265" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_orderitem" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
-          <Titles>
-            <Title LCID="1033" Title="Pozycje zamówienia" />
-          </Titles>
-        </SubArea>
+        <SubArea Id="subarea_196b9581" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_usuga" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_ce120265" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_orderitem" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
         <SubArea Id="subarea_acf59dc8" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_invoice" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_20d46574" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="cr679_complaint" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
       </Group>
     </Area>
   </SiteMap>

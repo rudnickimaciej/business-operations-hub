@@ -22,9 +22,11 @@
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
       <LocalizedName description="My Operators" languagecode="1033" />
+      <LocalizedName description="Moi operatorzy" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="Active Operators owned by me" languagecode="1033" />
+      <Description description="Aktywni operatorzy (moje)" languagecode="1045" />
     </Descriptions>
   </savedquery>
 </savedqueries>

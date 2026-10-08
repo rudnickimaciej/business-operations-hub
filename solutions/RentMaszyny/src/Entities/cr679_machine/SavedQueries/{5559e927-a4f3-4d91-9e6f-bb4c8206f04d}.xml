@@ -14,7 +14,7 @@
           <cell name="cr679_category" width="150" />
           <cell name="cr679_brandandmodel" width="150" />
           <cell name="cr679_registrationnumber" width="150" />
-          <cell name="cr679_productionyeartext" width="121" />
+          <cell name="cr679_productionyear" width="121" />
           <cell name="cr679_status" width="150" />
           <cell name="cr679_dailyratewithoutoperator" width="150" />
           <cell name="cr679_dailyratewithoperator" width="150" />
@@ -38,14 +38,14 @@
           <attribute name="cr679_status" />
           <attribute name="cr679_dailyratewithoutoperator" />
           <attribute name="cr679_dailyratewithoperator" />
-          <attribute name="cr679_productionyeartext" />
+          <attribute name="cr679_productionyear" />
         </entity>
       </fetch>
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Active Maszyny" languagecode="1033" />
-      <LocalizedName description="Wszystkie maszyny" languagecode="1045" />
+      <LocalizedName description="Active Machines" languagecode="1033" />
+      <LocalizedName description="Aktywne maszyny" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

@@ -43,6 +43,8 @@ pac solution unpack --zipfile <scratch>/s.zip --folder <scratch>/un
 ```
 
 Then confirm `git status` shows no deletions in those folders. The export contains the SAS key name only, never the key.
+For the same reason, importing a packed solution back into DEV clears the endpoint's key and disables its steps:
+warn the owner before such an import and follow "Every solution import resets the Service Endpoint" in `docs/alm.md` after it.
 
 If `sync` fails with "file is used by another process", make sure no shell has its working directory
 inside `solutions/` and retry. If it then fails with `SolutionXmlVersioningException`, the folder was left

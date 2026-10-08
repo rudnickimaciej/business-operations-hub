@@ -10,6 +10,7 @@
         <tab verticallayout="true" id="{B0345B10-2045-4AE0-BE0D-8972C54EFEFA}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
@@ -17,6 +18,7 @@
                 <section showlabel="false" showbar="false" IsUserDefined="0" id="{D8968ADE-ED41-4611-AA33-7E55B12D5A3C}">
                   <labels>
                     <label description="General" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -31,6 +33,7 @@
                       <cell id="{1400620A-D555-4526-A06D-6255F1F98636}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
+                          <label description="Właściciel" languagecode="1045" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -39,6 +42,7 @@
                       <cell id="{0d89fdb7-ed62-4999-8b88-397e04beae46}">
                         <labels>
                           <label description="Machine" languagecode="1033" />
+                          <label description="Maszyna" languagecode="1045" />
                         </labels>
                         <control id="cr679_machineid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_machineid" />
                       </cell>
@@ -47,6 +51,7 @@
                       <cell id="{8571bc12-0acd-400e-a68a-ae126968a0f8}">
                         <labels>
                           <label description="Service Type" languagecode="1033" />
+                          <label description="Typ usługi" languagecode="1045" />
                         </labels>
                         <control id="cr679_servicetype" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="cr679_servicetype" />
                       </cell>
@@ -55,6 +60,7 @@
                       <cell id="{c55cfc2d-658e-400a-b36a-44a0c6541a5b}">
                         <labels>
                           <label description="Inspection Date" languagecode="1033" />
+                          <label description="Data przeglądu" languagecode="1045" />
                         </labels>
                         <control id="cr679_inspectiondate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_inspectiondate" />
                       </cell>
@@ -63,6 +69,7 @@
                       <cell id="{102eec67-8a78-4779-9b7b-edf74b73a128}">
                         <labels>
                           <label description="Insurance Expiry Date" languagecode="1033" />
+                          <label description="Data wygaśnięcia ubezpieczenia" languagecode="1045" />
                         </labels>
                         <control id="cr679_insuranceexpirydate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_insuranceexpirydate" />
                       </cell>
@@ -71,6 +78,7 @@
                       <cell id="{25ccdecf-c14a-4e2a-bd73-5dc1bc229bc9}">
                         <labels>
                           <label description="Notes" languagecode="1033" />
+                          <label description="Notatki" languagecode="1045" />
                         </labels>
                         <control id="cr679_notes" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="cr679_notes" />
                       </cell>
@@ -87,9 +95,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

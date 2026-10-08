@@ -31,7 +31,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Active Linie Raportu Czasu Pracy" languagecode="1033" />
+      <LocalizedName description="Active Timesheet Lines" languagecode="1033" />
+      <LocalizedName description="Aktywne linie raportu" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

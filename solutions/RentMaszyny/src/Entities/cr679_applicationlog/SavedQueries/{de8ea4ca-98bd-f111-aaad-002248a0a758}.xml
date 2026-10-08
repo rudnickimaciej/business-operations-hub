@@ -21,6 +21,7 @@
     <IntroducedVersion>1.0.0.0</IntroducedVersion>
     <LocalizedNames>
       <LocalizedName description="Application Logs" languagecode="1033" />
+      <LocalizedName description="Dzienniki aplikacji" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="All active Application Logs" languagecode="1033" />

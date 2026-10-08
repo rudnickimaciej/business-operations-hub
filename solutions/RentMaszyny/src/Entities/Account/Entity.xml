@@ -3,6 +3,18 @@
   <Name LocalizedName="Account" OriginalName="">Account</Name>
   <EntityInfo>
     <entity Name="Account">
+      <LocalizedNames>
+        <LocalizedName description="Account" languagecode="1033" />
+        <LocalizedName description="Klient" languagecode="1045" />
+      </LocalizedNames>
+      <LocalizedCollectionNames>
+        <LocalizedCollectionName description="Accounts" languagecode="1033" />
+        <LocalizedCollectionName description="Konta" languagecode="1045" />
+      </LocalizedCollectionNames>
+      <Descriptions>
+        <Description description="Business that represents a customer or potential customer. The company that is billed in business transactions." languagecode="1033" />
+        <Description description="Firma reprezentująca klienta lub potencjalnego klienta. Firma, która otrzymuje faktury za transakcje biznesowe." languagecode="1045" />
+      </Descriptions>
       <attributes>
         <attribute PhysicalName="cr679_nip">
           <Type>nvarchar</Type>

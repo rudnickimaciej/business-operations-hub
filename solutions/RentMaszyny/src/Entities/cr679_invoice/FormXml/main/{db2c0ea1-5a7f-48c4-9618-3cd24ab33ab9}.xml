@@ -15,7 +15,7 @@
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="false" showbar="false" IsUserDefined="0" id="{541e2ece-b9f9-42e1-bd57-8c792ebc049c}">
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{541e2ece-b9f9-42e1-bd57-8c792ebc049c}" columns="11">
                   <labels>
                     <label description="General" languagecode="1033" />
                     <label description="Ogólne" languagecode="1045" />
@@ -24,81 +24,121 @@
                     <row>
                       <cell id="{9183bd2d-c687-40c1-9741-b7c80e70e594}">
                         <labels>
-                          <label description="Autonumber" languagecode="1033" />
+                          <label description="Invoice Number" languagecode="1033" />
+                          <label description="Numer faktury" languagecode="1045" />
                         </labels>
                         <control id="cr679_autonumber" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_autonumber" />
                       </cell>
-                    </row>
-                    <row>
-                      <cell id="{5cc3e8b5-d043-4c87-9f43-b45cdcb6aa2c}" locklevel="0" colspan="1" rowspan="1">
+                      <cell id="{a4ea8029-8caf-46df-b0b3-ffa457142c6a}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Klient" languagecode="1033" />
+                          <label description="PDF Document" languagecode="1033" />
+                          <label description="Dokument PDF" languagecode="1045" />
                         </labels>
-                        <control id="cr679_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_customerid" disabled="false" />
+                        <control id="cr679_document" classid="{0A7FF475-B016-4687-9CE5-042BFDBD6519}" datafieldname="cr679_document" disabled="false" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{16490aac-e3d6-41e0-86a9-3f71cd1a25f7}" locklevel="0" colspan="1" rowspan="1">
+                      <cell id="{669f9b34-17be-4044-9e44-f575958ce889}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Nazwa Klienta" languagecode="1033" />
+                          <label description="Invoice Language" languagecode="1033" />
+                          <label description="Język faktury" languagecode="1045" />
                         </labels>
-                        <control id="cr679_customername" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customername" disabled="false" />
+                        <control id="cr679_language" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="cr679_language" disabled="false" />
                       </cell>
-                    </row>
-                    <row>
-                      <cell id="{3bfb257f-9c1a-4b4e-8335-7aeb3ff5c907}" locklevel="0" colspan="1" rowspan="1">
-                        <labels>
-                          <label description="Adres Klienta" languagecode="1033" />
-                        </labels>
-                        <control id="cr679_customeraddress" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customeraddress" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{eedd7b8b-bfa0-4978-b07f-e46cc4f731e5}" locklevel="0" colspan="1" rowspan="1">
-                        <labels>
-                          <label description="NIP Klienta" languagecode="1033" />
-                        </labels>
-                        <control id="cr679_customernip" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customernip" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
                       <cell id="{3572626b-1d6c-4e4a-8841-ca4953997274}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Kwota netto" languagecode="1033" />
+                          <label description="Net Amount" languagecode="1033" />
+                          <label description="Kwota netto" languagecode="1045" />
                         </labels>
                         <control id="cr679_netamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_netamount" disabled="false" />
                       </cell>
                     </row>
                     <row>
+                      <cell id="{5cc3e8b5-d043-4c87-9f43-b45cdcb6aa2c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Customer" languagecode="1033" />
+                          <label description="Klient" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_customerid" disabled="false" />
+                      </cell>
                       <cell id="{9987a30f-6c74-4d8d-97a8-e24bd40b38c2}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Kwota VAT" languagecode="1033" />
+                          <label description="VAT Amount" languagecode="1033" />
+                          <label description="Kwota VAT" languagecode="1045" />
                         </labels>
                         <control id="cr679_vatamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_vatamount" disabled="false" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{6dcb93da-f727-49fa-a3a4-e26812e17960}" locklevel="0" colspan="1" rowspan="1">
+                      <cell id="{16490aac-e3d6-41e0-86a9-3f71cd1a25f7}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Kwota brutto" languagecode="1033" />
+                          <label description="Customer Name" languagecode="1033" />
+                          <label description="Nazwa klienta" languagecode="1045" />
                         </labels>
-                        <control id="cr679_grossamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_grossamount" disabled="false" />
+                        <control id="cr679_customername" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customername" disabled="false" />
                       </cell>
-                    </row>
-                    <row>
                       <cell id="{9595581c-a46d-41bb-b234-bbee1fe6364e}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="Created On" languagecode="1033" />
+                          <label description="Data utworzenia" languagecode="1045" />
                         </labels>
                         <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3bfb257f-9c1a-4b4e-8335-7aeb3ff5c907}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Customer Address" languagecode="1033" />
+                          <label description="Adres klienta" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_customeraddress" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customeraddress" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{2215d8f9-d069-4211-914b-7f834af06f2a}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eedd7b8b-bfa0-4978-b07f-e46cc4f731e5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Customer Tax ID" languagecode="1033" />
+                          <label description="NIP klienta" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_customernip" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customernip" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{20964ed0-7890-4374-b916-d4bfdd1f0518}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6dcb93da-f727-49fa-a3a4-e26812e17960}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Gross Amount" languagecode="1033" />
+                          <label description="Kwota brutto" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_grossamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_grossamount" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{df200c1d-0d9a-4154-a492-dd1fb49beb87}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
                       </cell>
                     </row>
                     <row>
                       <cell id="{2eaf9e64-dcd6-4559-ada7-201edbde539c}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="Modified On" languagecode="1033" />
+                          <label description="Data modyfikacji" languagecode="1045" />
                         </labels>
                         <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{e1718b0f-4f85-4d5a-b442-d6b09afccac9}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
                       </cell>
                     </row>
                   </rows>
@@ -129,24 +169,28 @@
             <cell id="{b6f9c04e-2f39-4809-ab46-ae5183727508}" colspan="1" rowspan="1">
               <labels>
                 <label description="Owner" languagecode="1033" />
+                <label description="Właściciel" languagecode="1045" />
               </labels>
               <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
             </cell>
             <cell id="{79a4e6e1-962b-4f56-9f2a-bd51f8a089d8}" locklevel="0" colspan="1" rowspan="1">
               <labels>
-                <label description="Data zlecenia " languagecode="1033" />
+                <label description="Requested On" languagecode="1033" />
+                <label description="Data zlecenia" languagecode="1045" />
               </labels>
               <control id="header_cr679_requestedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="cr679_requestedon" disabled="false" />
             </cell>
             <cell id="{d14b0228-86b7-41ff-b428-f4422084b085}" locklevel="0" colspan="1" rowspan="1">
               <labels>
-                <label description="Data wystawienia" languagecode="1033" />
+                <label description="Issue Date" languagecode="1033" />
+                <label description="Data wystawienia" languagecode="1045" />
               </labels>
               <control id="header_cr679_issuedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="cr679_issuedate" disabled="false" />
             </cell>
             <cell id="{d0d3121e-6c4d-4ca2-b73e-b8a51f5b0b2b}" locklevel="0" colspan="1" rowspan="1">
               <labels>
-                <label description="Data wygenerowania " languagecode="1033" />
+                <label description="Generated On" languagecode="1033" />
+                <label description="Data wygenerowania" languagecode="1045" />
               </labels>
               <control id="header_cr679_generatedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="cr679_generatedon" disabled="false" />
             </cell>
@@ -182,9 +226,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

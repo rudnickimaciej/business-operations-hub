@@ -81,3 +81,13 @@ After deployment (manual, once per environment):
    and set it on the Service Endpoint in the Plugin Registration Tool.
 2. Get the managed identity's Application ID (`az ad sp show --id <functionPrincipalId output> --query appId -o tsv`)
    and create a Dataverse application user with the role `Invoice Generator Service`.
+
+**Every solution import resets the Service Endpoint**, in TST and also in DEV when a packed solution is imported
+there. The solution carries only the SAS key *name*, so the import clears the key and **disables both SDK steps**
+(pac warns: "Configuration of required credentials must be completed"). After such an import:
+
+1. Set the key again (step 1 above).
+2. Enable both steps `invoices …: Create/Update of cr679_invoice` (Plugin Registration Tool, or set `statecode = 0`).
+3. Touch `cr679_requestedon` on a test invoice and confirm `IncomingMessages` on the Service Bus namespace.
+
+Successful endpoint jobs are auto-deleted, so an empty System Jobs list does not mean nothing was sent.

@@ -10,6 +10,7 @@
         <tab verticallayout="true" id="{D28BF036-92FE-4455-9D59-E1C11103F32D}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
@@ -17,6 +18,7 @@
                 <section showlabel="false" showbar="false" IsUserDefined="0" id="{B7C9A577-DD9F-469E-89C8-179F6747F262}">
                   <labels>
                     <label description="General" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -31,6 +33,7 @@
                       <cell id="{5D318568-9E00-4AD8-9AB8-281A3608F60F}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
+                          <label description="Właściciel" languagecode="1045" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -38,7 +41,8 @@
                     <row>
                       <cell id="{a9b1b041-f43d-46a8-b6b4-132c694e4762}">
                         <labels>
-                          <label description="Kwalifikacje" languagecode="1033" />
+                          <label description="Qualifications" languagecode="1033" />
+                          <label description="Kwalifikacje" languagecode="1045" />
                         </labels>
                         <control id="cr679_qualifications" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="cr679_qualifications" />
                       </cell>
@@ -46,7 +50,8 @@
                     <row>
                       <cell id="{b3c7b04d-4aac-4431-802e-f6bb158ffb7e}">
                         <labels>
-                          <label description="Telefon" languagecode="1033" />
+                          <label description="Phone" languagecode="1033" />
+                          <label description="Telefon" languagecode="1045" />
                         </labels>
                         <control id="cr679_phonenumber" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="cr679_phonenumber" />
                       </cell>
@@ -54,7 +59,8 @@
                     <row>
                       <cell id="{96958e32-238b-4b92-9999-f3626ba44349}">
                         <labels>
-                          <label description="Dostępny" languagecode="1033" />
+                          <label description="Available" languagecode="1033" />
+                          <label description="Dostępny" languagecode="1045" />
                         </labels>
                         <control id="cr679_currentavailability" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="cr679_currentavailability" />
                       </cell>
@@ -71,9 +77,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

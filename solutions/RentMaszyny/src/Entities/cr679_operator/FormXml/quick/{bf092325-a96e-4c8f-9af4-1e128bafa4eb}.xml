@@ -17,6 +17,7 @@
                 <section showlabel="false" showbar="false" IsUserDefined="0" id="{71A2132E-1102-4849-B706-8E2FE6975DA4}">
                   <labels>
                     <label description="GENERAL" languagecode="1033" />
+                    <label description="OGÓLNE" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -31,6 +32,7 @@
                       <cell id="{E798069E-1C17-4925-9E63-9A0F7A781B51}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
+                          <label description="Właściciel" languagecode="1045" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -47,6 +49,7 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
   </systemform>
 </forms>

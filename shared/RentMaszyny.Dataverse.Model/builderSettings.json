@@ -1,0 +1,27 @@
+﻿{
+  "suppressINotifyPattern": true,
+  "suppressGeneratedCodeAttribute": true,
+  "language": "CS",
+  "namespace": "RentMaszyny.Dataverse.Model",
+  "serviceContextName": "DataverseContext",
+  "generateSdkMessages": false,
+  "generateGlobalOptionSets": false,
+  "emitFieldsClasses": true,
+  "entityTypesFolder": "Entities",
+  "messagesTypesFolder": "Messages",
+  "optionSetsTypesFolder": "OptionSets",
+  "entityNamesFilter": [
+    "cr679_invoice",
+    "cr679_order",
+    "cr679_orderitem",
+    "cr679_applicationlog",
+    "cr679_machine",
+    "account",
+    "contact",
+    "environmentvariabledefinition",
+    "environmentvariablevalue",
+    "transactioncurrency"
+  ],
+  "emitEntityETC": false,
+  "emitVirtualAttributes": false
+}

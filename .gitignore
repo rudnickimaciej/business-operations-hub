@@ -23,3 +23,8 @@ Thumbs.db
 node_modules/
 webresources/dist/
 coverage/
+
+# Azure Functions
+local.settings.json
+azure/functions/**/bin/
+azure/functions/**/obj/

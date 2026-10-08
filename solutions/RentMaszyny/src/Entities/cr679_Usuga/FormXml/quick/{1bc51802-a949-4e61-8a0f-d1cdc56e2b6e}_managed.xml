@@ -17,6 +17,7 @@
                 <section showlabel="false" showbar="false" IsUserDefined="0" id="{7D67BB7F-A328-4467-AB47-CB8D39D49E5C}">
                   <labels>
                     <label description="GENERAL" languagecode="1033" />
+                    <label description="OGÓLNE" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -47,6 +48,7 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
   </systemform>
 </forms>

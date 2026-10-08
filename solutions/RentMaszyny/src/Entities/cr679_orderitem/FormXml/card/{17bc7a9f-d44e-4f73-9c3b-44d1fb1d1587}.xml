@@ -17,6 +17,7 @@
                 <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{DAE0B5F7-D611-41E0-884C-9DD9B0A33385}">
                   <labels>
                     <label description="ColorStrip" languagecode="1033" />
+                    <label description="Pasek kolorów" languagecode="1045" />
                   </labels>
                 </section>
               </sections>
@@ -26,12 +27,14 @@
                 <section name="CardHeader" showlabel="false" showbar="false" columns="111" id="{3A8ADA13-58F8-4FA5-AAC7-714763F3C651}" IsUserDefined="0">
                   <labels>
                     <label description="Header" languagecode="1033" />
+                    <label description="Nagłówek" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{F96B4D31-51F8-40F6-8A1A-DB903D65BCCB}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Status Reason" languagecode="1033" />
+                          <label description="Przyczyna stanu" languagecode="1045" />
                         </labels>
                         <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
                       </cell>
@@ -51,6 +54,7 @@
                 <section name="CardDetails" showlabel="false" showbar="false" columns="1" id="{F10C8059-D7F6-4DB4-B336-66CFE1B2B2D6}" IsUserDefined="0">
                   <labels>
                     <label description="Details" languagecode="1033" />
+                    <label description="Szczegóły" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -66,18 +70,21 @@
                 <section name="CardFooter" showlabel="false" columns="1111" showbar="false" id="{AF6DD981-AA3A-46DE-80A7-4B4C6E61765C}" IsUserDefined="0">
                   <labels>
                     <label description="Footer" languagecode="1033" />
+                    <label description="Stopka" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{33699DD6-AFD7-49BD-9DB6-076DFF7555BD}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Owner" languagecode="1033" />
+                          <label description="Właściciel" languagecode="1045" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
                       </cell>
                       <cell id="{BE7FF5EA-84DB-4268-8D0C-5A0EEE91DDA6}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Created On" languagecode="1033" />
+                          <label description="Data utworzenia" languagecode="1045" />
                         </labels>
                         <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
                       </cell>
@@ -104,6 +111,7 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A card form for this entity." languagecode="1033" />

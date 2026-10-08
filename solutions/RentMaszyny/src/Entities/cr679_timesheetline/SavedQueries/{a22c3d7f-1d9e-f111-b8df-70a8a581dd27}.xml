@@ -21,10 +21,12 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="My Linie Raportu Czasu Pracy" languagecode="1033" />
+      <LocalizedName description="My Timesheet Lines" languagecode="1033" />
+      <LocalizedName description="Moje linie raportu" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Active Linie Raportu Czasu Pracy owned by me" languagecode="1033" />
+      <Description description="Active Timesheet Lines owned by me" languagecode="1033" />
+      <Description description="Aktywne linie raportu (moje)" languagecode="1045" />
     </Descriptions>
   </savedquery>
 </savedqueries>

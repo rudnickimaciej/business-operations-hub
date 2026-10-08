@@ -11,6 +11,13 @@
       <grid name="resultset" jump="cr679_autonumber" select="1" icon="1" preview="1">
         <row name="result" id="cr679_invoiceid">
           <cell name="cr679_autonumber" width="300" />
+          <cell name="cr679_language" width="141" />
+          <cell name="cr679_customerid" width="100" />
+          <cell name="cr679_netamount" width="110" />
+          <cell name="cr679_vatamount" width="115" />
+          <cell name="cr679_grossamount" width="123" />
+          <cell name="cr679_documentstatus" width="137" />
+          <cell name="statecode" width="100" />
           <cell name="createdon" width="125" />
         </row>
       </grid>
@@ -26,12 +33,20 @@
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
           </filter>
+          <attribute name="statecode" />
+          <attribute name="cr679_netamount" />
+          <attribute name="cr679_vatamount" />
+          <attribute name="cr679_grossamount" />
+          <attribute name="cr679_customerid" />
+          <attribute name="cr679_language" />
+          <attribute name="cr679_documentstatus" />
         </entity>
       </fetch>
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Active Faktury" languagecode="1033" />
+      <LocalizedName description="Active Invoices" languagecode="1033" />
+      <LocalizedName description="Aktywne faktury" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

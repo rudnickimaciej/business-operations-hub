@@ -40,7 +40,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Active Usługas" languagecode="1033" />
+      <LocalizedName description="Active Services" languagecode="1033" />
+      <LocalizedName description="Aktywne usługi" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

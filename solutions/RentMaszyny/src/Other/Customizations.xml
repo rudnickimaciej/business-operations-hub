@@ -38,6 +38,100 @@
   <AppModuleSiteMaps />
   <AppModules />
   <EntityDataProviders />
+  <AIModels>
+    <AIModel>
+      <msdyn_aimodelid>{a14c8998-3993-4a82-8ce0-704736198eed}</msdyn_aimodelid>
+      <msdyn_name>Complaint - AI Summary 10/08/2026, 03:01:35 PM</msdyn_name>
+      <msdyn_templateid>{0632735e-ce75-4348-888d-0c8efa537334}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>1</IsCustomizable>
+      <msdyn_activerunconfigurationid>{d7c10eac-96e4-493c-a8c7-25077d15074d}</msdyn_activerunconfigurationid>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{d7c10eac-96e4-493c-a8c7-25077d15074d}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>{"version":"GptDynamicPrompt-2","prompt":[{"type":"literal","text":"Streść zgłoszenie klienta wypożyczalni maszyn budowlanych w maksymalnie 2 zdaniach po polsku. Podaj, czego dotyczy problem (maszyna, faktura, godziny operatora, dostawa, uszkodzenie) i czego oczekuje klient. Nie dodawaj informacji, których nie ma w opisie. Opis:  "},{"type":"data","id":"cr679_complaint.cr679_description","text":"Complaint.Description"},{"type":"literal","text":" \r\n\r\n"}],"definitions":{"inputs":[{"id":"PromptColumnRecordId","text":"PromptColumnRecordId","type":"text","quickTestValue":""}],"formulas":[],"data":[{"id":"cr679_complaint","displayName":"Complaint","type":"dataverseTable","filters":[{"filterType":"equal","attribute":"cr679_complaintid","valueType":"inputVariable","value":"PromptColumnRecordId"}]}],"output":{"formats":["text"]}},"modelParameters":{"modelType":"gpt-5-chat","gptParameters":{"temperature":0}},"settings":{"recordRetrievalLimit":30,"shouldPreserveRecordLinks":null,"runtime":null},"code":""}</msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>a14c8998-3993-4a82-8ce0-704736198eed_10/8/2026 1:03:01 PM</msdyn_name>
+          <msdyn_modelrundataspecification>H4sIAAAAAAAACpWQSwvCMBCE/0rZcy6CeOhNW4VerNTHfTWrBtokJBuwSP+7rQ8UWw+eZ+abnb3C2tJhYVyFvCPnldEQjwRk2gYujOG5ZsU1xFdIlbcl1kusCGIAAVNmp/aByXfyypnKcmLKUOmCDsbJTPZjgy4BueW2GUuIj1h6ErCpbWdftw36BI0AlFI9PInRTBfus6c9yyeYXXhzZ+hpMn7Rm5afB/538fAVm0dxb8BRaeXPBaHvXvydWtzV6CkPxCUybj0NvDRtlegu/Zz7HtrcAG6DTVXxAQAA</msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{a14c8998-3993-4a82-8ce0-704736198eed}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{2f758790-18c3-f111-aaad-e4fb1ef7e9ff}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>1</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{2f758790-18c3-f111-aaad-e4fb1ef7e9ff}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_modeldata>a77c9ab4-b80c-4d2b-ab4b-f21078118746</msdyn_modeldata>
+          <msdyn_name>a14c8998-3993-4a82-8ce0-704736198eed_Training_10/8/2026 1:02:58 PM</msdyn_name>
+          <msdyn_modelrundataspecification>
+        {
+        "schemaVersion": 2,
+        "input": {},
+        "output": {}
+        }
+      </msdyn_modelrundataspecification>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{a14c8998-3993-4a82-8ce0-704736198eed}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>1</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{f370fe01-18b8-43b5-87b7-a3f7bd607268}</msdyn_aimodelid>
+      <msdyn_name>Complaint - AI Next Steps 10/08/2026, 03:04:55 PM</msdyn_name>
+      <msdyn_templateid>{0632735e-ce75-4348-888d-0c8efa537334}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>1</IsCustomizable>
+      <msdyn_activerunconfigurationid>{905fd6bc-81d1-4616-a7ac-a84a01705e7f}</msdyn_activerunconfigurationid>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{905fd6bc-81d1-4616-a7ac-a84a01705e7f}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>{"version":"GptDynamicPrompt-2","prompt":[{"type":"literal","text":"Jesteś pracownikiem obsługi wypożyczalni maszyn budowlanych (koparki, ładowarki, minikoparki). Na podstawie opisu zgłoszenia zaproponuj maksymalnie 3 konkretne kolejne kroki po polsku, jako listę numerowaną. Każdy krok zaczynaj od czasownika. Nie wymyślaj faktów, których nie ma w opisie.\r\n\r\nStosuj procedury firmy:\r\n\r\n1. Awaria maszyny w trakcie najmu:\r\n   - jeśli maszyna stoi i blokuje pracę klienta: zgłoszenie do serwisu tego samego dnia, maszyna zastępcza w ciągu 24 h, jeśli jest dostępna;\r\n   - dni postoju z winy maszyny nie są naliczane do najmu, oznacz to do korekty rozliczenia;\r\n   - jeśli awaria mogła wynikać z błędu obsługi (np. brak paliwa, przeciążenie), poproś o zdjęcia i oświadczenie operatora przed decyzją.\r\n\r\n2. Spór o fakturę (liczba dni, stawka, kwota):\r\n   - porównaj fakturę z zamówieniem (daty wydania i zwrotu maszyny) i kartą pracy operatora;\r\n   - jeśli błąd jest po stronie firmy, przygotuj korektę i poinformuj klienta w ciągu 3 dni roboczych;\r\n   - jeśli faktura jest poprawna, wyślij klientowi zestawienie dni i godzin z kart pracy.\r\n\r\n3. Spór o godziny pracy operatora:\r\n   - zweryfikuj kartę pracy podpisaną przez kierownika budowy klienta;\r\n   - poproś operatora o wyjaśnienie;\r\n   - jeśli karta nie była podpisana przez klienta, rozstrzygnij na korzyść klienta i odnotuj to u operatora.\r\n\r\n4. Opóźniona dostawa lub odbiór maszyny:\r\n   - ustal przyczynę z działem transportu;\r\n   - przy opóźnieniu dostawy powyżej 1 dnia zaproponuj rabat za transport;\r\n   - potwierdź klientowi nowy termin na piśmie.\r\n\r\n5. Uszkodzenie maszyny stwierdzone przy zwrocie:\r\n   - porównaj stan z protokołem wydania i zdjęciami z wydania;\r\n   - przekaż maszynę do wyceny szkody w serwisie;\r\n   - nie obciążaj klienta kosztami przed przesłaniem mu protokołu i wyceny.\r\n\r\n6. Zachowanie operatora lub obsługa klienta:\r\n   - przekaż zgłoszenie kierownikowi oddziału;\r\n   - skontaktuj się z klientem w ciągu 1 dnia roboczego.\r\n\r\nZasady ogólne:\r\n- Jeśli opis jest niejasny albo brakuje kluczowych informacji (która maszyna, które zamówienie, kiedy), pierwszym krokiem jest kontakt z klientem z konkretnymi pytaniami.\r\n- Jeśli zgłoszenie dotyczy bezpieczeństwa ludzi (wypadek, uraz, zagrożenie), pierwszym krokiem jest natychmiastowe wstrzymanie pracy maszyny i powiadomienie kierownika oddziału.\r\n- Nie obiecuj klientowi zwrotu pieniędzy ani rabatu poza tym, co przewidują procedury.\r\n\r\nOpis zgłoszenia:  "},{"type":"data","id":"cr679_complaint.cr679_description","text":"Complaint.Description"},{"type":"literal","text":" "}],"definitions":{"inputs":[{"id":"PromptColumnRecordId","text":"PromptColumnRecordId","type":"text","quickTestValue":""}],"formulas":[],"data":[{"id":"cr679_complaint","displayName":"Complaint","type":"dataverseTable","filters":[{"filterType":"equal","attribute":"cr679_complaintid","valueType":"inputVariable","value":"PromptColumnRecordId"}]}],"output":{"formats":["text"]}},"modelParameters":{"modelType":"gpt-5-chat","gptParameters":{"temperature":0}},"settings":{"recordRetrievalLimit":30,"shouldPreserveRecordLinks":null,"runtime":null},"code":"","signature":""}</msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>f370fe01-18b8-43b5-87b7-a3f7bd607268_10/8/2026 1:05:25 PM</msdyn_name>
+          <msdyn_modelrundataspecification>H4sIAAAAAAAACpWQSwvCMBCE/0rZcy6CeOhNW4VerNTHfTWrBtokJBuwSP+7rQ8UWw+eZ+abnb3C2tJhYVyFvCPnldEQjwRk2gYujOG5ZsU1xFdIlbcl1kusCGIAAVNmp/aByXfyypnKcmLKUOmCDsbJTPZjgy4BueW2GUuIj1h6ErCpbWdftw36BI0AlFI9PInRTBfus6c9yyeYXXhzZ+hpMn7Rm5afB/538fAVm0dxb8BRaeXPBaHvXvydWtzV6CkPxCUybj0NvDRtlegu/Zz7HtrcAG6DTVXxAQAA</msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{f370fe01-18b8-43b5-87b7-a3f7bd607268}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{10b932ec-18c3-f111-aaad-e4fb1ef7e9ff}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>1</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{10b932ec-18c3-f111-aaad-e4fb1ef7e9ff}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_modeldata>a3e8fc82-a353-4945-b684-314efaded187</msdyn_modeldata>
+          <msdyn_name>f370fe01-18b8-43b5-87b7-a3f7bd607268_Training_10/8/2026 1:05:24 PM</msdyn_name>
+          <msdyn_modelrundataspecification>
+        {
+        "schemaVersion": 2,
+        "input": {},
+        "output": {}
+        }
+      </msdyn_modelrundataspecification>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{f370fe01-18b8-43b5-87b7-a3f7bd607268}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>1</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+  </AIModels>
   <Languages>
     <Language>1033</Language>
     <Language>1045</Language>

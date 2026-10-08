@@ -66,6 +66,7 @@ docs/decisions/     ADRs — read before changing architecture
 solutions/RentMaszyny/  Unpacked solution — THE single source of truth for all components
 webresources/       TypeScript source of JS web resources (webpack, Jest); constants in src/shared/schema.ts
 config/             Deployment settings per environment (no secrets)
+shared/RentMaszyny.Dataverse.Model/  Early-bound Dataverse model (pac modelbuilder, net462;net8.0)
 scripts/            Repeatable PowerShell/pac scripts
 ```
 
@@ -102,6 +103,10 @@ alone is insufficient, plus cost, security and maintenance impact.
   builds and injects bundles into the solution; the JS copy in `solutions/` is only the last DEV snapshot.
   Entry files follow `src/<table>/<table>.<form>.ts` (bundle `cr679_<table><form>`, handler `RentMaszyny.<table>.<form>.onLoad`).
   Use table/column names from `schema.ts`, and cover logic with Jest tests in `webresources/tests/` (mirrors `src/`). Client-side validation is UX only, not enforcement.
+- **C# against Dataverse:** use the early-bound model in `shared/` (`Entity.Fields.*`, typed properties), never
+  column names as strings. Choice values use the generated enums; their member names come from the English (1033)
+  labels, so keep base-language labels English and Polish ones in 1045. After a schema change in DEV run
+  `scripts/Update-DataverseModel.ps1`.
 - **Power Apps:** flag every delegation risk; keep business logic out of control properties
   (prefer Dataverse business rules, flows, or plug-ins where appropriate).
 - **Power BI:** star schema, measures documented, RLS considered.
@@ -134,6 +139,8 @@ Remove an item when its ADR is written.
 - Request intake channel (manual entry, web form, e-mail, Power Pages?).
 - Data model (tables, relationships, ownership) — owner proposes first.
 - Azure DEV resources are hand-made in the portal; convert them to Bicep before creating TST (ADR-004).
+- Service Endpoint SAS key after a solution import: manual for now (`docs/alm.md`). Candidate: Bicep writes the key to
+  Key Vault, a pipeline step sets it and re-enables the steps after import. Do together with the TST infrastructure.
 - Security roles and business unit/team structure.
 - CI/CD authentication: client secret vs workload identity federation for the Power Platform service connection.
 
