@@ -17,6 +17,7 @@
                 <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{e92db2e0-c666-4543-8774-00d2b94de7aa}">
                   <labels>
                     <label description="ColorStrip" languagecode="1033" />
+                    <label description="Pasek kolorów" languagecode="1045" />
                   </labels>
                 </section>
               </sections>
@@ -101,6 +102,7 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A card form for this entity." languagecode="1033" />

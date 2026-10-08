@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name LocalizedName="Linia Raportu Czasu Pracy" OriginalName="Linia Raportu Czasu Pracy">cr679_timesheetline</Name>
+  <Name LocalizedName="Timesheet Line" OriginalName="Linia Raportu Czasu Pracy">cr679_timesheetline</Name>
   <EntityInfo>
     <entity Name="cr679_timesheetline">
       <LocalizedNames>
-        <LocalizedName description="Linia Raportu Czasu Pracy" languagecode="1033" />
+        <LocalizedName description="Timesheet Line" languagecode="1033" />
+        <LocalizedName description="Linia raportu czasu pracy" languagecode="1045" />
       </LocalizedNames>
       <LocalizedCollectionNames>
-        <LocalizedCollectionName description="Linie Raportu Czasu Pracy" languagecode="1033" />
+        <LocalizedCollectionName description="Timesheet Lines" languagecode="1033" />
+        <LocalizedCollectionName description="Linie raportu czasu pracy" languagecode="1045" />
       </LocalizedCollectionNames>
       <Descriptions>
         <Description description="This table contains records of timesheet line items" languagecode="1033" />
@@ -48,6 +50,7 @@
           <Behavior>1</Behavior>
           <displaynames>
             <displayname description="Day" languagecode="1033" />
+            <displayname description="Dzień" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -87,7 +90,8 @@
           <MinValue>1</MinValue>
           <MaxValue>31</MaxValue>
           <displaynames>
-            <displayname description="Dzień" languagecode="1033" />
+            <displayname description="Day" languagecode="1033" />
+            <displayname description="Dzień" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -128,6 +132,7 @@
           <Accuracy>2</Accuracy>
           <displaynames>
             <displayname description="Hours Worked" languagecode="1033" />
+            <displayname description="Przepracowane godziny" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -139,6 +144,7 @@
           <LogicalName>cr679_timesheetid</LogicalName>
           <RequiredLevel>none</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+          <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
           <ValidForReadApi>1</ValidForReadApi>
           <ValidForCreateApi>1</ValidForCreateApi>
@@ -166,6 +172,7 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Timesheet" languagecode="1033" />
+            <displayname description="Raport czasu pracy" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -202,10 +209,12 @@
           <IsRetrievable>1</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
           <displaynames>
-            <displayname description="Linia Raportu Czasu Pracy" languagecode="1033" />
+            <displayname description="Timesheet Line" languagecode="1033" />
+            <displayname description="Linia raportu czasu pracy" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for entity instances" languagecode="1033" />
+            <Description description="Unikatowy identyfikator wystąpień encji" languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="cr679_TimesheetlineName">
@@ -242,7 +251,8 @@
           <MaxLength>850</MaxLength>
           <Length>1700</Length>
           <displaynames>
-            <displayname description="Timesheetline Name" languagecode="1033" />
+            <displayname description="Timesheet Line Name" languagecode="1033" />
+            <displayname description="Nazwa linii raportu" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="" languagecode="1033" />
@@ -282,9 +292,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Created By" languagecode="1033" />
+            <displayname description="Utworzone przez" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+            <Description description="Unikatowy identyfikator użytkownika, który utworzył rekord." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="CreatedOn">
@@ -322,9 +334,11 @@
           <Behavior>1</Behavior>
           <displaynames>
             <displayname description="Created On" languagecode="1033" />
+            <displayname description="Data utworzenia" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Date and time when the record was created." languagecode="1033" />
+            <Description description="Data i godzina utworzenia rekordu." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="CreatedOnBehalfBy">
@@ -361,9 +375,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Created By (Delegate)" languagecode="1033" />
+            <displayname description="Utworzone przez (delegat)" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the delegate user who created the record." languagecode="1033" />
+            <Description description="Unikatowy identyfikator użytkownika delegowanego, który utworzył rekord." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ImportSequenceNumber">
@@ -401,9 +417,11 @@
           <MaxValue>2147483647</MaxValue>
           <displaynames>
             <displayname description="Import Sequence Number" languagecode="1033" />
+            <displayname description="Numer sekwencji importu" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Sequence number of the import that created this record." languagecode="1033" />
+            <Description description="Numer sekwencyjny operacji importu, w wyniku której został utworzony ten rekord." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ModifiedBy">
@@ -440,9 +458,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Modified By" languagecode="1033" />
+            <displayname description="Zmodyfikowany przez" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+            <Description description="Unikatowy identyfikator użytkownika, który zmodyfikował rekord." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ModifiedOn">
@@ -480,9 +500,11 @@
           <Behavior>1</Behavior>
           <displaynames>
             <displayname description="Modified On" languagecode="1033" />
+            <displayname description="Data modyfikacji" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Date and time when the record was modified." languagecode="1033" />
+            <Description description="Data i godzina modyfikacji rekordu." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="ModifiedOnBehalfBy">
@@ -519,9 +541,11 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Modified By (Delegate)" languagecode="1033" />
+            <displayname description="Zmodyfikowane przez (delegat)" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier of the delegate user who modified the record." languagecode="1033" />
+            <Description description="Unikatowy identyfikator użytkownika delegowanego, który zmodyfikował rekord." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="OverriddenCreatedOn">
@@ -559,9 +583,11 @@
           <Behavior>1</Behavior>
           <displaynames>
             <displayname description="Record Created On" languagecode="1033" />
+            <displayname description="Data utworzenia rekordu" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Date and time that the record was migrated." languagecode="1033" />
+            <Description description="Data i godzina migracji rekordu." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="OwnerId">
@@ -601,6 +627,7 @@
           </LookupTypes>
           <displaynames>
             <displayname description="Owner" languagecode="1033" />
+            <displayname description="Właściciel" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Owner Id" languagecode="1033" />
@@ -640,6 +667,7 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Owning Business Unit" languagecode="1033" />
+            <displayname description="Jednostka biznesowa — właściciel" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
@@ -679,6 +707,7 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Owning Team" languagecode="1033" />
+            <displayname description="Zespół będący właścicielem" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for the team that owns the record." languagecode="1033" />
@@ -718,6 +747,7 @@
           <LookupTypes />
           <displaynames>
             <displayname description="Owning User" languagecode="1033" />
+            <displayname description="Użytkownik-właściciel" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
@@ -759,28 +789,32 @@
             <IsCustomizable>1</IsCustomizable>
             <displaynames>
               <displayname description="Status" languagecode="1033" />
+              <displayname description="Stan" languagecode="1045" />
             </displaynames>
             <Descriptions>
-              <Description description="Status of the Linia Raportu Czasu Pracy" languagecode="1033" />
+              <Description description="Status of the Timesheet Line" languagecode="1033" />
             </Descriptions>
             <states>
               <state value="0" defaultstatus="1" invariantname="Active" IsHidden="0">
                 <labels>
                   <label description="Active" languagecode="1033" />
+                  <label description="Aktywne" languagecode="1045" />
                 </labels>
               </state>
               <state value="1" defaultstatus="2" invariantname="Inactive" IsHidden="0">
                 <labels>
                   <label description="Inactive" languagecode="1033" />
+                  <label description="Nieaktywne" languagecode="1045" />
                 </labels>
               </state>
             </states>
           </optionset>
           <displaynames>
             <displayname description="Status" languagecode="1033" />
+            <displayname description="Stan" languagecode="1045" />
           </displaynames>
           <Descriptions>
-            <Description description="Status of the Linia Raportu Czasu Pracy" languagecode="1033" />
+            <Description description="Status of the Timesheet Line" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="statuscode">
@@ -819,28 +853,32 @@
             <IsCustomizable>1</IsCustomizable>
             <displaynames>
               <displayname description="Status Reason" languagecode="1033" />
+              <displayname description="Przyczyna stanu" languagecode="1045" />
             </displaynames>
             <Descriptions>
-              <Description description="Reason for the status of the Linia Raportu Czasu Pracy" languagecode="1033" />
+              <Description description="Reason for the status of the Timesheet Line" languagecode="1033" />
             </Descriptions>
             <statuses>
               <status value="1" state="0" IsHidden="0">
                 <labels>
                   <label description="Active" languagecode="1033" />
+                  <label description="Aktywne" languagecode="1045" />
                 </labels>
               </status>
               <status value="2" state="1" IsHidden="0">
                 <labels>
                   <label description="Inactive" languagecode="1033" />
+                  <label description="Nieaktywne" languagecode="1045" />
                 </labels>
               </status>
             </statuses>
           </optionset>
           <displaynames>
             <displayname description="Status Reason" languagecode="1033" />
+            <displayname description="Przyczyna stanu" languagecode="1045" />
           </displaynames>
           <Descriptions>
-            <Description description="Reason for the status of the Linia Raportu Czasu Pracy" languagecode="1033" />
+            <Description description="Reason for the status of the Timesheet Line" languagecode="1033" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="TimeZoneRuleVersionNumber">
@@ -877,9 +915,11 @@
           <MaxValue>2147483647</MaxValue>
           <displaynames>
             <displayname description="Time Zone Rule Version Number" languagecode="1033" />
+            <displayname description="Numer wersji reguły strefy czasowej" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="For internal use only." languagecode="1033" />
+            <Description description="Tylko do użytku wewnętrznego." languagecode="1045" />
           </Descriptions>
         </attribute>
         <attribute PhysicalName="UTCConversionTimeZoneCode">
@@ -916,9 +956,11 @@
           <MaxValue>2147483647</MaxValue>
           <displaynames>
             <displayname description="UTC Conversion Time Zone Code" languagecode="1033" />
+            <displayname description="Kod strefy czasowej do konwersji czasu UTC" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Time zone code that was in use when the record was created." languagecode="1033" />
+            <Description description="Kod strefy czasowej używanej przy tworzeniu rekordu." languagecode="1045" />
           </Descriptions>
         </attribute>
       </attributes>

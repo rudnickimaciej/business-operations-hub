@@ -12,6 +12,7 @@
   <AppModuleComponents>
     <AppModuleComponent type="1" schemaName="account" />
     <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="cr679_complaint" />
     <AppModuleComponent type="1" schemaName="cr679_invoice" />
     <AppModuleComponent type="1" schemaName="cr679_machine" />
     <AppModuleComponent type="1" schemaName="cr679_operator" />
@@ -27,6 +28,7 @@
   </AppModuleRoleMaps>
   <LocalizedNames>
     <LocalizedName description="Rent-Maszyny" languagecode="1033" />
+    <LocalizedName description="Rent-Maszyny" languagecode="1045" />
   </LocalizedNames>
   <appsettings>
     <appsetting settingdefinitionid.uniquename="AppChannel">

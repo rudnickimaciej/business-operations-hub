@@ -17,6 +17,7 @@
                 <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{8AA42160-5995-4A5A-9EDA-3C46D554467E}">
                   <labels>
                     <label description="ColorStrip" languagecode="1033" />
+                    <label description="Pasek kolorów" languagecode="1045" />
                   </labels>
                 </section>
               </sections>
@@ -26,6 +27,7 @@
                 <section name="CardHeader" showlabel="false" showbar="false" columns="111" id="{3826D1C0-725D-435F-8D56-A791BFA82D1B}" IsUserDefined="0">
                   <labels>
                     <label description="Header" languagecode="1033" />
+                    <label description="Nagłówek" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -51,6 +53,7 @@
                 <section name="CardDetails" showlabel="false" showbar="false" columns="1" id="{3098A093-D6DF-44C8-A45C-065C43B72562}" IsUserDefined="0">
                   <labels>
                     <label description="Details" languagecode="1033" />
+                    <label description="Szczegóły" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -66,6 +69,7 @@
                 <section name="CardFooter" showlabel="false" columns="1111" showbar="false" id="{F1651AC9-A7E2-465F-A96F-50409B8D7E3C}" IsUserDefined="0">
                   <labels>
                     <label description="Footer" languagecode="1033" />
+                    <label description="Stopka" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -104,6 +108,7 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A card form for this entity." languagecode="1033" />

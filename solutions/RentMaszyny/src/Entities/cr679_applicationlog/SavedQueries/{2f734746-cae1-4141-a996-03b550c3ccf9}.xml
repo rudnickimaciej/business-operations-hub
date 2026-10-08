@@ -32,6 +32,7 @@
     <IntroducedVersion>1.0.0.0</IntroducedVersion>
     <LocalizedNames>
       <LocalizedName description="Active Application Logs" languagecode="1033" />
+      <LocalizedName description="Aktywne wpisy dziennika" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

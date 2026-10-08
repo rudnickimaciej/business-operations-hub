@@ -31,7 +31,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Inactive Linie Raportu Czasu Pracy" languagecode="1033" />
+      <LocalizedName description="Inactive Timesheet Lines" languagecode="1033" />
+      <LocalizedName description="Nieaktywne linie raportu" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

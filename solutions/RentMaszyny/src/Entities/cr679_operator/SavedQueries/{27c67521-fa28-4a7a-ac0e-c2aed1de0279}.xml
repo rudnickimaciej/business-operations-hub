@@ -32,6 +32,7 @@
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
       <LocalizedName description="Inactive Operators" languagecode="1033" />
+      <LocalizedName description="Nieaktywni operatorzy" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

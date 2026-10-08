@@ -14,7 +14,7 @@
           <cell name="cr679_category" width="115" />
           <cell name="cr679_brandandmodel" width="100" />
           <cell name="cr679_registrationnumber" width="155" />
-          <cell name="cr679_productionyeartext" width="121" />
+          <cell name="cr679_productionyear" width="121" />
         </row>
       </grid>
     </layoutxml>
@@ -34,13 +34,13 @@
               <value>630100002</value>
             </condition>
           </filter>
-          <attribute name="cr679_productionyeartext" />
+          <attribute name="cr679_productionyear" />
         </entity>
       </fetch>
     </fetchxml>
     <IntroducedVersion>1.0.0.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Koparki" languagecode="1033" />
+      <LocalizedName description="Excavators" languagecode="1033" />
       <LocalizedName description="Koparki" languagecode="1045" />
     </LocalizedNames>
   </savedquery>

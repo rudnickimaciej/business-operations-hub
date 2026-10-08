@@ -17,14 +17,15 @@
               <sections>
                 <section showlabel="true" showbar="false" IsUserDefined="0" id="{82de5298-1e2b-4dff-a15c-be96f5fd0f16}" columns="11">
                   <labels>
-                    <label description="Podsumowani" languagecode="1033" />
-                    <label description="Ogólne" languagecode="1045" />
+                    <label description="Summary" languagecode="1033" />
+                    <label description="Podsumowanie" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{f9113e49-c73f-42d3-880d-6b1f229e69c6}" colspan="2">
                         <labels>
-                          <label description="Nazwa" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
+                          <label description="Nazwa" languagecode="1045" />
                         </labels>
                         <control id="cr679_timesheetname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_timesheetname" />
                       </cell>
@@ -68,7 +69,8 @@
                 </section>
                 <section name="null_section_4" id="2f8c1ed1-1221-4bb1-a727-677f80028473" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Godziny pracy" languagecode="1033" />
+                    <label description="Working Hours" languagecode="1033" />
+                    <label description="Godziny pracy" languagecode="1045" />
                   </labels>
                   <rows>
                     <row />
@@ -83,7 +85,8 @@
                     <row>
                       <cell locklevel="0" id="{f3ac17c9-bb50-40b6-bae1-3d105e693d92}" colspan="1" rowspan="6" auto="false">
                         <labels>
-                          <label description="Godziny pracy" languagecode="1033" />
+                          <label description="Working Hours" languagecode="1033" />
+                          <label description="Godziny pracy" languagecode="1045" />
                         </labels>
                         <control indicationOfSubgrid="true" id="cc_1787427058269" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" uniqueid="{2c728c3a-a031-4419-89c4-c7f216998505}">
                           <parameters>
@@ -109,7 +112,8 @@
                 </section>
                 <section name="null_section_5" id="bc2f1859-564b-4627-9f2b-0ddcc03924d0" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Klasyfikacja AI" languagecode="1033" />
+                    <label description="AI Classification" languagecode="1033" />
+                    <label description="Klasyfikacja AI" languagecode="1045" />
                   </labels>
                   <rows>
                     <row />
@@ -156,7 +160,8 @@
               <sections>
                 <section name="null_section_6" id="96158053-fd18-47d3-8e55-365063892e29" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Zdjęcie" languagecode="1033" />
+                    <label description="Photo" languagecode="1033" />
+                    <label description="Zdjęcie" languagecode="1045" />
                   </labels>
                   <rows>
                     <row />
@@ -307,9 +312,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

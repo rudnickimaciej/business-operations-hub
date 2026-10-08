@@ -187,6 +187,7 @@ resource functionApp 'Microsoft.Web/sites@2023-12-01' = {
         { name: 'APPLICATIONINSIGHTS_AUTHENTICATION_STRING', value: 'Authorization=AAD' }
         { name: 'ServiceBusConnection__fullyQualifiedNamespace', value: '${serviceBus.name}.servicebus.windows.net' }
         { name: 'InvoiceQueueName', value: queueName }
+        { name: 'InvoiceQueueMaxDeliveryCount', value: string(maxDeliveryCount) }
         { name: 'DataverseUrl', value: dataverseUrl }
       ]
     }

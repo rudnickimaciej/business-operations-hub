@@ -24,7 +24,8 @@
                     <row>
                       <cell id="{aff3a0af-f50c-4a0a-aa40-b8c5dc679c48}">
                         <labels>
-                          <label description="Timesheetline Name" languagecode="1033" />
+                          <label description="Timesheet Line Name" languagecode="1033" />
+                          <label description="Nazwa linii raportu" languagecode="1045" />
                         </labels>
                         <control id="cr679_timesheetlinename" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_timesheetlinename" />
                       </cell>
@@ -33,6 +34,7 @@
                       <cell id="{cedfe3c1-b3db-4f31-8a02-72887b6b40bf}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
+                          <label description="Właściciel" languagecode="1045" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -41,6 +43,7 @@
                       <cell id="{afcb5ed9-e32b-4c83-9f53-c705b5a79b95}">
                         <labels>
                           <label description="Day" languagecode="1033" />
+                          <label description="Dzień" languagecode="1045" />
                         </labels>
                         <control id="cr679_day" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_day" />
                       </cell>
@@ -49,6 +52,7 @@
                       <cell id="{513c26e9-356b-4b83-97a1-f9435c469325}">
                         <labels>
                           <label description="Hours Worked" languagecode="1033" />
+                          <label description="Przepracowane godziny" languagecode="1045" />
                         </labels>
                         <control id="cr679_hoursworked" classid="{c3efe0c3-0ec6-42be-8349-cbd9079dfd8e}" datafieldname="cr679_hoursworked" />
                       </cell>
@@ -57,6 +61,7 @@
                       <cell id="{6e35aec3-715e-431f-8e85-185176e320d6}">
                         <labels>
                           <label description="Timesheet" languagecode="1033" />
+                          <label description="Raport czasu pracy" languagecode="1045" />
                         </labels>
                         <control id="cr679_timesheetid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_timesheetid" />
                       </cell>
@@ -73,9 +78,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

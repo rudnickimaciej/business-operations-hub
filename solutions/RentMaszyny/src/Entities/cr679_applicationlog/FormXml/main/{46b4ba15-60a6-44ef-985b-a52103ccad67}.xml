@@ -25,6 +25,7 @@
                       <cell id="{b02de29a-a8aa-4342-9fe7-3d72dbe77593}">
                         <labels>
                           <label description="Name" languagecode="1033" />
+                          <label description="Nazwa" languagecode="1045" />
                         </labels>
                         <control id="cr679_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_name" />
                       </cell>
@@ -41,9 +42,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

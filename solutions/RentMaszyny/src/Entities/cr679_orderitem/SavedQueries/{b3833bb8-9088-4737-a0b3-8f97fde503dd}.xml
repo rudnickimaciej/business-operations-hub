@@ -35,8 +35,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Active Pozycje Zamówienia" languagecode="1033" />
-      <LocalizedName description="Active Pozycje Zamówienia" languagecode="1045" />
+      <LocalizedName description="Active Order Items" languagecode="1033" />
+      <LocalizedName description="Aktywne pozycje zamówienia" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

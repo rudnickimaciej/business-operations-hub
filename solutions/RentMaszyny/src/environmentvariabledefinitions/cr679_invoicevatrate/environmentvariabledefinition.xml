@@ -1,7 +1,8 @@
 <environmentvariabledefinition schemaname="cr679_invoicevatrate">
   <defaultvalue>23</defaultvalue>
-  <displayname default="Invoice Vat Rate">
-    <label description="Invoice Vat Rate" languagecode="1033" />
+  <displayname default="Invoice VAT Rate">
+    <label description="Invoice VAT Rate" languagecode="1033" />
+    <label description="Stawka VAT na fakturze" languagecode="1045" />
   </displayname>
   <introducedversion>1.0.0.0</introducedversion>
   <iscustomizable>1</iscustomizable>

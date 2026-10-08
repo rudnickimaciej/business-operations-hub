@@ -35,8 +35,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Inactive Maszyny" languagecode="1033" />
-      <LocalizedName description="Zepsute maszyny" languagecode="1045" />
+      <LocalizedName description="Inactive Machines" languagecode="1033" />
+      <LocalizedName description="Nieaktywne maszyny" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

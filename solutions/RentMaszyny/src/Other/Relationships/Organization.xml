@@ -38,6 +38,7 @@
     <RelationshipDescription>
       <Descriptions>
         <Description description="Unique identifier for the organization" languagecode="1033" />
+        <Description description="Unikatowy identyfikator organizacji" languagecode="1045" />
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>

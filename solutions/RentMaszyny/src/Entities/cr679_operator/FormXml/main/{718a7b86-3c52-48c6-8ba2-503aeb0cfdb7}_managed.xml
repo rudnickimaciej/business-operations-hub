@@ -10,6 +10,7 @@
         <tab verticallayout="true" id="{D28BF036-92FE-4455-9D59-E1C11103F32D}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
@@ -17,6 +18,7 @@
                 <section showlabel="false" showbar="false" IsUserDefined="0" id="{B7C9A577-DD9F-469E-89C8-179F6747F262}">
                   <labels>
                     <label description="General" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -71,9 +73,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

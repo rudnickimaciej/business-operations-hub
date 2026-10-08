@@ -1,0 +1,20 @@
+<environmentvariabledefinition schemaname="cr679_InvoiceSeller">
+  <defaultvalue>{
+  "name": "RentMaszyny Wypożyczalnia Sprzętu Budowlanego Sp. z o.o.",
+  "address": "ul. Przemysłowa 15, 02-232 Warszawa",
+  "nip": "5213456784",
+  "bankAccount": "PL 00 1020 0000 0000 0000 0000 0000"
+}</defaultvalue>
+  <description default="Seller details printed on invoices (JSON: name, address, nip, bankAccount).">
+    <label description="Seller details printed on invoices (JSON: name, address, nip, bankAccount)." languagecode="1033" />
+  </description>
+  <displayname default="Invoice Seller">
+    <label description="Invoice Seller" languagecode="1033" />
+    <label description="Sprzedawca na fakturze" languagecode="1045" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000003</type>
+</environmentvariabledefinition>

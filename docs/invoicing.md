@@ -13,7 +13,8 @@ Order form: "Wystaw fakturę" (Power Fx command)
   └─ creates cr679_invoice: status Requested, snapshot of customer data and amounts, cr679_requestedon = now
        └─ Dataverse Service Endpoint (async step) ──> Service Bus queue "invoice-requests"
             └─ Azure Function InvoiceGenerator
-                 1. read invoice; status not Requested/Failed → complete message, do nothing (idempotency)
+                 1. read invoice; status not Requested/Generating → complete message, do nothing (idempotency;
+                    Generating means a previous attempt crashed)
                  2. status = Generating
                  3. read order items, render PDF (QuestPDF), upload to cr679_document
                  4. status = Generated, cr679_generatedon = now
@@ -25,7 +26,7 @@ Invoice form: "Ponów generowanie" (visible when Failed) → status Requested, c
 
 ### `cr679_invoice` (Faktura / Faktury), user-owned
 
-Display names are Polish (the app's users are Polish); schema names are English.
+Labels exist in English (base language, 1033) and Polish (1045); the table below lists the Polish ones. Schema names are English.
 
 | Schema name | Display name | Type | Notes |
 |---|---|---|---|
@@ -46,6 +47,7 @@ Display names are Polish (the app's users are Polish); schema names are English.
 | `cr679_generatedon` | Data wygenerowania | Date and time | |
 | `cr679_document` | Dokument PDF | File (10 MB) | Invoice PDF |
 | `cr679_errormessage` | Komunikat błędu | Multiline text | Last error, user-readable |
+| `cr679_language` | Język faktury | Choice: Polski (1045), Angielski (1033) | Chosen when issuing. Values are Windows LCIDs, so the generator maps them straight to a .NET culture |
 
 Ownership is user/team, because table ownership cannot be changed later and the security model is not designed yet.
 
@@ -71,7 +73,27 @@ Shared technical log for flows, the Azure Function and scripts. `createdon` / `c
 |---|---|---|
 | `cr679_InvoiceVatRate` | Environment variable (decimal) | 23 |
 | `cr679_InvoicePaymentTermDays` | Environment variable (number) | 14 |
+| `cr679_InvoiceSeller` | Environment variable (JSON: `name`, `address`, `nip`, `bankAccount`) | fictional company in the default value |
 | Service Bus queue + SAS key | Service Endpoint | per environment, set after import |
+
+## Invoice language
+
+The document language comes from `cr679_language`. Printed labels live in `InvoiceLabels.resx` (English, also the
+fallback) and `InvoiceLabels.pl.resx`; the culture also drives date and number formats. Adding a language = a new
+choice value (its LCID) + a new `.resx`; no code changes. Error messages written back to Dataverse stay Polish,
+because they are read by the app's users, not by the customer.
+
+## Running the generator locally
+
+Prerequisites: .NET SDK 9 (see `global.json`), Azure Functions Core Tools, Azurite, `az login` to the Dataverse tenant,
+and the role *Azure Service Bus Data Receiver* on the DEV queue for your account.
+
+1. Stop the Azure function so it does not compete for messages: `az functionapp stop -g rg-rentmachines-dev-neu -n <function>`.
+2. Copy `local.settings.sample.json` to `local.settings.json` (git-ignored) and fill in the DEV values.
+3. Start `azurite`, then `func start` in `azure/functions/src/InvoiceGenerator`.
+4. Create an invoice in DEV (or change `cr679_requestedon` on an existing one) and watch the console.
+
+Unit tests: `dotnet test` in `azure/functions` (no Dataverse needed). The PDF tests write sample files to the test output folder.
 
 ## What can go wrong
 

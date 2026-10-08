@@ -31,7 +31,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Inactive Usługas" languagecode="1033" />
+      <LocalizedName description="Inactive Services" languagecode="1033" />
+      <LocalizedName description="Nieaktywne usługi" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

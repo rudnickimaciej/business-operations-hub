@@ -5,9 +5,11 @@
     <entity Name="cr679_applicationlog">
       <LocalizedNames>
         <LocalizedName description="Application Log" languagecode="1033" />
+        <LocalizedName description="Dziennik aplikacji" languagecode="1045" />
       </LocalizedNames>
       <LocalizedCollectionNames>
         <LocalizedCollectionName description="Application Logs" languagecode="1033" />
+        <LocalizedCollectionName description="Dzienniki aplikacji" languagecode="1045" />
       </LocalizedCollectionNames>
       <Descriptions>
         <Description description="Technical log written by flows, the Azure Function and scripts." languagecode="1033" />
@@ -45,6 +47,7 @@
           <IsLocalizable>0</IsLocalizable>
           <displaynames>
             <displayname description="Application Log" languagecode="1033" />
+            <displayname description="Dziennik aplikacji" languagecode="1045" />
           </displaynames>
           <Descriptions>
             <Description description="Unique identifier for entity instances" languagecode="1033" />
@@ -86,6 +89,7 @@
           <Length>200</Length>
           <displaynames>
             <displayname description="Correlation ID" languagecode="1033" />
+            <displayname description="Identyfikator korelacji" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_details">
@@ -122,6 +126,7 @@
           <MaxLength>100000</MaxLength>
           <displaynames>
             <displayname description="Details" languagecode="1033" />
+            <displayname description="Szczegóły" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_errorcode">
@@ -159,6 +164,7 @@
           <Length>200</Length>
           <displaynames>
             <displayname description="Error Code" languagecode="1033" />
+            <displayname description="Kod błędu" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_message">
@@ -195,6 +201,7 @@
           <MaxLength>4000</MaxLength>
           <displaynames>
             <displayname description="Message" languagecode="1033" />
+            <displayname description="Komunikat" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_name">
@@ -232,6 +239,7 @@
           <Length>400</Length>
           <displaynames>
             <displayname description="Name" languagecode="1033" />
+            <displayname description="Nazwa" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_operation">
@@ -269,6 +277,7 @@
           <Length>400</Length>
           <displaynames>
             <displayname description="Operation" languagecode="1033" />
+            <displayname description="Operacja" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_recordid">
@@ -306,6 +315,7 @@
           <Length>200</Length>
           <displaynames>
             <displayname description="Record ID" languagecode="1033" />
+            <displayname description="Identyfikator rekordu" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_severity">
@@ -338,38 +348,45 @@
           <IsFilterable>0</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
+          <AppDefaultValue>-1</AppDefaultValue>
           <optionset Name="cr679_applicationlog_cr679_severity">
             <OptionSetType>picklist</OptionSetType>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
             <IsCustomizable>1</IsCustomizable>
             <displaynames>
               <displayname description="Severity" languagecode="1033" />
+              <displayname description="Ważność" languagecode="1045" />
             </displaynames>
             <options>
               <option value="630100000" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="Information" languagecode="1033" />
+                  <label description="Informacja" languagecode="1045" />
                 </labels>
               </option>
               <option value="630100001" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="Warning" languagecode="1033" />
+                  <label description="Ostrzeżenie" languagecode="1045" />
                 </labels>
               </option>
               <option value="630100002" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="Error" languagecode="1033" />
+                  <label description="Błąd" languagecode="1045" />
                 </labels>
               </option>
               <option value="630100003" ExternalValue="" IsHidden="0">
                 <labels>
                   <label description="Critical" languagecode="1033" />
+                  <label description="Krytyczny" languagecode="1045" />
                 </labels>
               </option>
             </options>
           </optionset>
           <displaynames>
             <displayname description="Severity" languagecode="1033" />
+            <displayname description="Ważność" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_source">
@@ -407,6 +424,7 @@
           <Length>400</Length>
           <displaynames>
             <displayname description="Source" languagecode="1033" />
+            <displayname description="Źródło" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="cr679_tablename">
@@ -444,6 +462,7 @@
           <Length>200</Length>
           <displaynames>
             <displayname description="Table Name" languagecode="1033" />
+            <displayname description="Nazwa tabeli" languagecode="1045" />
           </displaynames>
         </attribute>
         <attribute PhysicalName="CreatedBy">

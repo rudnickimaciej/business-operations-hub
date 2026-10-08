@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{32ecb497-11cc-4667-9396-483f27650025}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{c753e5c2-9f7d-40e5-9532-606ad6aaa40c}" IsUserDefined="1" name="{c753e5c2-9f7d-40e5-9532-606ad6aaa40c}" locklevel="0" expanded="true" showlabel="true">
+          <labels>
+            <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{706e43b5-ea4e-4c34-b6f4-539db95e4b41}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1157b78a-591c-4751-be8c-d4783d0b819c}">
+                        <labels>
+                          <label description="Number" languagecode="1033" />
+                          <label description="Numer" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_name" uniqueid="{3e1a350a-510e-ecca-b71d-676990db642e}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ab34318e-2bb7-db87-de83-c6691094ba54}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Customer" languagecode="1033" />
+                          <label description="Klient" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_customerid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{13d25009-11ea-dd60-500a-aae1636eea54}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Order" languagecode="1033" />
+                          <label description="Zamówienie" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_orderid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_orderid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cc8c02bb-7078-8990-125b-95e2aa143edc}" showlabel="true" locklevel="0" rowspan="10">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                          <label description="Opis" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_description" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="cr679_description" disabled="false" uniqueid="{337d4d97-e575-d616-1931-671e9be6b281}" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{1740c4ff-451c-4883-90b3-faa69f9dad5f}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                          <label description="Właściciel" languagecode="1045" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="{c753e5c2-9f7d-40e5-9532-606ad6aaa40c}_section_2" showlabel="false" showbar="false" locklevel="0" id="{0b62e4d5-a533-1bc7-9808-4d12d9441d9c}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="AI" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{cc518357-75cd-612d-1a0b-6d8483b1bdd7}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="AI Next Steps" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_ainextsteps" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_ainextsteps" disabled="true" uniqueid="{9c26dd1d-0b32-880b-7d02-4c76d852e43a}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{42aa59aa-71e8-5d7e-dd47-1c003ee4b3e4}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="AI Summary" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_aisummary" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="cr679_aisummary" disabled="true" uniqueid="{52298db2-43c5-2620-88ac-30515466cc9d}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

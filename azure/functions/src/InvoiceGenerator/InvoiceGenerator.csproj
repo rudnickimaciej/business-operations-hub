@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AzureFunctionsVersion>v4</AzureFunctionsVersion>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="host.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="local.settings.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="InvoiceGenerator.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.21.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.23.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="2.52.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="2.51.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.ServiceBus" Version="5.24.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="2.1.0" />
+    <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.2.27" />
+    <PackageReference Include="QuestPDF" Version="2026.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\shared\RentMaszyny.Dataverse.Model\RentMaszyny.Dataverse.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Short names for the generated choice enums (their member names come from the English labels in Dataverse). -->
+    <Using Include="RentMaszyny.Dataverse.Model.cr679_invoice_cr679_documentstatus" Alias="InvoiceDocumentStatus" />
+    <Using Include="RentMaszyny.Dataverse.Model.cr679_invoice_cr679_language" Alias="InvoiceLanguage" />
+    <Using Include="RentMaszyny.Dataverse.Model.cr679_applicationlog_cr679_severity" Alias="LogSeverity" />
+  </ItemGroup>
+
+</Project>

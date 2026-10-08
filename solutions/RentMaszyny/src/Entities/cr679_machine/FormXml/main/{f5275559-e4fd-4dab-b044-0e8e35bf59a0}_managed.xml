@@ -10,6 +10,7 @@
         <tab verticallayout="true" id="{CAEA1A3F-4ACB-4A58-97B5-876DC1288089}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
+            <label description="Ogólne" languagecode="1045" />
           </labels>
           <columns>
             <column width="30%">
@@ -17,6 +18,7 @@
                 <section showlabel="false" showbar="false" IsUserDefined="0" id="{D1E014EB-9EEA-4728-BC73-971CD97FBB8F}" name="Photo_section">
                   <labels>
                     <label description="General" languagecode="1033" />
+                    <label description="Ogólne" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
@@ -38,25 +40,17 @@
                     <row>
                       <cell id="{1a1f5cef-2a9e-4922-b131-db9e36f5893b}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Zdjęcie" languagecode="1033" />
+                          <label description="Photo" languagecode="1033" />
                           <label description="Zdjęcie" languagecode="1045" />
                         </labels>
                         <control id="cr679_zdjecie" classid="{7E548B0D-209C-477B-9DCD-F0F44472381D}" datafieldname="cr679_zdjecie" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{774a9888-039e-4bac-ba0f-c62157b5a6a3}" showlabel="false" visible="false">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                        <control id="cr679_photo" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="cr679_photo" />
                       </cell>
                     </row>
                   </rows>
                 </section>
                 <section name="technicals_section" id="95e3f7cf-68b4-4ec8-8a36-acc54913d1fd" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="New Section" languagecode="1033" />
+                    <label description="Technical Data" languagecode="1033" />
                     <label description="Dane techniczne" languagecode="1045" />
                   </labels>
                   <rows>
@@ -64,7 +58,7 @@
                     <row>
                       <cell id="{7d0c7d6f-baf7-4b81-83c4-996d6651f657}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
-                          <label description="Nazwa maszyny" languagecode="1033" />
+                          <label description="Machine Name" languagecode="1033" />
                           <label description="Nazwa maszyny" languagecode="1045" />
                         </labels>
                         <control id="cr679_machinename" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_machinename" disabled="false" />
@@ -95,16 +89,7 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{47af5bf7-30f6-4bc0-8a1d-61839e45d90f}" locklevel="0" colspan="1" rowspan="1">
-                        <labels>
-                          <label description="Rok produkcji" languagecode="1033" />
-                          <label description="Rok produkcji" languagecode="1045" />
-                        </labels>
-                        <control id="cr679_productionyeartext" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_productionyeartext" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{926e7a6b-ff10-4d44-a7a8-2bcb2e31b661}" colspan="1" rowspan="1" visible="false">
+                      <cell id="{926e7a6b-ff10-4d44-a7a8-2bcb2e31b661}" colspan="1" rowspan="1">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -135,7 +120,7 @@
               <sections>
                 <section name="null_section_4" id="3d821e7b-2f5a-4adf-8467-9420246e3b4b" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Historia serwisu" languagecode="1033" />
+                    <label description="Service History" languagecode="1033" />
                     <label description="Historia serwisu" languagecode="1045" />
                   </labels>
                   <rows>
@@ -144,7 +129,7 @@
                 </section>
                 <section name="null_section_5" id="c36095f4-d843-4d6b-ac6b-37b7124a1182" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
                   <labels>
-                    <label description="Historia wynajmu" languagecode="1033" />
+                    <label description="Rental History" languagecode="1033" />
                     <label description="Historia wynajmu" languagecode="1045" />
                   </labels>
                   <rows>
@@ -152,6 +137,7 @@
                     <row>
                       <cell locklevel="0" id="{01d228be-ac91-4f73-9bd5-df351791ec88}" rowspan="4" colspan="1" auto="false" showlabel="false">
                         <labels>
+                          <label description="Order Items" languagecode="1033" />
                           <label description="New SG control 1786733577924" languagecode="1045" />
                         </labels>
                         <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
@@ -236,11 +222,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
-      <LocalizedName description="Information" languagecode="1045" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
-      <Description description="A form for this entity." languagecode="1045" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

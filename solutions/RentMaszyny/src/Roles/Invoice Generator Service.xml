@@ -41,12 +41,14 @@
     <RolePrivilege name="prvReadComplexControl" level="Global" />
     <RolePrivilege name="prvReadContact" level="Global" />
     <RolePrivilege name="prvReadcr679_invoice" level="Global" />
+    <RolePrivilege name="prvReadcr679_machine" level="Global" />
     <RolePrivilege name="prvReadcr679_order" level="Global" />
     <RolePrivilege name="prvReadcr679_orderitem" level="Global" />
     <RolePrivilege name="prvReadCustomization" level="Global" />
     <RolePrivilege name="prvReadEntity" level="Global" />
     <RolePrivilege name="prvReadEntityKey" level="Global" />
     <RolePrivilege name="prvReadEntityMap" level="Global" />
+    <RolePrivilege name="prvReadEnvironmentVariableDefinition" level="Global" />
     <RolePrivilege name="prvReadHierarchyRule" level="Global" />
     <RolePrivilege name="prvReadNewProcess" level="Global" />
     <RolePrivilege name="prvReadOptionSet" level="Global" />

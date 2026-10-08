@@ -21,10 +21,12 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="My Faktury" languagecode="1033" />
+      <LocalizedName description="My Invoices" languagecode="1033" />
+      <LocalizedName description="Moje faktury" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Active Faktury owned by me" languagecode="1033" />
+      <Description description="Active Invoices owned by me" languagecode="1033" />
+      <Description description="Aktywne faktury (moje)" languagecode="1045" />
     </Descriptions>
   </savedquery>
 </savedqueries>

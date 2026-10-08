@@ -4,6 +4,7 @@
     <UniqueName>RentMaszyny</UniqueName>
     <LocalizedNames>
       <LocalizedName description="RentMaszyny" languagecode="1033" />
+      <LocalizedName description="RentMaszyny" languagecode="1045" />
     </LocalizedNames>
     <Descriptions />
     <Version>1.0.0.0</Version>
@@ -81,6 +82,7 @@
       <RootComponent type="1" schemaName="account" behavior="1" />
       <RootComponent type="1" schemaName="contact" behavior="1" />
       <RootComponent type="1" schemaName="cr679_applicationlog" behavior="0" />
+      <RootComponent type="1" schemaName="cr679_complaint" behavior="0" />
       <RootComponent type="1" schemaName="cr679_invoice" behavior="0" />
       <RootComponent type="1" schemaName="cr679_machine" behavior="0" />
       <RootComponent type="1" schemaName="cr679_operator" behavior="0" />
@@ -92,6 +94,8 @@
       <RootComponent type="1" schemaName="cr679_usuga" behavior="0" />
       <RootComponent type="20" id="{b118a063-91c0-f111-aaaf-7ced8d2eb382}" behavior="0" />
       <RootComponent type="29" id="{4b3a948f-e997-f111-b8dc-7ced8d2eb382}" behavior="0" />
+      <RootComponent type="401" id="{a14c8998-3993-4a82-8ce0-704736198eed}" behavior="0" />
+      <RootComponent type="401" id="{f370fe01-18b8-43b5-87b7-a3f7bd607268}" behavior="0" />
       <RootComponent type="431" schemaName="cr679_machine cr679_zdjecie" behavior="0" />
       <RootComponent type="431" schemaName="cr679_timesheet cr679_photo" behavior="0" />
       <RootComponent type="432" schemaName="cr679_machine" behavior="0" />
@@ -106,61 +110,61 @@
     <MissingDependencies>
       <MissingDependency>
         <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account for Interactive experience" parentDisplayName="Account" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{707fc57b-c5e6-471b-a180-e37ed28a38e2}">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Information" parentDisplayName="Zamówienie" id="{6335c954-c7ed-45a7-9d60-83451d87565c}" />
+        <Dependent type="60" displayName="Information" parentDisplayName="Order" id="{6335c954-c7ed-45a7-9d60-83451d87565c}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Account" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Account for Interactive experience" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account for Interactive experience" parentDisplayName="Account" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="account card" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{b028db32-3619-48a5-ac51-cf3f947b0ef3}">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Information" parentDisplayName="Zamówienie" id="{6335c954-c7ed-45a7-9d60-83451d87565c}" />
+        <Dependent type="60" displayName="Information" parentDisplayName="Order" id="{6335c954-c7ed-45a7-9d60-83451d87565c}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Information" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{b053a39a-041a-4356-acef-ddf00182762b}">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="SidePanel" parentDisplayName="Account" id="{16c6d917-231d-f111-8341-70a8a52fd65e}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
-          <package appName="msdynce_AppCommon" version="9.0.26085.10002">msdynce_AppCommonAnchor (9.0.26085.10002)</package>
+          <package appName="msdynce_AppCommon" version="9.0.26091.10001">msdynce_AppCommonAnchor (9.0.26091.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account for Interactive experience" parentDisplayName="Account" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
@@ -181,7 +185,7 @@
         <Required type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2609.1007)">
           <package appName="Base Custom Controls" version="9.0.2609.1007">BaseCustomControlsCore (9.0.2609.1007)</package>
         </Required>
-        <Dependent type="60" displayName="Information" parentDisplayName="Raport Czasu Pracy" id="{d7bac23e-3baa-43a6-ab29-1669323dc671}" />
+        <Dependent type="60" displayName="Information" parentDisplayName="Timesheet" id="{d7bac23e-3baa-43a6-ab29-1669323dc671}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">

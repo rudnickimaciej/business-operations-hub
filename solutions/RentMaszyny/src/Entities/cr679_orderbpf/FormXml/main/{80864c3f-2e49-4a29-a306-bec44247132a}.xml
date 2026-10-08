@@ -9,20 +9,23 @@
       <tabs>
         <tab verticallayout="true" id="{4287f232-05a6-417b-a171-b42765b0d506}" name="StageStep3" locklevel="0" expanded="true" visible="false" labelid="{8f92238d-109a-423a-a9d0-5e0804ea167b}">
           <labels>
-            <label description="Zapytanie" languagecode="1033" />
+            <label description="Inquiry" languagecode="1033" />
+            <label description="Zapytanie" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
                 <section showbar="false" columns="1" id="{f795a326-453f-8cf0-6166-8c98f3e0b87f}" name="StageStep3_section1" labelid="{b9701150-31c1-4e49-902a-ca41d50385c9}">
                   <labels>
-                    <label description="Zapytanie" languagecode="1033" />
+                    <label description="Inquiry" languagecode="1033" />
+                    <label description="Zapytanie" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{8e78821a-901a-418e-bbf1-c4eb02041d07}" showlabel="true" visible="true" labelid="{2f060c4f-6f4f-4355-bcb3-8b1c059cc883}">
                         <labels>
-                          <label description="Wybierz klienta" languagecode="1033" />
+                          <label description="Select the customer" languagecode="1033" />
+                          <label description="Wybierz klienta" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_customerid" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="cr679_customerid" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" disabled="false" />
                       </cell>
@@ -30,7 +33,8 @@
                     <row>
                       <cell id="{22226857-5fdf-415e-8a63-3ba7925a96ca}" showlabel="true" visible="true" labelid="{68b24c2e-6ab9-4274-8b5f-e5eb93791bb4}">
                         <labels>
-                          <label description="Określ typ usługi" languagecode="1033" />
+                          <label description="Specify the service type" languagecode="1033" />
+                          <label description="Określ typ usługi" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_servicetype" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="cr679_servicetype" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -38,7 +42,8 @@
                     <row>
                       <cell id="{1b4ddb3c-7175-4b55-be22-3f62a0c00d41}" showlabel="true" visible="true" labelid="{cf89e2be-90a4-4e1a-b41b-055a3c83a43e}">
                         <labels>
-                          <label description="Wskaż wstępny termin rozpoczęcia" languagecode="1033" />
+                          <label description="Enter the tentative start date" languagecode="1033" />
+                          <label description="Wskaż wstępny termin rozpoczęcia" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_startdate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_startdate" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -46,7 +51,8 @@
                     <row>
                       <cell id="{79ce3108-d0c1-47d6-a736-f37588c4e5b0}" showlabel="true" visible="true" labelid="{31168ea1-79d7-4c07-bee3-5173ff0f63fa}">
                         <labels>
-                          <label description="Wskaż miejsce realizacji" languagecode="1033" />
+                          <label description="Enter the work location" languagecode="1033" />
+                          <label description="Wskaż miejsce realizacji" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_location" classid="{e0dece4b-6fc8-4a8f-a065-082708572369}" datafieldname="cr679_location" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="false" />
                       </cell>
@@ -59,20 +65,23 @@
         </tab>
         <tab verticallayout="true" id="{dcec3644-ef88-44f8-b134-7356449e813c}" name="StageStep13" locklevel="0" expanded="true" visible="false" labelid="{e01af0e4-7905-4548-85c7-fd7685a74e33}">
           <labels>
-            <label description="Potwierdzone" languagecode="1033" />
+            <label description="Confirmed" languagecode="1033" />
+            <label description="Potwierdzone" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
                 <section showbar="false" columns="1" id="{de053c9f-3d30-28d1-bce3-fc734caf0e75}" name="StageStep13_section1" labelid="{c08497cd-84cf-40a7-9b29-de2d216a3d27}">
                   <labels>
-                    <label description="Potwierdzone" languagecode="1033" />
+                    <label description="Confirmed" languagecode="1033" />
+                    <label description="Potwierdzone" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{64ad0567-8db9-484c-af11-77afbc9395cf}" showlabel="true" visible="true" labelid="{3db2408a-2679-4dad-874d-37482c221f2b}">
                         <labels>
-                          <label description="Planowany termin rozpoczęcia" languagecode="1033" />
+                          <label description="Planned Start Date" languagecode="1033" />
+                          <label description="Planowany termin rozpoczęcia" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_startdate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_startdate" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -80,7 +89,8 @@
                     <row>
                       <cell id="{53493a4d-8250-4bc1-a302-90b105757fbe}" showlabel="true" visible="true" labelid="{412f4f10-4f8d-4873-b5c8-b5246f5480db}">
                         <labels>
-                          <label description="Planowany termin zakończenia" languagecode="1033" />
+                          <label description="Planned End Date" languagecode="1033" />
+                          <label description="Planowany termin zakończenia" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_enddate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_enddate" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -88,7 +98,8 @@
                     <row>
                       <cell id="{1b6dce5d-c9af-46b5-aa9a-051764efbff7}" showlabel="true" visible="true" labelid="{f83179e8-e29f-492e-b547-9b87f87ea4cf}">
                         <labels>
-                          <label description="Data wydania sprzętu" languagecode="1033" />
+                          <label description="Equipment Release Date" languagecode="1033" />
+                          <label description="Data wydania sprzętu" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_dateofequipment" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_dateofequipment" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -101,20 +112,23 @@
         </tab>
         <tab verticallayout="true" id="{f16d7ade-14b5-4e83-ba1d-747904b0a505}" name="StageStep21" locklevel="0" expanded="true" visible="false" labelid="{53650be6-e834-454a-bef6-55002fa0d7dc}">
           <labels>
-            <label description="W Trakcie" languagecode="1033" />
+            <label description="In Progress" languagecode="1033" />
+            <label description="W trakcie" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
                 <section showbar="false" columns="1" id="{0ee5ef00-77f2-9a16-943d-22c47c1b016c}" name="StageStep21_section1" labelid="{a80d87cf-dcdb-42b9-b049-f6742d381c17}">
                   <labels>
-                    <label description="W Trakcie" languagecode="1033" />
+                    <label description="In Progress" languagecode="1033" />
+                    <label description="W trakcie" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{4c3c7162-7454-46d1-822d-c35d6ed757c0}" showlabel="true" visible="true" labelid="{c23b9846-e0a3-49b6-a6df-7fd5b3733fbb}">
                         <labels>
-                          <label description="Data oddania sprzętu" languagecode="1033" />
+                          <label description="Equipment Return Date" languagecode="1033" />
+                          <label description="Data oddania sprzętu" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_equipmentreturndate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_equipmentreturndate" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -127,20 +141,23 @@
         </tab>
         <tab verticallayout="true" id="{39130289-5f2a-43f0-9497-479cba87cdf8}" name="StageStep25" locklevel="0" expanded="true" visible="false" labelid="{b922e026-d703-4fff-994d-c075b3d15c19}">
           <labels>
-            <label description="Zakończone" languagecode="1033" />
+            <label description="Completed" languagecode="1033" />
+            <label description="Zakończone" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
                 <section showbar="false" columns="1" id="{3a264a03-d549-443c-ed22-13ef88c26729}" name="StageStep25_section1" labelid="{65e1e4c3-be6b-44b6-ae87-eed5e5f37e79}">
                   <labels>
-                    <label description="Zakończone" languagecode="1033" />
+                    <label description="Completed" languagecode="1033" />
+                    <label description="Zakończone" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{b28ad59f-1a7a-4789-beb6-23ddc07e1b78}" showlabel="true" visible="true" labelid="{fe554fce-3ad4-4f37-993d-28340831f478}">
                         <labels>
-                          <label description="Data wysłania faktury" languagecode="1033" />
+                          <label description="Invoice Sent Date" languagecode="1033" />
+                          <label description="Data wysłania faktury" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_invoicedate" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="cr679_invoicedate" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -153,20 +170,23 @@
         </tab>
         <tab verticallayout="true" id="{25a8906d-f743-4c93-ac3a-d8d35164c3cf}" name="StageStep29" locklevel="0" expanded="true" visible="false" labelid="{c548eabc-d3e6-488e-a848-dcf319e7d19d}">
           <labels>
-            <label description="Rozliczenie" languagecode="1033" />
+            <label description="Settlement" languagecode="1033" />
+            <label description="Rozliczenie" languagecode="1045" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
                 <section showbar="false" columns="1" id="{673447fe-f62e-d489-fc5a-f24bbfa1164e}" name="StageStep29_section1" labelid="{7f17b6f2-f433-4ef2-b92b-cc5e7e652f74}">
                   <labels>
-                    <label description="Rozliczenie" languagecode="1033" />
+                    <label description="Settlement" languagecode="1033" />
+                    <label description="Rozliczenie" languagecode="1045" />
                   </labels>
                   <rows>
                     <row>
                       <cell id="{eb08dd20-8f0d-423c-b6d0-f2523477caac}" showlabel="true" visible="true" labelid="{b21c3139-ceab-4e53-bca8-863ed981ce91}">
                         <labels>
-                          <label description="Data opłacenia faktury" languagecode="1033" />
+                          <label description="Invoice Paid Date" languagecode="1033" />
+                          <label description="Data opłacenia faktury" languagecode="1045" />
                         </labels>
                         <control id="bpf_cr679_order_cr679_orderbpf:cr679_paymentdate" classid="{533b9e00-756b-4312-95a0-dc888637ac78}" datafieldname="cr679_paymentdate" disabled="false" relationship="bpf_cr679_order_cr679_orderbpf" isrequired="true" />
                       </cell>
@@ -183,9 +203,11 @@
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
       <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informacje" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formularz tej encji." languagecode="1045" />
     </Descriptions>
   </systemform>
 </forms>

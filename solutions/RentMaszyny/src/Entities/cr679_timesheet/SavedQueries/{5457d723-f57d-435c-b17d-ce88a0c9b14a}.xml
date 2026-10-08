@@ -38,7 +38,8 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="Raporty Czasu Pracy" languagecode="1033" />
+      <LocalizedName description="Timesheets" languagecode="1033" />
+      <LocalizedName description="Raporty czasu pracy" languagecode="1045" />
     </LocalizedNames>
   </savedquery>
 </savedqueries>

@@ -14,7 +14,7 @@
                 <section name="account information" showlabel="false" showbar="false" id="{407c4e29-b766-4efb-986c-f4c1d9be75ce}" IsUserDefined="0" ordinalvalue="0">
                   <rows>
                     <row>
-                      <cell id="{ea0b806e-b8ff-474e-a676-962a67ec191d}" ordinalvalue="10002" solutionaction="Modified">
+                      <cell id="{ea0b806e-b8ff-474e-a676-962a67ec191d}" ordinalvalue="10000">
                         <labels>
                           <label description="Account Name" languagecode="1033" solutionaction="Added" />
                           <label description="Nazwa klienta" languagecode="1045" solutionaction="Added" />
@@ -28,7 +28,7 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{414469ee-8334-476e-ae58-8ac4692d03eb}" ordinalvalue="10006" solutionaction="Modified">
+                      <cell id="{414469ee-8334-476e-ae58-8ac4692d03eb}" ordinalvalue="10004" solutionaction="Modified">
                         <labels>
                           <label description="Primary Contact" languagecode="1033" solutionaction="Added" />
                           <label description="Kontakt podstawowy" languagecode="1045" solutionaction="Added" />
@@ -42,7 +42,7 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{4c14f897-986a-40dc-a7ba-df7801d13f01}" ordinalvalue="10008" solutionaction="Modified">
+                      <cell id="{4c14f897-986a-40dc-a7ba-df7801d13f01}" ordinalvalue="10006" solutionaction="Modified">
                         <labels>
                           <label description="Account Number" languagecode="1033" solutionaction="Added" />
                           <label description="Numer konta" languagecode="1045" solutionaction="Added" />
@@ -56,7 +56,7 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{a8a9ce07-fda7-4329-8c1f-abf5cf028319}" ordinalvalue="10010" solutionaction="Modified">
+                      <cell id="{a8a9ce07-fda7-4329-8c1f-abf5cf028319}" ordinalvalue="10008" solutionaction="Modified">
                         <labels>
                           <label description="Parent Account" languagecode="1033" solutionaction="Added" />
                           <label description="Klient nadrzędny" languagecode="1045" solutionaction="Added" />
@@ -70,7 +70,7 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{dd9cfe1d-a28a-4626-b56c-a247b5c7b759}" ordinalvalue="10012" solutionaction="Modified">
+                      <cell id="{dd9cfe1d-a28a-4626-b56c-a247b5c7b759}" ordinalvalue="10010" solutionaction="Modified">
                         <labels>
                           <label description="Email" languagecode="1033" solutionaction="Added" />
                           <label description="Adres e-mail" languagecode="1045" solutionaction="Added" />
@@ -79,14 +79,7 @@
                       <cell id="{01289424-a3c2-4c71-815b-cb5f2bfaf9ce}" showlabel="false" ordinalvalue="20009" solutionaction="Modified" />
                     </row>
                     <row>
-                      <cell locklevel="0" id="{51f2258b-1d05-4373-8ccd-bcc77aa3510c}" ordinalvalue="10000" solutionaction="Added">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{28aedfc6-4363-4364-95e7-ec83f7c347aa}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10004" solutionaction="Added">
+                      <cell id="{28aedfc6-4363-4364-95e7-ec83f7c347aa}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10002" solutionaction="Added">
                         <labels>
                           <label description="NIP" languagecode="1033" />
                         </labels>
@@ -95,13 +88,6 @@
                     </row>
                     <row>
                       <cell id="{e7819902-d361-d4aa-dae2-caba568b987c}" showlabel="false" ordinalvalue="20011" solutionaction="Added">
-                        <labels>
-                          <label description="" languagecode="1033" />
-                        </labels>
-                      </cell>
-                    </row>
-                    <row>
-                      <cell locklevel="0" id="{3a8883c2-28a8-4c22-bf09-aab21e3ae7c5}" ordinalvalue="20013" solutionaction="Added">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -252,17 +238,6 @@
             </column>
           </columns>
         </tab>
-        <tab name="notes and activities" id="{61710424-A7C1-4db5-9489-788BCDCF267A}" IsUserDefined="0" expanded="false" ordinalvalue="3">
-          <columns>
-            <column width="100%" id="0">
-              <sections>
-                <section name="activities" showlabel="true" showbar="true" id="{690cd22e-026f-4e6a-8e93-74e5c27b4973}" IsUserDefined="0" height="auto" ordinalvalue="0">
-                  <rows />
-                </section>
-              </sections>
-            </column>
-          </columns>
-        </tab>
         <tab name="administration" id="{5b8906be-c80f-4c26-8ba2-b07f45cb2936}" IsUserDefined="0" ordinalvalue="4">
           <columns>
             <column width="100%" id="0">
@@ -397,25 +372,7 @@
       </Navigation>
       <DisplayConditions FallbackForm="true" Order="4" solutionaction="Modified" />
       <footer id="{6bd880d9-42e1-4890-9d24-9564f75f0cc0}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows>
-          <row>
-            <cell id="{35903e3c-f5a4-4617-b339-fd46002aa958}" showlabel="false" ordinalvalue="10000">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{c96149bc-1500-4cbf-abae-fec0423f4ef2}" showlabel="false" ordinalvalue="20001">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{74b872c9-b9bb-4757-8778-14e9c2132049}" showlabel="false" ordinalvalue="30002">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-          </row>
-        </rows>
+        <rows></rows>
       </footer>
     </form>
     <LocalizedNames>

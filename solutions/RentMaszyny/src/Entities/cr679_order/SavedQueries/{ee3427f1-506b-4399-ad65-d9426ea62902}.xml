@@ -21,10 +21,12 @@
     </fetchxml>
     <IntroducedVersion>1.0</IntroducedVersion>
     <LocalizedNames>
-      <LocalizedName description="My Zamówienia" languagecode="1033" />
+      <LocalizedName description="My Orders" languagecode="1033" />
+      <LocalizedName description="Moje zamówienia" languagecode="1045" />
     </LocalizedNames>
     <Descriptions>
-      <Description description="Active Zamówienia owned by me" languagecode="1033" />
+      <Description description="Active Orders owned by me" languagecode="1033" />
+      <Description description="Aktywne zamówienia (moje)" languagecode="1045" />
     </Descriptions>
   </savedquery>
 </savedqueries>

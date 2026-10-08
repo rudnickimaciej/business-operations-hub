@@ -219,7 +219,6 @@
         </rows>
       </header>
       <Navigation>
-        <NavBar />
         <NavBarAreas solutionaction="Added">
           <NavBarArea Id="Info">
             <Titles>
@@ -250,25 +249,7 @@
       </Navigation>
       <DisplayConditions FallbackForm="true" Order="2" solutionaction="Modified" />
       <footer id="{f464cbca-9040-4826-adf9-8da68762d5c1}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
-        <rows>
-          <row>
-            <cell id="{40a1413b-5925-4f0a-b62a-77c85e499e6f}" ordinalvalue="10000">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{5c57379b-88e0-4b7d-806f-7cf9de82e8a0}" ordinalvalue="20001">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-            <cell id="{b2820562-7d32-4106-a875-ee1b9d090bf0}" ordinalvalue="30002">
-              <labels>
-                <label description="" languagecode="1033" />
-              </labels>
-            </cell>
-          </row>
-        </rows>
+        <rows></rows>
       </footer>
     </form>
     <LocalizedNames>

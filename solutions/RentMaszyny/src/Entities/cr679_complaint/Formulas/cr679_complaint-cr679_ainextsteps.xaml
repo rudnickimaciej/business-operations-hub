@@ -1,0 +1,1 @@
+{"ModelId":"f370fe01-18b8-43b5-87b7-a3f7bd607268","FetchXML":"<fetch version=\"1.0\" mapping=\"logical\" distinct=\"true\"><entity name=\"cr679_complaint\"><filter type=\"and\"><condition attribute=\"cr679_description\" operator=\"not-null\"/></filter></entity></fetch>","State":"Active"}
