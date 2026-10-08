@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{6026d794-1cc3-f111-aaad-e4fb1ef7e9ff}</WebResourceId>
+  <Name>cr679_complaintmain</Name>
+  <DisplayName>Complaint Main</DisplayName>
+  <Description>Built from webresources/src/complaint/complaint.main.ts. Do not edit in DEV.</Description>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/cr679_complaintmain6026D794-1CC3-F111-AAAD-E4FB1EF7E9FF</FileName>
+</WebResource>

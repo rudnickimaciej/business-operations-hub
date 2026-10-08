@@ -135,6 +135,16 @@
         </NavBarAreas>
       </Navigation>
       <controlDescriptions />
+      <formLibraries>
+        <Library name="cr679_complaintmain" libraryUniqueId="{6d662d84-6dbf-423d-b329-9817d1262e90}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="RentMaszyny.complaint.main.onLoad" libraryName="cr679_complaintmain" handlerUniqueId="{d059f434-3e45-4582-ae6b-36aba26dd558}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
     </form>
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>

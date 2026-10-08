@@ -100,6 +100,7 @@
       <RootComponent type="431" schemaName="cr679_timesheet cr679_photo" behavior="0" />
       <RootComponent type="432" schemaName="cr679_machine" behavior="0" />
       <RootComponent type="432" schemaName="cr679_timesheet" behavior="0" />
+      <RootComponent type="61" schemaName="cr679_complaintmain" behavior="0" />
       <RootComponent type="61" schemaName="cr679_orderitemquickcreate" behavior="0" />
       <RootComponent type="62" schemaName="cr679_Ren30486c68" behavior="0" />
       <RootComponent type="80" schemaName="cr679_Ren6f132b80" behavior="0" />
