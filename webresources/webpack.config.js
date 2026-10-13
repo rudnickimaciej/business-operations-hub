@@ -10,14 +10,21 @@ const path = require("path");
  *
  * Example: src/orderitem/orderitem.quickcreate.ts -> cr679_orderitemquickcreate, RentMaszyny.orderitem.quickcreate
  *
- * Other files in a table folder (e.g. machineAvailability.ts) and everything in src/shared/ are modules
- * imported by entries, not bundles of their own.
+ * A file is an entry only if it also exports `onLoad`, the form handler. Every other file in a table folder
+ * (e.g. machineAvailability.ts, invoice.helper.ts) and everything in src/shared/ is a module that entries import,
+ * so it is bundled into them, never published as a web resource of its own.
  * The pipeline copies each bundle over solutions/RentMaszyny/src/WebResources/<name>; the web resource must
  * already exist in the solution (create it once in DEV, then sync), otherwise the build fails.
  */
 const PREFIX = "cr679_";
 const NAMESPACE = "RentMaszyny";
 const srcDir = path.resolve(__dirname, "src");
+
+const ON_LOAD_EXPORT = /^export\s+(async\s+)?function\s+onLoad\b/m;
+
+function exportsOnLoad(file) {
+  return ON_LOAD_EXPORT.test(fs.readFileSync(file, "utf8"));
+}
 
 function findEntries() {
   return fs
@@ -28,23 +35,29 @@ function findEntries() {
       return fs
         .readdirSync(path.join(srcDir, dir.name))
         .map((file) => file.match(pattern))
-        .filter(Boolean)
+        .filter((match) => match && exportsOnLoad(path.join(srcDir, dir.name, match[0])))
         .map((match) => ({ table: dir.name, form: match[1], entry: `./src/${dir.name}/${match[0]}` }));
     });
 }
 
 // Development builds embed a source map, so DevTools shows and debugs the original .ts files.
 // Production builds (pipeline, TST) have no source map.
-module.exports = (_env, argv) => findEntries().map(({ table, form, entry }) => ({
-  entry,
-  output: {
-    filename: `${PREFIX}${table}${form}.js`,
-    path: path.resolve(__dirname, "dist"),
-    library: { name: [NAMESPACE, table, form], type: "window" },
-  },
-  devtool: argv.mode === "development" ? "inline-source-map" : false,
-  resolve: { extensions: [".ts", ".js"] },
-  module: {
-    rules: [{ test: /\.ts$/, use: "ts-loader", exclude: /node_modules/ }],
-  },
-}));
+module.exports = (_env, argv) => {
+  const entries = findEntries();
+  if (entries.length === 0) {
+    throw new Error("No form scripts found: expected src/<table>/<table>.<form>.ts exporting onLoad.");
+  }
+  return entries.map(({ table, form, entry }) => ({
+    entry,
+    output: {
+      filename: `${PREFIX}${table}${form}.js`,
+      path: path.resolve(__dirname, "dist"),
+      library: { name: [NAMESPACE, table, form], type: "window" },
+    },
+    devtool: argv.mode === "development" ? "inline-source-map" : false,
+    resolve: { extensions: [".ts", ".js"] },
+    module: {
+      rules: [{ test: /\.ts$/, use: "ts-loader", exclude: /node_modules/ }],
+    },
+  }));
+};

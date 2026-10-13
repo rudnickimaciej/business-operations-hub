@@ -101,7 +101,8 @@ alone is insufficient, plus cost, security and maintenance impact.
   `cr679_applicationlog` table with a correlation id (use system `createdon`/`createdby`, don't duplicate them).
 - **Form scripts (TypeScript):** source is `webresources/`, never the JS in `solutions/` or in DEV. The pipeline
   builds and injects bundles into the solution; the JS copy in `solutions/` is only the last DEV snapshot.
-  Entry files follow `src/<table>/<table>.<form>.ts` (bundle `cr679_<table><form>`, handler `RentMaszyny.<table>.<form>.onLoad`).
+  Entry files follow `src/<table>/<table>.<form>.ts` and export `onLoad` (bundle `cr679_<table><form>`, handler
+  `RentMaszyny.<table>.<form>.onLoad`); any other file is a module bundled into the entries that import it.
   Use table/column names from `schema.ts`, and cover logic with Jest tests in `webresources/tests/` (mirrors `src/`). Client-side validation is UX only, not enforcement.
 - **C# against Dataverse:** use the early-bound model in `shared/` (`Entity.Fields.*`, typed properties), never
   column names as strings. Choice values use the generated enums; their member names come from the English (1033)
