@@ -286,7 +286,7 @@
           <IsFilterable>0</IsFilterable>
           <IsRetrievable>0</IsRetrievable>
           <IsLocalizable>0</IsLocalizable>
-          <AppDefaultValue>-1</AppDefaultValue>
+          <AppDefaultValue>630100000</AppDefaultValue>
           <optionset Name="cr679_invoice_cr679_documentstatus">
             <OptionSetType>picklist</OptionSetType>
             <IntroducedVersion>1.0.0.0</IntroducedVersion>
@@ -599,7 +599,7 @@
           <Type>datetime</Type>
           <Name>cr679_issuedate</Name>
           <LogicalName>cr679_issuedate</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
+          <RequiredLevel>recommended</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
           <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>
@@ -831,7 +831,7 @@
           <Type>datetime</Type>
           <Name>cr679_requestedon</Name>
           <LogicalName>cr679_requestedon</LogicalName>
-          <RequiredLevel>none</RequiredLevel>
+          <RequiredLevel>recommended</RequiredLevel>
           <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
           <ImeMode>auto</ImeMode>
           <ValidForUpdateApi>1</ValidForUpdateApi>

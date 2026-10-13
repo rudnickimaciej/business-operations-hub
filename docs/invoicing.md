@@ -1,7 +1,8 @@
 # Invoicing
 
 Issues an invoice for a rental order and attaches it as a PDF. Decisions: [ADR-003](decisions/003-invoice-as-separate-table.md),
-[ADR-004](decisions/004-azure-function-for-invoice-pdf.md). Sending the invoice by e-mail is out of scope for now.
+[ADR-004](decisions/004-azure-function-for-invoice-pdf.md). A generated invoice gets a draft e-mail with the PDF;
+actually sending it waits for Exchange (no licence yet).
 
 Every customer gets an invoice, companies (`account`) and private persons (`contact`) alike; the command behaves the same for both.
 A private person's invoice has no buyer NIP.
@@ -19,8 +20,36 @@ Order form: "Wystaw fakturę" (Power Fx command)
                  3. read order items, render PDF (QuestPDF), upload to cr679_document
                  4. status = Generated, cr679_generatedon = now
                  on error: retry (Service Bus); last attempt → status Failed, cr679_errormessage, cr679_applicationlog
+                 bad data (no status, no order, items ≠ net amount) → status Failed at once, no retry
+            └─ Flow "Invoice - Create e-mail when PDF is generated" (status changed to Generated)
+                 draft e-mail with the PDF to the customer's primary contact (or the private person), see below
+Invoice form: status in the header; banner from invoice.main.ts (error text when Failed, "in progress" when Requested/Generating)
+New invoice form: invoice.main.ts fills empty issue date (today), due date (issue date + payment term, follows the
+  issue date until edited) and VAT rate from the environment variables; missing configuration → warning, fields left empty
+Invoice form, order selected: net amount = sum of the order's active items (read-only field, so the PDF lines add up);
+  empty customer ← order's customer; order of another customer → error on the Order field (blocks saving)
+Invoice form, customer selected or changed: buyer name, address (address1_composite on one line) and NIP (account only)
+  copied from the customer, still editable; customer without name/address → warning
 Invoice form: "Ponów generowanie" (visible when Failed) → status Requested, cr679_requestedon = now
 ```
+
+## Invoice e-mail
+
+Flow **Invoice - Create e-mail when PDF is generated** (solution `RentMaszyny`, connection reference `cr679_dataverse`).
+
+| Step | Detail |
+|---|---|
+| Trigger | `cr679_invoice` updated, filtering column `cr679_documentstatus`, filter `cr679_documentstatus eq Generated`; concurrency 1 |
+| Recipient | company → its primary contact; private person → the contact itself. No contact or no e-mail address → no e-mail, Warning in `cr679_applicationlog` |
+| Content | e-mail template **Invoice e-mail** on contact, one per language (`languagecode` = invoice `cr679_language`). The template fills the contact's name; the flow replaces `{{InvoiceNumber}}`, `{{GrossAmount}}`, `{{Currency}}`, `{{DueDate}}`, `{{SellerName}}` (seller from `cr679_InvoiceSeller`) |
+| E-mail | draft, To = contact, Related = contact and account, so it shows on both timelines. PDF from `cr679_document` attached |
+| Duplicates | a draft with the same subject created after `cr679_generatedon` already exists → stop (the trigger can fire twice) |
+| Errors | `Try` / `Catch`: a half-created draft is deleted, Error in `cr679_applicationlog` with the run id, run marked Failed |
+
+Why tokens instead of template fields: e-mail templates only work for tables with activities, and `cr679_invoice` has
+none (enabling activities is irreversible). The e-mail therefore has no Regarding; the Related parties put it on the timelines.
+
+Templates are solution components: edit them in DEV (Settings → Templates → Email Templates) and keep the tokens.
 
 ## Data model
 
@@ -38,7 +67,7 @@ Labels exist in English (base language, 1033) and Polish (1045); the table below
 | `cr679_customeraddress` | Nabywca – adres | Text (500) | Snapshot: `address1_composite` |
 | `cr679_issuedate` | Data wystawienia | Date only | |
 | `cr679_duedate` | Termin płatności | Date only | Issue date + `cr679_InvoicePaymentTermDays` |
-| `cr679_netamount` | Kwota netto | Currency | Copied from the order |
+| `cr679_netamount` | Kwota netto | Currency | Sum of the order's active items, set by the form script; read-only on the form. The generator rejects a mismatch |
 | `cr679_vatrate` | Stawka VAT (%) | Decimal | From environment variable `cr679_InvoiceVatRate` |
 | `cr679_vatamount` | Kwota VAT | Currency, calculated | `cr679_netamount * cr679_vatrate / 100` |
 | `cr679_grossamount` | Kwota brutto | Currency, calculated | `cr679_netamount + cr679_vatamount` |
@@ -73,8 +102,14 @@ Shared technical log for flows, the Azure Function and scripts. `createdon` / `c
 |---|---|---|
 | `cr679_InvoiceVatRate` | Environment variable (decimal) | 23 |
 | `cr679_InvoicePaymentTermDays` | Environment variable (number) | 14 |
-| `cr679_InvoiceSeller` | Environment variable (JSON: `name`, `address`, `nip`, `bankAccount`) | fictional company in the default value |
+| `cr679_InvoiceSeller` | Environment variable (JSON: `name`, `address`, `nip`, `bankAccount`, optional `logo`) | fictional company in the default value |
+| `cr679_logo` | Web resource (PNG/JPG), named in `logo` above | seller logo in the PDF header, scaled into 180 × 60 pt |
 | Service Bus queue + SAS key | Service Endpoint | per environment, set after import |
+| `cr679_dataverse` | Connection reference (Dataverse) | DEV: owner's connection; TST: a connection must be created and mapped at import |
+| Invoice e-mail | E-mail templates (contact, PL 1045 and EN 1033) | in the solution |
+
+The form script reads the two numeric variables with the user's own permissions, so every role that creates invoices
+needs read access to *Environment Variable Definition* and *Environment Variable Value* (Basic User has it).
 
 ## Invoice language
 
@@ -100,6 +135,8 @@ Unit tests: `dotnet test` in `azure/functions` (no Dataverse needed). The PDF te
 | Symptom | Cause |
 |---|---|
 | Invoice stays *Requested* | Service Endpoint not configured in this environment, or the async step is disabled (check System Jobs) |
+| Invoice *Failed*: "Nie znaleziono logo sprzedawcy" | `logo` in `cr679_InvoiceSeller` names a web resource that does not exist or is not published |
+| No draft e-mail after the PDF | Flow off, or the recipient is missing (Warning in `cr679_applicationlog`). Flow runs: Power Automate → the flow → Run history |
 | Invoice *Failed* | Message in `cr679_errormessage`; details in `cr679_applicationlog` and Application Insights |
 | Messages in the dead-letter queue | Repeated failure; the invoice is *Failed*; fix the cause and use "Ponów generowanie" |
 | Amount on the invoice differs from items | Order total not recalculated before issuing (see ADR-003, consequences) |

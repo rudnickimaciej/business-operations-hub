@@ -39,6 +39,19 @@ public class InvoiceProcessorTests
     }
 
     [Fact]
+    public async Task Marks_an_invoice_without_status_failed_and_tells_the_user()
+    {
+        repository.Invoice = TestData.Invoice(status: null);
+
+        Assert.Equal(ProcessingOutcome.Failed, await Process());
+
+        Assert.Equal([InvoiceDocumentStatus.Failed], repository.Statuses);
+        Assert.Equal(InvoiceProcessor.MissingStatusMessage, repository.FailureMessage);
+        Assert.Equal(LogSeverity.Warning, Assert.Single(repository.Logs).Severity);
+        Assert.Null(repository.UploadedFileName);
+    }
+
+    [Fact]
     public async Task Continues_an_invoice_left_in_generating_by_a_crashed_attempt()
     {
         repository.Invoice = TestData.Invoice(InvoiceDocumentStatus.Generating);

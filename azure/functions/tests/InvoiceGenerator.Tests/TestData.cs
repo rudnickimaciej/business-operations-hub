@@ -10,6 +10,10 @@ internal static class TestData
 
     public static readonly Seller Seller = new("Wypożyczalnia Maszyn Test Sp. z o.o.", "ul. Testowa 1, 00-001 Warszawa", "5270123459", "00 1111 2222 3333 4444 5555 6666");
 
+    /// <summary>A 1 x 1 px PNG: enough for the renderer to embed an image.</summary>
+    public static readonly byte[] Logo = Convert.FromBase64String(
+        "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg==");
+
     public static InvoiceRecord Invoice(InvoiceDocumentStatus? status = InvoiceDocumentStatus.Requested, InvoiceLanguage? language = InvoiceLanguage.Polish) => new(
         InvoiceId,
         Number: "FV-01000",

@@ -1,0 +1,1 @@
+﻿<template><text><![CDATA[<p>Dzień dobry ]]></text><slugs><slug><entity>contact</entity><attribute>fullname</attribute></slug><default /></slugs><text><![CDATA[,</p><p>w załączniku przesyłamy fakturę <b>{{InvoiceNumber}}</b> na kwotę <b>{{GrossAmount}} {{Currency}}</b>.</p><p>Termin płatności: <b>{{DueDate}}</b>.</p><p>Pozdrawiamy<br/>{{SellerName}}</p>]]></text></template>

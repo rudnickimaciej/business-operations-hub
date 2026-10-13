@@ -1,0 +1,1 @@
+﻿<template><text><![CDATA[Invoice {{InvoiceNumber}}]]></text></template>

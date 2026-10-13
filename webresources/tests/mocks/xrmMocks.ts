@@ -28,7 +28,7 @@ export function formContext(attributes: Record<string, unknown> = {}, controls: 
     getAttribute: jest.fn((name: string) => attributes[name] ?? null),
     getControl: jest.fn((name: string) => controls[name] ?? null),
     data: { entity: { save: jest.fn(), addOnSave: jest.fn() } },
-    ui: { setFormNotification: jest.fn(), clearFormNotification: jest.fn() },
+    ui: { setFormNotification: jest.fn(), clearFormNotification: jest.fn(), getFormType: jest.fn(() => 2) }, // 2 = Update
   };
 }
 
