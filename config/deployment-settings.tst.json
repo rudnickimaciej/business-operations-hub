@@ -1,0 +1,11 @@
+{
+  "EnvironmentVariables": [],
+  "ConnectionReferences": [
+    {
+      "LogicalName": "cr679_dataverse",
+      "ConnectionId": "ee3e6f928d2b418da320892b93fe8b61",
+      "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+    }
+  ],
+  "CopilotAgents": []
+}

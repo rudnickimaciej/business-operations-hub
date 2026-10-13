@@ -35,6 +35,21 @@ must first be created in DEV (any placeholder content), added to the solution an
 2. Select the app registration and assign **System Administrator**. That role is broader than least privilege,
    but solution import (tables, processes, apps) effectively requires it. Only the pipeline uses this identity.
 
+### TST connections (flows)
+
+Flows use connection references; their TST connections are mapped in
+[`config/deployment-settings.tst.json`](../config/deployment-settings.tst.json) (`ConnectionId`). The Build stage fails
+while a connection reference in the solution has no `ConnectionId` there.
+
+1. In TST create a **Microsoft Dataverse** connection. Current choice: **OAuth, owned by the owner's account**.
+   The importer (the pipeline's service principal) turns the flows on and may not be allowed to use a connection it
+   does not own; if a flow stays off after import, turn it on as the connection owner. Switching to a connection with
+   *Service principal* authentication removes that step; decide it together with the CI/CD authentication question.
+2. Copy the connection id (Power Automate → *Connections* → the connection → id in the URL, `shared-commondataser-…`)
+   into `ConnectionId` for `cr679_dataverse`. It is an identifier, not a secret.
+3. Environment variables are not in the file: TST uses the default values from the solution. Add an entry only when
+   TST needs a different value, and never with an empty `Value`.
+
 ### Azure DevOps
 
 1. Install the **Power Platform Build Tools** extension in the organization.
@@ -52,6 +67,8 @@ must first be created in DEV (any placeholder content), added to the solution an
 | Changes deployed but not visible in TST | Someone customized TST directly; the unmanaged layer hides the managed one. Remove the unmanaged layer in TST. |
 | `Cannot create a holding solution for missing base RentMaszyny` | The solution does not exist in TST yet (first deployment or TST reset). Run the pipeline manually with **First deployment** ticked. |
 | `Unauthorized` / `The user is not a member of the organization` | The application user is missing in TST (for example after an environment reset). |
+| Build fails: `No TST connection for: …` | A new connection reference has no `ConnectionId` in `config/deployment-settings.tst.json`. |
+| Flow is off in TST after import | The importing identity cannot use the mapped connection, or the connection is broken. |
 
 ## Azure infrastructure (invoice generator)
 

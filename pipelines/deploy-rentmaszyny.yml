@@ -34,6 +34,7 @@ pr:
       - solutions/RentMaszyny/**
       - webresources/**
       - pipelines/deploy-rentmaszyny.yml
+      - config/**
 
 parameters:
   # Stage-and-upgrade needs an existing base solution in TST. Tick this only for the very first
@@ -50,6 +51,7 @@ variables:
   solutionName: RentMaszyny
   solutionSourceFolder: $(Build.SourcesDirectory)/solutions/RentMaszyny/src
   managedZip: $(Build.ArtifactStagingDirectory)/RentMaszyny_managed.zip
+  tstSettingsFile: config/deployment-settings.tst.json   # connection references (and env var values) for TST
   tstServiceConnection: PowerPlatform-TST   # Power Platform service connection name in ADO
 
 stages:
@@ -117,10 +119,38 @@ stages:
               SolutionOutputFile: $(managedZip)
               SolutionType: Managed
 
+          # Every connection reference in the solution needs a TST connection, otherwise its flows
+          # cannot be turned on after import. Fail the build (and so the PR) instead of deploying them off.
+          - task: PowerShell@2
+            displayName: Check TST deployment settings
+            inputs:
+              pwsh: true
+              targetType: inline
+              script: |
+                $settings = Get-Content "$(Build.SourcesDirectory)/$(tstSettingsFile)" -Raw | ConvertFrom-Json
+                [xml]$customizations = Get-Content "$(solutionSourceFolder)/Other/Customizations.xml" -Raw
+                $references = @($customizations.ImportExportXml.connectionreferences.connectionreference |
+                  Where-Object { $_ } | ForEach-Object { $_.connectionreferencelogicalname })
+                $missing = foreach ($name in $references) {
+                  $entry = $settings.ConnectionReferences | Where-Object { $_.LogicalName -eq $name }
+                  if (-not $entry -or [string]::IsNullOrWhiteSpace($entry.ConnectionId)) { $name }
+                }
+                if ($missing) {
+                  throw "No TST connection for: $($missing -join ', '). Set ConnectionId in $(tstSettingsFile) (docs/alm.md)."
+                }
+                Write-Host "TST connections set for: $($references -join ', ')"
+
+          - task: CopyFiles@2
+            displayName: Add TST deployment settings to the artifact
+            inputs:
+              SourceFolder: $(Build.SourcesDirectory)/config
+              Contents: deployment-settings.tst.json
+              TargetFolder: $(Build.ArtifactStagingDirectory)
+
           - task: PublishPipelineArtifact@1
             displayName: Publish solution artifact
             inputs:
-              targetPath: $(managedZip)
+              targetPath: $(Build.ArtifactStagingDirectory)
               artifact: solution
 
   # ── Stage 2: Deploy to TST (acts as PROD) ─────────────────────────────────
@@ -155,3 +185,6 @@ stages:
                     StageAndUpgrade: ${{ not(parameters.firstDeployment) }}
                     PublishWorkflows: true
                     OverwriteUnmanagedCustomizations: false
+                    # Maps connection references to TST connections, so flows can be turned on.
+                    UseDeploymentSettingsFile: true
+                    DeploymentSettingsFile: $(Pipeline.Workspace)/solution/deployment-settings.tst.json
