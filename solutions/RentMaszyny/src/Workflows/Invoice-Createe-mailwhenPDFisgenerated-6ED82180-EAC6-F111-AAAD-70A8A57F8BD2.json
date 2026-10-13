@@ -1,0 +1,719 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr679_dataverse"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "Invoice Seller (cr679_InvoiceSeller)": {
+          "defaultValue": {
+            "name": "RentMaszyny Wypożyczalnia Sprzętu Budowlanego Sp. z o.o.",
+            "address": "ul. Przemysłowa 15, 02-232 Warszawa",
+            "nip": "5213456784",
+            "bankAccount": "PL 00 1020 0000 0000 0000 0000 0000",
+            "logo": "cr679_logo"
+          },
+          "type": "Object",
+          "metadata": {
+            "schemaName": "cr679_InvoiceSeller"
+          }
+        }
+      },
+      "triggers": {
+        "When_invoice_PDF_is_generated": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "cr679_invoice",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "cr679_documentstatus",
+              "subscriptionRequest/filterexpression": "cr679_documentstatus eq 630100002"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "concurrency": {
+              "runs": 1
+            }
+          }
+        }
+      },
+      "actions": {
+        "Initialize_varRecipientId": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varRecipientId",
+                "type": "string",
+                "value": ""
+              }
+            ]
+          }
+        },
+        "Initialize_varRecipientEmail": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varRecipientEmail",
+                "type": "string",
+                "value": ""
+              }
+            ]
+          },
+          "runAfter": {
+            "Initialize_varRecipientId": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Initialize_varParties": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varParties",
+                "type": "array",
+                "value": []
+              }
+            ]
+          },
+          "runAfter": {
+            "Initialize_varRecipientEmail": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Initialize_varEmailId": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varEmailId",
+                "type": "string",
+                "value": ""
+              }
+            ]
+          },
+          "runAfter": {
+            "Initialize_varParties": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Try": {
+          "type": "Scope",
+          "actions": {
+            "Get_invoice": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "cr679_invoices",
+                  "recordId": "@triggerOutputs()?['body/cr679_invoiceid']",
+                  "$select": "cr679_autonumber,_cr679_customerid_value,cr679_grossamount,cr679_duedate,cr679_generatedon,cr679_language,cr679_document_name",
+                  "$expand": "transactioncurrencyid($select=isocurrencycode)"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {}
+            },
+            "List_customer_account": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "accounts",
+                  "$select": "accountid",
+                  "$filter": "accountid eq @{outputs('Get_invoice')?['body/_cr679_customerid_value']}",
+                  "$expand": "primarycontactid($select=contactid,emailaddress1)"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Get_invoice": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Customer_is_a_company": {
+              "type": "If",
+              "expression": {
+                "greater": [
+                  "@length(outputs('List_customer_account')?['body/value'])",
+                  0
+                ]
+              },
+              "actions": {
+                "Set_recipient_to_primary_contact": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "varRecipientId",
+                    "value": "@{coalesce(first(outputs('List_customer_account')?['body/value'])?['primarycontactid']?['contactid'], '')}"
+                  }
+                },
+                "Set_recipient_e-mail_of_primary_contact": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "varRecipientEmail",
+                    "value": "@{coalesce(first(outputs('List_customer_account')?['body/value'])?['primarycontactid']?['emailaddress1'], '')}"
+                  },
+                  "runAfter": {
+                    "Set_recipient_to_primary_contact": [
+                      "Succeeded"
+                    ]
+                  }
+                },
+                "Add_account_as_related_party": {
+                  "type": "AppendToArrayVariable",
+                  "inputs": {
+                    "name": "varParties",
+                    "value": {
+                      "participationtypemask": 13,
+                      "partyid@odata.bind": "accounts(@{outputs('Get_invoice')?['body/_cr679_customerid_value']})"
+                    }
+                  },
+                  "runAfter": {
+                    "Set_recipient_e-mail_of_primary_contact": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "actions": {
+                  "Get_customer_contact": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "GetItem",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "contacts",
+                        "recordId": "@outputs('Get_invoice')?['body/_cr679_customerid_value']",
+                        "$select": "contactid,emailaddress1"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    },
+                    "runAfter": {}
+                  },
+                  "Set_recipient_to_customer_contact": {
+                    "type": "SetVariable",
+                    "inputs": {
+                      "name": "varRecipientId",
+                      "value": "@{outputs('Get_customer_contact')?['body/contactid']}"
+                    },
+                    "runAfter": {
+                      "Get_customer_contact": [
+                        "Succeeded"
+                      ]
+                    }
+                  },
+                  "Set_recipient_e-mail_of_customer_contact": {
+                    "type": "SetVariable",
+                    "inputs": {
+                      "name": "varRecipientEmail",
+                      "value": "@{coalesce(outputs('Get_customer_contact')?['body/emailaddress1'], '')}"
+                    },
+                    "runAfter": {
+                      "Set_recipient_to_customer_contact": [
+                        "Succeeded"
+                      ]
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "List_customer_account": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Recipient_is_missing": {
+              "type": "If",
+              "expression": {
+                "or": [
+                  {
+                    "equals": [
+                      "@empty(variables('varRecipientId'))",
+                      true
+                    ]
+                  },
+                  {
+                    "equals": [
+                      "@empty(variables('varRecipientEmail'))",
+                      true
+                    ]
+                  }
+                ]
+              },
+              "actions": {
+                "Log_missing_recipient": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "cr679_applicationlogs",
+                      "item/cr679_name": "Invoice e-mail skipped: no recipient",
+                      "item/cr679_severity": 630100001,
+                      "item/cr679_source": "@{workflow()?['tags']?['flowDisplayName']}",
+                      "item/cr679_operation": "CreateInvoiceEmail",
+                      "item/cr679_correlationid": "@{workflow()?['run']?['name']}",
+                      "item/cr679_message": "Nie utworzono e-maila z fakturą @{outputs('Get_invoice')?['body/cr679_autonumber']}: klient nie ma kontaktu głównego albo kontakt nie ma adresu e-mail.",
+                      "item/cr679_details": "Customer: @{outputs('Get_invoice')?['body/_cr679_customerid_value']}",
+                      "item/cr679_tablename": "cr679_invoice",
+                      "item/cr679_recordid": "@triggerOutputs()?['body/cr679_invoiceid']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  },
+                  "runAfter": {}
+                },
+                "Stop_without_recipient": {
+                  "type": "Terminate",
+                  "inputs": {
+                    "runStatus": "Succeeded"
+                  },
+                  "runAfter": {
+                    "Log_missing_recipient": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "runAfter": {
+                "Customer_is_a_company": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "List_e-mail_template": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "templates",
+                  "$select": "templateid",
+                  "$filter": "title eq 'Invoice e-mail' and templatetypecode eq 'contact' and languagecode eq @{coalesce(outputs('Get_invoice')?['body/cr679_language'], 1045)}",
+                  "$top": 1
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Recipient_is_missing": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Template_is_missing": {
+              "type": "If",
+              "expression": {
+                "equals": [
+                  "@length(outputs('List_e-mail_template')?['body/value'])",
+                  0
+                ]
+              },
+              "actions": {
+                "Log_missing_template": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "cr679_applicationlogs",
+                      "item/cr679_name": "Invoice e-mail failed: no template",
+                      "item/cr679_severity": 630100002,
+                      "item/cr679_source": "@{workflow()?['tags']?['flowDisplayName']}",
+                      "item/cr679_operation": "CreateInvoiceEmail",
+                      "item/cr679_correlationid": "@{workflow()?['run']?['name']}",
+                      "item/cr679_message": "Brak szablonu e-mail 'Invoice e-mail' dla języka faktury @{outputs('Get_invoice')?['body/cr679_autonumber']}. Dodaj szablon w solucji RentMaszyny.",
+                      "item/cr679_details": "Language: @{outputs('Get_invoice')?['body/cr679_language']}",
+                      "item/cr679_tablename": "cr679_invoice",
+                      "item/cr679_recordid": "@triggerOutputs()?['body/cr679_invoiceid']"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  },
+                  "runAfter": {}
+                },
+                "Stop_without_template": {
+                  "type": "Terminate",
+                  "inputs": {
+                    "runStatus": "Failed",
+                    "runError": {
+                      "code": "InvoiceEmailTemplateMissing",
+                      "message": "E-mail template 'Invoice e-mail' not found"
+                    }
+                  },
+                  "runAfter": {
+                    "Log_missing_template": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "runAfter": {
+                "List_e-mail_template": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Fill_template_for_recipient": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "PerformUnboundAction",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "actionName": "InstantiateTemplate",
+                  "item/TemplateId": "@{first(outputs('List_e-mail_template')?['body/value'])?['templateid']}",
+                  "item/ObjectType": "contact",
+                  "item/ObjectId": "@variables('varRecipientId')"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Template_is_missing": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Compose_e-mail_content": {
+              "type": "Compose",
+              "inputs": {
+                "subject": "@{replace(first(outputs('Fill_template_for_recipient')?['body/value'])?['subject'], '{{InvoiceNumber}}', outputs('Get_invoice')?['body/cr679_autonumber'])}",
+                "body": "@{replace(replace(replace(replace(replace(first(outputs('Fill_template_for_recipient')?['body/value'])?['description'], '{{InvoiceNumber}}', outputs('Get_invoice')?['body/cr679_autonumber']), '{{GrossAmount}}', formatNumber(outputs('Get_invoice')?['body/cr679_grossamount'], 'N2', if(equals(outputs('Get_invoice')?['body/cr679_language'], 1033), 'en-US', 'pl-PL'))), '{{Currency}}', coalesce(outputs('Get_invoice')?['body/transactioncurrencyid/isocurrencycode'], '')), '{{DueDate}}', formatDateTime(outputs('Get_invoice')?['body/cr679_duedate'], 'd', if(equals(outputs('Get_invoice')?['body/cr679_language'], 1033), 'en-US', 'pl-PL'))), '{{SellerName}}', coalesce(parameters('Invoice Seller (cr679_InvoiceSeller)')?['name'], ''))}"
+              },
+              "runAfter": {
+                "Fill_template_for_recipient": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "List_e-mails_already_created": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "emails",
+                  "$select": "activityid",
+                  "$filter": "subject eq '@{replace(outputs('Compose_e-mail_content')?['subject'], '''', '''''')}' and createdon ge @{outputs('Get_invoice')?['body/cr679_generatedon']}",
+                  "$top": 1
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Compose_e-mail_content": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "E-mail_already_exists": {
+              "type": "If",
+              "expression": {
+                "greater": [
+                  "@length(outputs('List_e-mails_already_created')?['body/value'])",
+                  0
+                ]
+              },
+              "actions": {
+                "Stop_as_duplicate": {
+                  "type": "Terminate",
+                  "inputs": {
+                    "runStatus": "Succeeded"
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "runAfter": {
+                "List_e-mails_already_created": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Add_recipient_as_To_party": {
+              "type": "AppendToArrayVariable",
+              "inputs": {
+                "name": "varParties",
+                "value": {
+                  "participationtypemask": 2,
+                  "partyid@odata.bind": "contacts(@{variables('varRecipientId')})"
+                }
+              },
+              "runAfter": {
+                "E-mail_already_exists": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Add_recipient_as_related_party": {
+              "type": "AppendToArrayVariable",
+              "inputs": {
+                "name": "varParties",
+                "value": {
+                  "participationtypemask": 13,
+                  "partyid@odata.bind": "contacts(@{variables('varRecipientId')})"
+                }
+              },
+              "runAfter": {
+                "Add_recipient_as_To_party": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Download_invoice_PDF": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetEntityFileImageFieldContent",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "cr679_invoices",
+                  "recordId": "@triggerOutputs()?['body/cr679_invoiceid']",
+                  "fileImageFieldName": "cr679_document"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Add_recipient_as_related_party": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Create_e-mail_draft": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "emails",
+                  "item/subject": "@outputs('Compose_e-mail_content')?['subject']",
+                  "item/description": "@outputs('Compose_e-mail_content')?['body']",
+                  "item/directioncode": true,
+                  "item/activitypointer_activity_parties": "@variables('varParties')"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Download_invoice_PDF": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Remember_e-mail_id": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "varEmailId",
+                "value": "@{outputs('Create_e-mail_draft')?['body/activityid']}"
+              },
+              "runAfter": {
+                "Create_e-mail_draft": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Attach_invoice_PDF": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "activitymimeattachments",
+                  "item/attachmentid@odata.bind": "@null",
+                  "item/objectid_email@odata.bind": "/emails(@{variables('varEmailId')})",
+                  "item/objecttypecode": "email",
+                  "item/filename": "@{coalesce(outputs('Get_invoice')?['body/cr679_document_name'], concat(outputs('Get_invoice')?['body/cr679_autonumber'], '.pdf'))}",
+                  "item/mimetype": "application/pdf",
+                  "item/body": "@{base64(body('Download_invoice_PDF'))}"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "Remember_e-mail_id": [
+                  "Succeeded"
+                ]
+              }
+            }
+          },
+          "runAfter": {
+            "Initialize_varEmailId": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Catch": {
+          "type": "Scope",
+          "actions": {
+            "Failed_actions": {
+              "type": "Query",
+              "inputs": {
+                "from": "@result('Try')",
+                "where": "@equals(item()?['status'], 'Failed')"
+              }
+            },
+            "E-mail_was_created": {
+              "type": "If",
+              "expression": {
+                "not": {
+                  "equals": [
+                    "@empty(variables('varEmailId'))",
+                    true
+                  ]
+                }
+              },
+              "actions": {
+                "Delete_incomplete_e-mail": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "DeleteRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "emails",
+                      "recordId": "@variables('varEmailId')"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  },
+                  "runAfter": {}
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "runAfter": {
+                "Failed_actions": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Log_error": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "cr679_applicationlogs",
+                  "item/cr679_name": "Invoice e-mail failed",
+                  "item/cr679_severity": 630100002,
+                  "item/cr679_source": "@{workflow()?['tags']?['flowDisplayName']}",
+                  "item/cr679_operation": "CreateInvoiceEmail",
+                  "item/cr679_correlationid": "@{workflow()?['run']?['name']}",
+                  "item/cr679_message": "@{concat('Nie udało się utworzyć e-maila z fakturą: ', coalesce(first(body('Failed_actions'))?['error']?['message'], first(body('Failed_actions'))?['outputs']?['body']?['error']?['message'], 'nieznany błąd'))}",
+                  "item/cr679_details": "@{string(body('Failed_actions'))}",
+                  "item/cr679_tablename": "cr679_invoice",
+                  "item/cr679_recordid": "@triggerOutputs()?['body/cr679_invoiceid']"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runAfter": {
+                "E-mail_was_created": [
+                  "Succeeded",
+                  "Failed",
+                  "Skipped",
+                  "TimedOut"
+                ]
+              }
+            },
+            "Fail_the_run": {
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "code": "InvoiceEmailFailed",
+                  "message": "@{coalesce(first(body('Failed_actions'))?['error']?['message'], first(body('Failed_actions'))?['outputs']?['body']?['error']?['message'], 'Invoice e-mail failed')}"
+                }
+              },
+              "runAfter": {
+                "Log_error": [
+                  "Succeeded",
+                  "Failed",
+                  "Skipped",
+                  "TimedOut"
+                ]
+              }
+            }
+          },
+          "runAfter": {
+            "Try": [
+              "Failed",
+              "TimedOut"
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

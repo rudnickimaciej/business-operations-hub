@@ -1,0 +1,1 @@
+﻿<template><text><![CDATA[<p>Hello ]]></text><slugs><slug><entity>contact</entity><attribute>fullname</attribute></slug><default /></slugs><text><![CDATA[,</p><p>please find attached invoice <b>{{InvoiceNumber}}</b> for <b>{{GrossAmount}} {{Currency}}</b>.</p><p>Due date: <b>{{DueDate}}</b>.</p><p>Kind regards<br/>{{SellerName}}</p>]]></text></template>

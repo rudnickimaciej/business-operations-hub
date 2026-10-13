@@ -94,6 +94,9 @@
       <RootComponent type="1" schemaName="cr679_usuga" behavior="0" />
       <RootComponent type="20" id="{b118a063-91c0-f111-aaaf-7ced8d2eb382}" behavior="0" />
       <RootComponent type="29" id="{4b3a948f-e997-f111-b8dc-7ced8d2eb382}" behavior="0" />
+      <RootComponent type="29" id="{6ed82180-eac6-f111-aaad-70a8a57f8bd2}" behavior="0" />
+      <RootComponent type="36" id="{86ab13a0-ebc6-f111-aaad-70a8a57f8bd2}" behavior="0" />
+      <RootComponent type="36" id="{8aab13a0-ebc6-f111-aaad-70a8a57f8bd2}" behavior="0" />
       <RootComponent type="401" id="{a14c8998-3993-4a82-8ce0-704736198eed}" behavior="0" />
       <RootComponent type="401" id="{f370fe01-18b8-43b5-87b7-a3f7bd607268}" behavior="0" />
       <RootComponent type="431" schemaName="cr679_machine cr679_zdjecie" behavior="0" />
