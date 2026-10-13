@@ -13,7 +13,8 @@ public enum ProcessingOutcome
 
 /// <summary>
 /// Generates the PDF for one invoice request.
-/// - Idempotent: only invoices in Requested or Generating are processed (Generating = a previous attempt crashed).
+/// - Idempotent: only invoices in Requested or Generating are processed (Generating = a previous attempt crashed);
+///   Generated and Failed are skipped. An invoice without a status is bad data and is marked Failed.
 /// - Data problems fail the invoice immediately; retrying cannot fix them.
 /// - Other errors are rethrown so Service Bus retries; on the last attempt the invoice is marked Failed first.
 /// </summary>
@@ -26,6 +27,8 @@ public sealed class InvoiceProcessor(
     private const string Source = "InvoiceGenerator";
     internal const string TechnicalFailureMessage =
         "Nie udało się wygenerować dokumentu. Szczegóły w dzienniku aplikacji (Application Log).";
+    internal const string MissingStatusMessage =
+        "Faktura nie ma statusu dokumentu. Ustaw status „Zlecona” i zmień datę zlecenia, aby wygenerować PDF.";
 
     public async Task<ProcessingOutcome> ProcessAsync(
         Guid invoiceId, string correlationId, bool isLastAttempt, CancellationToken cancellationToken)
@@ -35,6 +38,15 @@ public sealed class InvoiceProcessor(
         {
             logger.LogWarning("Invoice {InvoiceId} does not exist; message ignored.", invoiceId);
             return ProcessingOutcome.Skipped;
+        }
+
+        // No status is bad data, not a duplicate message: tell the user on the invoice instead of skipping silently.
+        if (invoice.Status is null)
+        {
+            await repository.MarkFailedAsync(invoiceId, MissingStatusMessage, cancellationToken);
+            await TryWriteLogAsync(invoiceId, correlationId, LogSeverity.Warning, MissingStatusMessage, details: null, cancellationToken);
+            logger.LogWarning("Invoice {InvoiceId} has no document status; marked failed.", invoiceId);
+            return ProcessingOutcome.Failed;
         }
 
         if (invoice.Status is not (InvoiceDocumentStatus.Requested or InvoiceDocumentStatus.Generating))
