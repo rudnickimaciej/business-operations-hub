@@ -36,25 +36,39 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{669f9b34-17be-4044-9e44-f575958ce889}" locklevel="0" colspan="1" rowspan="1">
+                      <cell id="{486bc2e6-2e0b-dc51-6138-4355eee17333}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
-                        <control id="cr679_language" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="cr679_language" disabled="false" />
+                        <control id="statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" uniqueid="{a918a16e-310a-da39-8bc4-66082124b4c8}" />
                       </cell>
                       <cell id="{3572626b-1d6c-4e4a-8841-ca4953997274}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
-                        <control id="cr679_netamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_netamount" disabled="false" />
+                        <control id="cr679_netamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_netamount" disabled="true" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{5cc3e8b5-d043-4c87-9f43-b45cdcb6aa2c}" locklevel="0" colspan="1" rowspan="1">
+                      <cell id="{d151a358-8177-4430-b295-24df44528848}">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
-                        <control id="cr679_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_customerid" disabled="false" />
+                        <control id="cr679_duedate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="cr679_duedate" disabled="false" />
+                      </cell>
+                      <cell id="{999aa759-54ed-4635-b2c6-14a078838882}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_vatrate" classid="{C3EFE0C3-0EC6-42be-8349-CBD9079DFD8E}" datafieldname="cr679_vatrate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d51b5813-938e-ee44-4326-6d8590d601b2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_documentstatus" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="cr679_documentstatus" disabled="false" />
                       </cell>
                       <cell id="{9987a30f-6c74-4d8d-97a8-e24bd40b38c2}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
@@ -64,11 +78,11 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{16490aac-e3d6-41e0-86a9-3f71cd1a25f7}" locklevel="0" colspan="1" rowspan="1">
+                      <cell id="{669f9b34-17be-4044-9e44-f575958ce889}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
-                        <control id="cr679_customername" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customername" disabled="false" />
+                        <control id="cr679_language" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="cr679_language" disabled="false" />
                       </cell>
                       <cell id="{9595581c-a46d-41bb-b234-bbee1fe6364e}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
@@ -78,13 +92,52 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{5cc3e8b5-d043-4c87-9f43-b45cdcb6aa2c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_customerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_customerid" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{20964ed0-7890-4374-b916-d4bfdd1f0518}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c3a08b20-d1ba-9197-4995-7cb285d7ed87}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_orderid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="cr679_orderid" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{df200c1d-0d9a-4154-a492-dd1fb49beb87}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{16490aac-e3d6-41e0-86a9-3f71cd1a25f7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="cr679_customername" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customername" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{e1718b0f-4f85-4d5a-b442-d6b09afccac9}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{3bfb257f-9c1a-4b4e-8335-7aeb3ff5c907}" locklevel="0" colspan="1" rowspan="1">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
                         <control id="cr679_customeraddress" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customeraddress" disabled="false" />
                       </cell>
-                      <cell locklevel="0" id="{2215d8f9-d069-4211-914b-7f834af06f2a}">
+                      <cell id="{ba441c32-ea1d-27bc-a168-da3e856930b9}" showlabel="false">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -97,7 +150,7 @@
                         </labels>
                         <control id="cr679_customernip" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="cr679_customernip" disabled="false" />
                       </cell>
-                      <cell locklevel="0" id="{20964ed0-7890-4374-b916-d4bfdd1f0518}">
+                      <cell id="{d1965023-0414-9c41-265e-ce0ae626d26e}" showlabel="false">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -110,7 +163,7 @@
                         </labels>
                         <control id="cr679_grossamount" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="cr679_grossamount" disabled="false" />
                       </cell>
-                      <cell locklevel="0" id="{df200c1d-0d9a-4154-a492-dd1fb49beb87}">
+                      <cell id="{32da0811-7789-b582-8690-615d1e50a6eb}" showlabel="false">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -123,7 +176,7 @@
                         </labels>
                         <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
                       </cell>
-                      <cell locklevel="0" id="{e1718b0f-4f85-4d5a-b442-d6b09afccac9}">
+                      <cell id="{d55c64e2-1332-4be6-9893-1addb27951d1}" showlabel="false">
                         <labels>
                           <label description="" languagecode="1033" />
                         </labels>
@@ -178,6 +231,12 @@
               </labels>
               <control id="header_cr679_generatedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="cr679_generatedon" disabled="false" />
             </cell>
+            <cell id="{dbbb12d8-9a81-41fe-832d-76618b5707e0}" locklevel="0" colspan="1" rowspan="1" visible="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+              <control id="header_cr679_errormessage" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="cr679_errormessage" disabled="true" />
+            </cell>
           </row>
         </rows>
       </header>
@@ -202,9 +261,49 @@
           </row>
         </rows>
       </footer>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
       <DisplayConditions Order="0" FallbackForm="true">
         <Everyone />
       </DisplayConditions>
+      <formLibraries>
+        <Library name="cr679_invoicemain" libraryUniqueId="{6d044df1-b5ad-4116-819c-c4e6f0a41fa7}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="RentMaszyny.invoice.main.onLoad" libraryName="cr679_invoicemain" handlerUniqueId="{bef38599-2dc4-40f8-a909-605bfcf896c4}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
     </form>
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>

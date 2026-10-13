@@ -19,6 +19,14 @@ Order form: "Wystaw fakturę" (Power Fx command)
                  3. read order items, render PDF (QuestPDF), upload to cr679_document
                  4. status = Generated, cr679_generatedon = now
                  on error: retry (Service Bus); last attempt → status Failed, cr679_errormessage, cr679_applicationlog
+                 bad data (no status, no order, items ≠ net amount) → status Failed at once, no retry
+Invoice form: status in the header; banner from invoice.main.ts (error text when Failed, "in progress" when Requested/Generating)
+New invoice form: invoice.main.ts fills empty issue date (today), due date (issue date + payment term, follows the
+  issue date until edited) and VAT rate from the environment variables; missing configuration → warning, fields left empty
+Invoice form, order selected: net amount = sum of the order's active items (read-only field, so the PDF lines add up);
+  empty customer ← order's customer; order of another customer → error on the Order field (blocks saving)
+Invoice form, customer selected or changed: buyer name, address (address1_composite on one line) and NIP (account only)
+  copied from the customer, still editable; customer without name/address → warning
 Invoice form: "Ponów generowanie" (visible when Failed) → status Requested, cr679_requestedon = now
 ```
 
@@ -38,7 +46,7 @@ Labels exist in English (base language, 1033) and Polish (1045); the table below
 | `cr679_customeraddress` | Nabywca – adres | Text (500) | Snapshot: `address1_composite` |
 | `cr679_issuedate` | Data wystawienia | Date only | |
 | `cr679_duedate` | Termin płatności | Date only | Issue date + `cr679_InvoicePaymentTermDays` |
-| `cr679_netamount` | Kwota netto | Currency | Copied from the order |
+| `cr679_netamount` | Kwota netto | Currency | Sum of the order's active items, set by the form script; read-only on the form. The generator rejects a mismatch |
 | `cr679_vatrate` | Stawka VAT (%) | Decimal | From environment variable `cr679_InvoiceVatRate` |
 | `cr679_vatamount` | Kwota VAT | Currency, calculated | `cr679_netamount * cr679_vatrate / 100` |
 | `cr679_grossamount` | Kwota brutto | Currency, calculated | `cr679_netamount + cr679_vatamount` |
@@ -73,8 +81,12 @@ Shared technical log for flows, the Azure Function and scripts. `createdon` / `c
 |---|---|---|
 | `cr679_InvoiceVatRate` | Environment variable (decimal) | 23 |
 | `cr679_InvoicePaymentTermDays` | Environment variable (number) | 14 |
-| `cr679_InvoiceSeller` | Environment variable (JSON: `name`, `address`, `nip`, `bankAccount`) | fictional company in the default value |
+| `cr679_InvoiceSeller` | Environment variable (JSON: `name`, `address`, `nip`, `bankAccount`, optional `logo`) | fictional company in the default value |
+| `cr679_logo` | Web resource (PNG/JPG), named in `logo` above | seller logo in the PDF header, scaled into 180 × 60 pt |
 | Service Bus queue + SAS key | Service Endpoint | per environment, set after import |
+
+The form script reads the two numeric variables with the user's own permissions, so every role that creates invoices
+needs read access to *Environment Variable Definition* and *Environment Variable Value* (Basic User has it).
 
 ## Invoice language
 
@@ -100,6 +112,7 @@ Unit tests: `dotnet test` in `azure/functions` (no Dataverse needed). The PDF te
 | Symptom | Cause |
 |---|---|
 | Invoice stays *Requested* | Service Endpoint not configured in this environment, or the async step is disabled (check System Jobs) |
+| Invoice *Failed*: "Nie znaleziono logo sprzedawcy" | `logo` in `cr679_InvoiceSeller` names a web resource that does not exist or is not published |
 | Invoice *Failed* | Message in `cr679_errormessage`; details in `cr679_applicationlog` and Application Insights |
 | Messages in the dead-letter queue | Repeated failure; the invoice is *Failed*; fix the cause and use "Ponów generowanie" |
 | Amount on the invoice differs from items | Order total not recalculated before issuing (see ADR-003, consequences) |

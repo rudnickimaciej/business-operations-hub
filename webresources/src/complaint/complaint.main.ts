@@ -15,7 +15,7 @@
 
 import { Complaint, Order } from "../shared/schema";
 import { getLookupId } from "../shared/xrm";
-import { buildOrderFilter, getOrderCustomer } from "./orderCustomer";
+import { buildOrderFilter, getOrderCustomer } from "../shared/order";
 
 const ORDER_NOTIFICATION_ID = "cr679_complaint_order_customer";
 const FORM_NOTIFICATION_ID = "cr679_complaint_order_check";

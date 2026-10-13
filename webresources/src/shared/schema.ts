@@ -48,8 +48,22 @@ export const OrderItem = {
   },
 } as const;
 
-export const Account = { entity: "account" } as const;
-export const Contact = { entity: "contact" } as const;
+export const Account = {
+  entity: "account",
+  fields: {
+    name: "name",
+    address: "address1_composite",
+    nip: "cr679_nip",
+  },
+} as const;
+
+export const Contact = {
+  entity: "contact",
+  fields: {
+    fullName: "fullname",
+    address: "address1_composite",
+  },
+} as const;
 export const Machine = { entity: "cr679_machine" } as const;
 export const Operator = { entity: "cr679_operator" } as const;
 export const Service = { entity: "cr679_usuga" } as const;
@@ -79,6 +93,12 @@ export const Invoice = {
     document: "cr679_document",
     errorMessage: "cr679_errormessage",
   },
+} as const;
+
+/** Schema names of the environment variables read by form scripts. */
+export const EnvironmentVariables = {
+  invoiceVatRate: "cr679_InvoiceVatRate",
+  invoicePaymentTermDays: "cr679_InvoicePaymentTermDays",
 } as const;
 
 export const Complaint = {

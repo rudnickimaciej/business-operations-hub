@@ -1,4 +1,4 @@
-import { buildOrderFilter, getOrderCustomer } from "../../src/complaint/orderCustomer";
+import { buildOrderFilter, getOrderCustomer, getOrderNetAmount } from "../../src/shared/order";
 
 const CUSTOMER = "AAAAAAAA-0000-0000-0000-000000000001";
 const ORDER = "bbbbbbbb-0000-0000-0000-000000000002";
@@ -35,5 +35,29 @@ describe("buildOrderFilter", () => {
 
   it("rejects a malformed id instead of embedding it into FetchXML", () => {
     expect(() => buildOrderFilter("' or 1=1")).toThrow("Invalid GUID");
+  });
+});
+
+describe("getOrderNetAmount", () => {
+  function items(entities: Record<string, unknown>[]) {
+    return { retrieveRecord: jest.fn(), retrieveMultipleRecords: jest.fn().mockResolvedValue({ entities }) };
+  }
+
+  it("sums the prices of the order's active items", async () => {
+    const api = items([{ cr679_itemprice: 150.1 }, { cr679_itemprice: 249.9 }]);
+    expect(await getOrderNetAmount(api as unknown as Xrm.WebApi, `{${ORDER.toUpperCase()}}`)).toBe(400);
+    expect(api.retrieveMultipleRecords).toHaveBeenCalledWith(
+      "cr679_orderitem",
+      `?$select=cr679_itemprice&$filter=_cr679_orderid_value eq ${ORDER} and statecode eq 0`
+    );
+  });
+
+  it("counts an item without a price as 0 and rounds to grosze", async () => {
+    const api = items([{ cr679_itemprice: null }, { cr679_itemprice: 0.1 }, { cr679_itemprice: 0.2 }]);
+    expect(await getOrderNetAmount(api as unknown as Xrm.WebApi, ORDER)).toBe(0.3);
+  });
+
+  it("returns 0 for an order without items", async () => {
+    expect(await getOrderNetAmount(items([]) as unknown as Xrm.WebApi, ORDER)).toBe(0);
   });
 });
