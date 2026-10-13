@@ -104,10 +104,39 @@ public sealed class DataverseInvoiceRepository(IOrganizationServiceAsync2 servic
         var json = await GetEnvironmentVariableAsync(SellerVariable, cancellationToken)
             ?? throw new InvoiceValidationException($"Brak konfiguracji sprzedawcy (zmienna środowiskowa {SellerVariable}).");
 
-        var seller = JsonSerializer.Deserialize<Seller>(json, JsonOptions);
-        return seller is { Name.Length: > 0, Address.Length: > 0, Nip.Length: > 0 }
-            ? seller
-            : throw new InvoiceValidationException($"Niepełna konfiguracja sprzedawcy w zmiennej {SellerVariable}.");
+        var settings = JsonSerializer.Deserialize<SellerSettings>(json, JsonOptions);
+        if (settings is not { Name.Length: > 0, Address.Length: > 0, Nip.Length: > 0 })
+        {
+            throw new InvoiceValidationException($"Niepełna konfiguracja sprzedawcy w zmiennej {SellerVariable}.");
+        }
+
+        var logo = string.IsNullOrWhiteSpace(settings.Logo) ? null : await GetLogoAsync(settings.Logo, cancellationToken);
+        return new Seller(settings.Name, settings.Address, settings.Nip, settings.BankAccount, logo);
+    }
+
+    /// <summary>
+    /// Image content of a web resource in the solution, so the logo travels DEV → TST with it.
+    /// A logo that is configured but missing or not an image is a configuration error: retrying would not help.
+    /// </summary>
+    private async Task<byte[]> GetLogoAsync(string webResourceName, CancellationToken cancellationToken)
+    {
+        var query = new QueryExpression(WebResource.EntityLogicalName)
+        {
+            ColumnSet = new ColumnSet(WebResource.Fields.Content, WebResource.Fields.WebResourceType),
+            Criteria = { Conditions = { new ConditionExpression(WebResource.Fields.Name, ConditionOperator.Equal, webResourceName) } },
+        };
+        var resource = (await service.RetrieveMultipleAsync(query, cancellationToken)).Entities.FirstOrDefault()?.ToEntity<WebResource>();
+
+        if (resource?.Content is not { Length: > 0 } content)
+        {
+            throw new InvoiceValidationException(
+                $"Nie znaleziono logo sprzedawcy: zasób sieci Web {webResourceName} wskazany w zmiennej {SellerVariable}.");
+        }
+        if (resource.WebResourceType is not (webresource_webresourcetype.PNGformat or webresource_webresourcetype.JPGformat))
+        {
+            throw new InvoiceValidationException($"Logo sprzedawcy ({webResourceName}) musi być obrazem PNG lub JPG.");
+        }
+        return Convert.FromBase64String(content);
     }
 
     public Task SetStatusAsync(Guid invoiceId, InvoiceDocumentStatus status, CancellationToken cancellationToken) =>
@@ -200,6 +229,9 @@ public sealed class DataverseInvoiceRepository(IOrganizationServiceAsync2 servic
         var current = row.GetAttributeValue<AliasedValue>($"{CurrentValueAlias}.{EnvironmentVariableValue.Fields.Value}")?.Value as string;
         return string.IsNullOrWhiteSpace(current) ? row.ToEntity<EnvironmentVariableDefinition>().DefaultValue : current;
     }
+
+    /// <summary>Shape of the cr679_InvoiceSeller JSON. Logo is a web resource name, e.g. "cr679_/invoice/logo.png".</summary>
+    private sealed record SellerSettings(string? Name, string? Address, string? Nip, string? BankAccount, string? Logo);
 
     // Date-only columns come back as midnight; the date part is what matters.
     private static DateOnly? ToDate(DateTime? value) => value is null ? null : DateOnly.FromDateTime(value.Value);

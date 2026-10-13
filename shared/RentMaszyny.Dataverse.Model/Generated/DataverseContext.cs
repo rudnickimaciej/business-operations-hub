@@ -138,6 +138,17 @@ namespace RentMaszyny.Dataverse.Model
 				return this.CreateQuery<RentMaszyny.Dataverse.Model.TransactionCurrency>();
 			}
 		}
+		
+		/// <summary>
+		/// Gets a binding to the set of all <see cref="RentMaszyny.Dataverse.Model.WebResource"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<RentMaszyny.Dataverse.Model.WebResource> WebResourceSet
+		{
+			get
+			{
+				return this.CreateQuery<RentMaszyny.Dataverse.Model.WebResource>();
+			}
+		}
 	}
 }
 #pragma warning restore CS1591

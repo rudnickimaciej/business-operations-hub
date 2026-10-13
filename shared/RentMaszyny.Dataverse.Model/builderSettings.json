@@ -20,7 +20,8 @@
     "contact",
     "environmentvariabledefinition",
     "environmentvariablevalue",
-    "transactioncurrency"
+    "transactioncurrency",
+    "webresource"
   ],
   "emitEntityETC": false,
   "emitVirtualAttributes": false

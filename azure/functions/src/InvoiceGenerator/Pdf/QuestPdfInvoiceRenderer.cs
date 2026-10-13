@@ -13,6 +13,10 @@ public interface IInvoiceRenderer
 /// <summary>Renders the invoice as an A4 PDF in the invoice's language (labels, dates and number formats).</summary>
 public sealed class QuestPdfInvoiceRenderer : IInvoiceRenderer
 {
+    // Logo box in the header, in points (1/72 inch).
+    private const float LogoWidth = 180;
+    private const float LogoHeight = 60;
+
     public byte[] Render(InvoiceDocument invoice)
     {
         var labels = new InvoiceLabels(invoice.Culture);
@@ -25,11 +29,20 @@ public sealed class QuestPdfInvoiceRenderer : IInvoiceRenderer
             page.Margin(40);
             page.DefaultTextStyle(x => x.FontSize(10));
 
-            page.Header().Column(column =>
+            page.Header().Row(row =>
             {
-                column.Item().Text(labels.Title(invoice.Number)).FontSize(20).SemiBold();
-                column.Item().Text($"{labels.IssueDate}: {Date(invoice.IssueDate)}");
-                column.Item().Text($"{labels.DueDate}: {Date(invoice.DueDate)}");
+                row.RelativeItem().Column(column =>
+                {
+                    column.Item().Text(labels.Title(invoice.Number)).FontSize(20).SemiBold();
+                    column.Item().Text($"{labels.IssueDate}: {Date(invoice.IssueDate)}");
+                    column.Item().Text($"{labels.DueDate}: {Date(invoice.DueDate)}");
+                });
+
+                if (invoice.Seller.Logo is { } logo)
+                {
+                    // Scaled down to fit the box, aspect ratio kept.
+                    row.ConstantItem(LogoWidth).Height(LogoHeight).AlignRight().AlignMiddle().Image(logo).FitArea();
+                }
             });
 
             page.Content().PaddingVertical(20).Column(column =>

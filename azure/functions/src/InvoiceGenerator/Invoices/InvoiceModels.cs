@@ -23,8 +23,11 @@ public sealed record InvoiceRecord(
 
 public sealed record InvoiceLine(string Description, decimal NetAmount);
 
-/// <summary>Seller details, read from the Dataverse environment variable cr679_InvoiceSeller (JSON).</summary>
-public sealed record Seller(string Name, string Address, string Nip, string? BankAccount);
+/// <summary>
+/// Seller details, read from the Dataverse environment variable cr679_InvoiceSeller (JSON).
+/// <paramref name="Logo"/> is the PNG/JPG image of the web resource named in the JSON "logo" property; null without a logo.
+/// </summary>
+public sealed record Seller(string Name, string Address, string Nip, string? BankAccount, byte[]? Logo = null);
 
 /// <summary>Everything the renderer needs. Built only from validated data. Culture drives labels and number/date formats.</summary>
 public sealed record InvoiceDocument(
