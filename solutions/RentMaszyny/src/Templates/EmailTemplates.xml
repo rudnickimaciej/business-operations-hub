@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EmailTemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <emailtemplate>
+    <IsCustomizable>1</IsCustomizable>
+    <templateid>{86ab13a0-ebc6-f111-aaad-70a8a57f8bd2}</templateid>
+    <subject></subject>
+    <subjectpresentationxml></subjectpresentationxml>
+    <templatetypecode>2</templatetypecode>
+    <body></body>
+    <title>Invoice e-mail</title>
+    <description>Sent with an invoice PDF. {{InvoiceNumber}}, {{GrossAmount}}, {{Currency}}, {{DueDate}} and {{SellerName}} are filled by the flow 'Invoice - Create e-mail when PDF is generated'.</description>
+    <presentationxml></presentationxml>
+    <languagecode>1045</languagecode>
+    <generationtypecode>0</generationtypecode>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  </emailtemplate>
+  <emailtemplate>
+    <IsCustomizable>1</IsCustomizable>
+    <templateid>{8aab13a0-ebc6-f111-aaad-70a8a57f8bd2}</templateid>
+    <subject></subject>
+    <subjectpresentationxml></subjectpresentationxml>
+    <templatetypecode>2</templatetypecode>
+    <body></body>
+    <title>Invoice e-mail</title>
+    <description>Sent with an invoice PDF. {{InvoiceNumber}}, {{GrossAmount}}, {{Currency}}, {{DueDate}} and {{SellerName}} are filled by the flow 'Invoice - Create e-mail when PDF is generated'.</description>
+    <presentationxml></presentationxml>
+    <languagecode>1033</languagecode>
+    <generationtypecode>0</generationtypecode>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  </emailtemplate>
+</EmailTemplates>

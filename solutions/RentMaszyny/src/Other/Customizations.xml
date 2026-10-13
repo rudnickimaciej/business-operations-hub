@@ -132,6 +132,17 @@
       </AIConfigurations>
     </AIModel>
   </AIModels>
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="cr679_dataverse">
+      <connectionreferencedisplayname>Dataverse (RentMaszyny)</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <description>Dataverse connection used by the RentMaszyny flows.</description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
   <Languages>
     <Language>1033</Language>
     <Language>1045</Language>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{6ed82180-eac6-f111-aaad-70a8a57f8bd2}" Name="Invoice - Create e-mail when PDF is generated" Description="Creates a draft e-mail with the invoice PDF for the customer's primary contact when the PDF is generated. Errors go to cr679_applicationlog." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/Invoice-Createe-mailwhenPDFisgenerated-6ED82180-EAC6-F111-AAAD-70A8A57F8BD2.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>5</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Invoice - Create e-mail when PDF is generated" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Creates a draft e-mail with the invoice PDF for the customer's primary contact when the PDF is generated. Errors go to cr679_applicationlog." />
+  </Descriptions>
+</Workflow>
