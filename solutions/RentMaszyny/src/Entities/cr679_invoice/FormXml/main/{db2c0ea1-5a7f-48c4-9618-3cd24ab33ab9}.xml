@@ -205,6 +205,35 @@
             </column>
           </columns>
         </tab>
+        <tab verticallayout="true" name="tab_document" id="{0ff26e56-0ad9-4e7b-99c0-715449f26122}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+          <labels>
+            <label description="Document" languagecode="1033" />
+            <label description="Dokument" languagecode="1045" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="section_document" id="{cc1ec3df-6a64-44cd-ae3e-65d71e72b50c}" IsUserDefined="0" showlabel="false" showbar="false" locklevel="0" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Top">
+                  <labels>
+                    <label description="Document" languagecode="1033" />
+                    <label description="Dokument" languagecode="1045" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{65699056-7b72-4dd3-bef3-d6548873f617}" showlabel="false" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Invoice PDF" languagecode="1033" />
+                          <label description="PDF faktury" languagecode="1045" />
+                        </labels>
+                        <control id="cr679_documentstatus1" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="cr679_documentstatus" disabled="true" uniqueid="{770e1c5b-7e15-4923-acb2-b3ae18617e90}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
       </tabs>
       <header id="{585390bb-9480-4b15-8bf7-9339598b222f}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
         <rows>
@@ -316,6 +345,36 @@
       <DisplayConditions Order="0" FallbackForm="true">
         <Everyone />
       </DisplayConditions>
+      <controlDescriptions>
+        <controlDescription forControl="{770e1c5b-7e15-4923-acb2-b3ae18617e90}">
+          <customControl id="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}">
+            <parameters>
+              <datafieldname>cr679_documentstatus</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="cr679_RentMaszyny.InvoicePdfViewer">
+            <parameters>
+              <reloadOn>cr679_documentstatus</reloadOn>
+              <fileColumn type="SingleLine.Text" static="true">cr679_document</fileColumn>
+              <height type="Whole.None" static="true">900</height>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="cr679_RentMaszyny.InvoicePdfViewer">
+            <parameters>
+              <reloadOn>cr679_documentstatus</reloadOn>
+              <fileColumn type="SingleLine.Text" static="true">cr679_document</fileColumn>
+              <height type="Whole.None" static="true">900</height>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="cr679_RentMaszyny.InvoicePdfViewer">
+            <parameters>
+              <reloadOn>cr679_documentstatus</reloadOn>
+              <fileColumn type="SingleLine.Text" static="true">cr679_document</fileColumn>
+              <height type="Whole.None" static="true">900</height>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
       <formLibraries>
         <Library name="cr679_invoicemain" libraryUniqueId="{6d044df1-b5ad-4116-819c-c4e6f0a41fa7}" />
       </formLibraries>

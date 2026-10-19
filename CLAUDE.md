@@ -65,6 +65,7 @@ pipelines/          Azure DevOps YAML pipelines (Power Platform Build Tools); se
 docs/decisions/     ADRs — read before changing architecture
 solutions/RentMaszyny/  Unpacked solution — THE single source of truth for all components
 webresources/       TypeScript source of JS web resources (webpack, Jest); constants in src/shared/schema.ts
+pcf/                PCF code components (React virtual controls, Fluent UI 9 from the platform), ADR-007
 config/             Deployment settings per environment (no secrets)
 shared/RentMaszyny.Dataverse.Model/  Early-bound Dataverse model (pac modelbuilder, net462;net8.0)
 scripts/            Repeatable PowerShell/pac scripts
