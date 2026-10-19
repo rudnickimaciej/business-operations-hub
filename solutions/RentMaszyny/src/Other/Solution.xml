@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.26092.157" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26092.157" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26092.00157">
+<ImportExportXml version="9.2.26093.160" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26093.160" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26093.00160">
   <SolutionManifest>
     <UniqueName>RentMaszyny</UniqueName>
     <LocalizedNames>
@@ -107,7 +107,9 @@
       <RootComponent type="61" schemaName="cr679_invoicemain" behavior="0" />
       <RootComponent type="61" schemaName="cr679_logo" behavior="0" />
       <RootComponent type="61" schemaName="cr679_orderitemquickcreate" behavior="0" />
+      <RootComponent type="61" schemaName="cr679_orderribbon" behavior="0" />
       <RootComponent type="62" schemaName="cr679_Ren30486c68" behavior="0" />
+      <RootComponent type="66" schemaName="cr679_RentMaszyny.InvoicePdfViewer" behavior="0" />
       <RootComponent type="80" schemaName="cr679_Ren6f132b80" behavior="0" />
       <RootComponent type="92" id="{7b0335d9-a6c0-f111-aaad-6045bddce132}" behavior="0" />
       <RootComponent type="92" id="{9d1825ec-a6c0-f111-aaad-6045bddce132}" behavior="0" />
@@ -166,18 +168,18 @@
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
           <package appName="msdynce_AppCommon" version="9.0.26092.10001">msdynce_AppCommonAnchor (9.0.26092.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Account" parentDisplayName="Account" id="{8448b78f-8f42-454e-8e2a-f8196b0419af}" />
+        <Dependent type="60" displayName="Account for Interactive experience" parentDisplayName="Account" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="AppCommon/Account/Account_main_system_library.js" displayName="AppCommon/Account/Account_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
           <package appName="msdynce_AppCommon" version="9.0.26092.10001">msdynce_AppCommonAnchor (9.0.26092.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Account for Interactive experience" parentDisplayName="Account" id="{a72c7955-442b-4ea4-9499-b10cd18b4256}" />
+        <Dependent type="60" displayName="Information" parentDisplayName="Account" id="{b053a39a-041a-4356-acef-ddf00182762b}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="61" schemaName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" displayName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" solution="msdyn_RichTextEditor (9.0.26083.1012)">
-          <package appName="msdynce_Activities" version="9.0.26086.260830001">msdynce_EnableUCIByDefault (9.0.26086.260830001)</package>
-          <package appName="msdyn_CustomControlsExtended" version="9.0.26083.1012">msdyn_TimelineExtended (9.0.26083.1012)</package>
+        <Required type="61" schemaName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" displayName="msdyn_/RichTextEditorControl/libs/ckeditor/plugins/smiley/images/heart.png" solution="msdyn_RichTextEditor (9.0.26093.2001)">
+          <package appName="msdynce_Activities" version="9.0.26092.260909001">msdynce_EnableUCIByDefault (9.0.26092.260909001)</package>
+          <package appName="msdyn_CustomControlsExtended" version="9.0.26093.2001">msdyn_TimelineExtended (9.0.26093.2001)</package>
         </Required>
         <Dependent type="80" schemaName="cr679_Ren6f132b80" displayName="Rent-Maszyny" />
       </MissingDependency>
@@ -192,6 +194,13 @@
           <package appName="Base Custom Controls" version="9.0.2609.3003">BaseCustomControlsCore (9.0.2609.3003)</package>
         </Required>
         <Dependent type="60" displayName="Information" parentDisplayName="Timesheet" id="{d7bac23e-3baa-43a6-ab29-1669323dc671}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AllowNotificationsEarlyAccess" solution="AppNotifications (10.0.0.17)" id.uniquename="AllowNotificationsEarlyAccess">
+          <package appName="PowerAppsUnifiedClientExtensionApp Package" version="1.0.0.62">msft_PowerAppsUnifiedClientInfraExtensions (1.0.0.62)</package>
+          <package appName="PowerAppsUnifiedClientExtensionApp Package" version="1.0.0.103">PowerAppsUnifiedClientExtensionApp_Anchor (1.0.0.103)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=cr679_Ren6f132b80,settingdefinitionid.uniquename=AllowNotificationsEarlyAccess" id.parentappmoduleid.uniquename="cr679_Ren6f132b80" id.settingdefinitionid.uniquename="AllowNotificationsEarlyAccess" />
       </MissingDependency>
       <MissingDependency>
         <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.20)" id.uniquename="AppChannel">
