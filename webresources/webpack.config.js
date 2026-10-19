@@ -10,8 +10,9 @@ const path = require("path");
  *
  * Example: src/orderitem/orderitem.quickcreate.ts -> cr679_orderitemquickcreate, RentMaszyny.orderitem.quickcreate
  *
- * A file is an entry only if it also exports `onLoad`, the form handler. Every other file in a table folder
- * (e.g. machineAvailability.ts, invoice.helper.ts) and everything in src/shared/ is a module that entries import,
+ * A file is an entry only if it exports `onLoad` (a form script) or is named <table>.ribbon.ts (command bar
+ * functions, e.g. RentMaszyny.order.ribbon.createInvoice). Every other file in a table folder (e.g.
+ * machineAvailability.ts, invoice.helper.ts) and everything in src/shared/ is a module that entries import,
  * so it is bundled into them, never published as a web resource of its own.
  * The pipeline copies each bundle over solutions/RentMaszyny/src/WebResources/<name>; the web resource must
  * already exist in the solution (create it once in DEV, then sync), otherwise the build fails.
@@ -19,6 +20,7 @@ const path = require("path");
 const PREFIX = "cr679_";
 const NAMESPACE = "RentMaszyny";
 const srcDir = path.resolve(__dirname, "src");
+const RIBBON = "ribbon";
 
 const ON_LOAD_EXPORT = /^export\s+(async\s+)?function\s+onLoad\b/m;
 
@@ -35,7 +37,7 @@ function findEntries() {
       return fs
         .readdirSync(path.join(srcDir, dir.name))
         .map((file) => file.match(pattern))
-        .filter((match) => match && exportsOnLoad(path.join(srcDir, dir.name, match[0])))
+        .filter((match) => match && (match[1] === RIBBON || exportsOnLoad(path.join(srcDir, dir.name, match[0]))))
         .map((match) => ({ table: dir.name, form: match[1], entry: `./src/${dir.name}/${match[0]}` }));
     });
 }
@@ -45,7 +47,7 @@ function findEntries() {
 module.exports = (_env, argv) => {
   const entries = findEntries();
   if (entries.length === 0) {
-    throw new Error("No form scripts found: expected src/<table>/<table>.<form>.ts exporting onLoad.");
+    throw new Error("No scripts found: expected src/<table>/<table>.<form>.ts exporting onLoad, or <table>.ribbon.ts.");
   }
   return entries.map(({ table, form, entry }) => ({
     entry,
