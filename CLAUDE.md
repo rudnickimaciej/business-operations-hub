@@ -68,6 +68,7 @@ webresources/       TypeScript source of JS web resources (webpack, Jest); const
 pcf/                PCF code components (React virtual controls, Fluent UI 9 from the platform), ADR-007
 config/             Deployment settings per environment (no secrets)
 shared/RentMaszyny.Dataverse.Model/  Early-bound Dataverse model (pac modelbuilder, net462;net8.0)
+shared/RentMaszyny.Dataverse.Common/ Hand-written helpers for functions and plug-ins (no I/O, no extra packages), e.g. app notifications
 scripts/            Repeatable PowerShell/pac scripts
 ```
 

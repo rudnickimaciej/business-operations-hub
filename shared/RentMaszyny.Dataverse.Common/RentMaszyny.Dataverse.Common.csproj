@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Hand-written Dataverse helpers shared by Azure Functions (net8.0) and plug-ins (net462).
+    No I/O and no extra packages: helpers build rows, callers save them with their own service.
+  -->
+  <PropertyGroup>
+    <TargetFrameworks>net462;net8.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>RentMaszyny.Dataverse.Common</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RentMaszyny.Dataverse.Model\RentMaszyny.Dataverse.Model.csproj" />
+  </ItemGroup>
+
+</Project>

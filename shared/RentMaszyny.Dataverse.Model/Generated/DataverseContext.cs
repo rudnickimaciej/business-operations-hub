@@ -41,6 +41,17 @@ namespace RentMaszyny.Dataverse.Model
 		}
 		
 		/// <summary>
+		/// Gets a binding to the set of all <see cref="RentMaszyny.Dataverse.Model.appnotification"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<RentMaszyny.Dataverse.Model.appnotification> appnotificationSet
+		{
+			get
+			{
+				return this.CreateQuery<RentMaszyny.Dataverse.Model.appnotification>();
+			}
+		}
+		
+		/// <summary>
 		/// Gets a binding to the set of all <see cref="RentMaszyny.Dataverse.Model.Contact"/> entities.
 		/// </summary>
 		public System.Linq.IQueryable<RentMaszyny.Dataverse.Model.Contact> ContactSet

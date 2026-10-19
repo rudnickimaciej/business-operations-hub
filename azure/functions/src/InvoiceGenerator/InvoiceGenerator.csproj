@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\shared\RentMaszyny.Dataverse.Common\RentMaszyny.Dataverse.Common.csproj" />
     <ProjectReference Include="..\..\..\..\shared\RentMaszyny.Dataverse.Model\RentMaszyny.Dataverse.Model.csproj" />
   </ItemGroup>
 

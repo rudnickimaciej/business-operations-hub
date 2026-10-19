@@ -1,6 +1,8 @@
 using InvoiceGenerator.Invoices;
 using InvoiceGenerator.Pdf;
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Xrm.Sdk;
+using RentMaszyny.Dataverse.Common.Notifications;
 using RentMaszyny.Dataverse.Model;
 
 namespace InvoiceGenerator.Tests;
@@ -9,9 +11,10 @@ public class InvoiceProcessorTests
 {
     private readonly FakeRepository repository = new();
     private readonly FakeRenderer renderer = new();
+    private readonly FakeNotificationSender notifications = new();
 
     private InvoiceProcessor Processor() =>
-        new(repository, renderer, TimeProvider.System, NullLogger<InvoiceProcessor>.Instance);
+        new(repository, renderer, notifications, TimeProvider.System, NullLogger<InvoiceProcessor>.Instance);
 
     private Task<ProcessingOutcome> Process(bool isLastAttempt = false) =>
         Processor().ProcessAsync(TestData.InvoiceId, "corr-1", isLastAttempt, CancellationToken.None);
@@ -111,6 +114,79 @@ public class InvoiceProcessorTests
         repository.LogError = new InvalidOperationException("log table unavailable");
 
         await Assert.ThrowsAsync<TimeoutException>(() => Process(isLastAttempt: true));
+    }
+
+    [Fact]
+    public async Task Tells_the_owner_that_the_invoice_is_ready()
+    {
+        await Process();
+
+        var notification = Assert.Single(notifications.Sent);
+        Assert.Equal(new EntityReference("systemuser", TestData.OwnerId), notification.OwnerId);
+        Assert.Equal("Faktura FV-01000 jest gotowa", notification.Title);
+        Assert.Equal(notification_iconid.Success, notification.IconType);
+        Assert.Contains($"id={TestData.InvoiceId}", notification.Data);
+    }
+
+    [Fact]
+    public async Task Tells_the_owner_why_the_invoice_failed()
+    {
+        repository.Invoice = TestData.Invoice() with { OrderId = null };
+
+        await Process();
+
+        var notification = Assert.Single(notifications.Sent);
+        Assert.Equal(notification_iconid.Failure, notification.IconType);
+        Assert.Equal("Nie udało się wygenerować faktury FV-01000", notification.Title);
+        Assert.Equal("Faktura nie jest powiązana z zamówieniem.", notification.Body);
+    }
+
+    [Fact]
+    public async Task Tells_the_owner_about_a_technical_failure_only_on_the_last_attempt()
+    {
+        renderer.Error = new TimeoutException("Dataverse timeout");
+
+        await Assert.ThrowsAsync<TimeoutException>(() => Process(isLastAttempt: false));
+        Assert.Empty(notifications.Sent);
+
+        repository.Invoice = TestData.Invoice(status: InvoiceDocumentStatus.Generating);
+        await Assert.ThrowsAsync<TimeoutException>(() => Process(isLastAttempt: true));
+        Assert.Equal(InvoiceProcessor.TechnicalFailureMessage, Assert.Single(notifications.Sent).Body);
+    }
+
+    [Fact]
+    public async Task Does_not_notify_when_a_team_owns_the_invoice()
+    {
+        repository.Invoice = TestData.Invoice() with { OwnerUserId = null };
+
+        Assert.Equal(ProcessingOutcome.Generated, await Process());
+        Assert.Empty(notifications.Sent);
+    }
+
+    [Fact]
+    public async Task A_failing_notification_does_not_change_the_outcome()
+    {
+        notifications.Error = new InvalidOperationException("notifications disabled");
+
+        Assert.Equal(ProcessingOutcome.Generated, await Process());
+        Assert.Equal(InvoiceDocumentStatus.Generated, repository.Statuses[^1]);
+    }
+
+    private sealed class FakeNotificationSender : IAsyncAppNotificationSender
+    {
+        public Exception? Error { get; set; }
+        public List<appnotification> Sent { get; } = [];
+
+        public Task<Guid> SendAsync(appnotification notification, CancellationToken cancellationToken = default)
+        {
+            if (Error is not null)
+            {
+                throw Error;
+            }
+
+            Sent.Add(notification);
+            return Task.FromResult(Guid.NewGuid());
+        }
     }
 
     private sealed class FakeRenderer : IInvoiceRenderer

@@ -1,5 +1,6 @@
 using InvoiceGenerator.Pdf;
 using Microsoft.Extensions.Logging;
+using RentMaszyny.Dataverse.Common.Notifications;
 using RentMaszyny.Dataverse.Model;
 
 namespace InvoiceGenerator.Invoices;
@@ -17,10 +18,13 @@ public enum ProcessingOutcome
 ///   Generated and Failed are skipped. An invoice without a status is bad data and is marked Failed.
 /// - Data problems fail the invoice immediately; retrying cannot fix them.
 /// - Other errors are rethrown so Service Bus retries; on the last attempt the invoice is marked Failed first.
+/// - The invoice owner gets an in-app notification when the PDF is ready or the invoice is marked Failed.
+///   Notifications are best effort: a failed notification never changes the outcome.
 /// </summary>
 public sealed class InvoiceProcessor(
     IInvoiceRepository repository,
     IInvoiceRenderer renderer,
+    IAsyncAppNotificationSender notifications,
     TimeProvider timeProvider,
     ILogger<InvoiceProcessor> logger)
 {
@@ -29,6 +33,10 @@ public sealed class InvoiceProcessor(
         "Nie udało się wygenerować dokumentu. Szczegóły w dzienniku aplikacji (Application Log).";
     internal const string MissingStatusMessage =
         "Faktura nie ma statusu dokumentu. Ustaw status „Zlecona” i zmień datę zlecenia, aby wygenerować PDF.";
+    internal const string GeneratedTitle = "Faktura {0} jest gotowa";
+    internal const string GeneratedBody = "PDF faktury został wygenerowany i dołączony do faktury.";
+    internal const string FailedTitle = "Nie udało się wygenerować faktury {0}";
+    internal const string OpenInvoiceAction = "Otwórz fakturę";
 
     public async Task<ProcessingOutcome> ProcessAsync(
         Guid invoiceId, string correlationId, bool isLastAttempt, CancellationToken cancellationToken)
@@ -45,6 +53,7 @@ public sealed class InvoiceProcessor(
         {
             await repository.MarkFailedAsync(invoiceId, MissingStatusMessage, cancellationToken);
             await TryWriteLogAsync(invoiceId, correlationId, LogSeverity.Warning, MissingStatusMessage, details: null, cancellationToken);
+            await TryNotifyFailedAsync(invoice, MissingStatusMessage, cancellationToken);
             logger.LogWarning("Invoice {InvoiceId} has no document status; marked failed.", invoiceId);
             return ProcessingOutcome.Failed;
         }
@@ -71,6 +80,7 @@ public sealed class InvoiceProcessor(
             var pdf = renderer.Render(document);
             await repository.UploadDocumentAsync(invoiceId, $"{document.Number}.pdf", pdf, cancellationToken);
             await repository.MarkGeneratedAsync(invoiceId, timeProvider.GetUtcNow(), cancellationToken);
+            await TryNotifyAsync(invoice, string.Format(GeneratedTitle, document.Number), GeneratedBody, isFailure: false, cancellationToken);
 
             logger.LogInformation("Invoice {InvoiceNumber} generated ({Bytes} bytes).", document.Number, pdf.Length);
             return ProcessingOutcome.Generated;
@@ -79,6 +89,7 @@ public sealed class InvoiceProcessor(
         {
             await repository.MarkFailedAsync(invoiceId, ex.Message, cancellationToken);
             await TryWriteLogAsync(invoiceId, correlationId, LogSeverity.Warning, ex.Message, details: null, cancellationToken);
+            await TryNotifyFailedAsync(invoice, ex.Message, cancellationToken);
             logger.LogWarning("Invoice {InvoiceId} failed validation: {Reason}", invoiceId, ex.Message);
             return ProcessingOutcome.Failed;
         }
@@ -87,7 +98,35 @@ public sealed class InvoiceProcessor(
             logger.LogError(ex, "Invoice {InvoiceId} failed on the last delivery attempt.", invoiceId);
             await repository.MarkFailedAsync(invoiceId, TechnicalFailureMessage, cancellationToken);
             await TryWriteLogAsync(invoiceId, correlationId, LogSeverity.Error, ex.Message, ex.ToString(), cancellationToken);
+            await TryNotifyFailedAsync(invoice, TechnicalFailureMessage, cancellationToken);
             throw; // the message goes to the dead-letter queue
+        }
+    }
+
+    private Task TryNotifyFailedAsync(InvoiceRecord invoice, string reason, CancellationToken cancellationToken) =>
+        TryNotifyAsync(invoice, string.Format(FailedTitle, invoice.Number), reason, isFailure: true, cancellationToken);
+
+    // The PDF and the status are already saved; a notification problem only goes to the function log.
+    private async Task TryNotifyAsync(
+        InvoiceRecord invoice, string title, string body, bool isFailure, CancellationToken cancellationToken)
+    {
+        if (invoice.OwnerUserId is not { } recipient)
+        {
+            return; // owned by a team: app notifications go to users only
+        }
+
+        var builder = AppNotificationBuilder.To(recipient)
+            .WithTitle(title)
+            .WithBody(body)
+            .WithOpenRecordAction(OpenInvoiceAction, cr679_invoice.EntityLogicalName, invoice.Id);
+
+        try
+        {
+            await notifications.SendAsync((isFailure ? builder.AsFailure() : builder.AsSuccess()).Build(), cancellationToken);
+        }
+        catch (Exception ex) when (ex is not OperationCanceledException)
+        {
+            logger.LogWarning(ex, "Could not notify the owner of invoice {InvoiceId}.", invoice.Id);
         }
     }
 

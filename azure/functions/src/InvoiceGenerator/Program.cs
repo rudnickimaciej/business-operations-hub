@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.PowerPlatform.Dataverse.Client;
+using RentMaszyny.Dataverse.Common.Notifications;
 
 QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community; // ADR-004
 
@@ -36,6 +37,7 @@ var host = new HostBuilder()
         services.AddSingleton(TimeProvider.System);
         services.AddSingleton<IInvoiceRenderer, QuestPdfInvoiceRenderer>();
         services.AddSingleton<IInvoiceRepository, DataverseInvoiceRepository>();
+        services.AddSingleton<IAsyncAppNotificationSender, AsyncAppNotificationSender>();
         services.AddSingleton<InvoiceProcessor>();
     })
     .Build();
