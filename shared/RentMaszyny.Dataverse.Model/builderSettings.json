@@ -21,7 +21,8 @@
     "environmentvariabledefinition",
     "environmentvariablevalue",
     "transactioncurrency",
-    "webresource"
+    "webresource",
+    "appnotification"
   ],
   "emitEntityETC": false,
   "emitVirtualAttributes": false

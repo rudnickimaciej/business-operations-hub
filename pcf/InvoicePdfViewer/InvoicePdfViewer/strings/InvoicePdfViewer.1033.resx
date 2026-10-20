@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Control_Name" xml:space="preserve"><value>Invoice PDF viewer</value></data>
+  <data name="Control_Description" xml:space="preserve"><value>Shows the PDF stored in a file column of the current record.</value></data>
+  <data name="ReloadOn_Name" xml:space="preserve"><value>Reload on change of</value></data>
+  <data name="ReloadOn_Description" xml:space="preserve"><value>Column that changes when a new file is stored, e.g. the document status.</value></data>
+  <data name="FileColumn_Name" xml:space="preserve"><value>File column</value></data>
+  <data name="FileColumn_Description" xml:space="preserve"><value>Logical name of the file column with the PDF.</value></data>
+  <data name="Height_Name" xml:space="preserve"><value>Height (px)</value></data>
+  <data name="Height_Description" xml:space="preserve"><value>Height of the document area.</value></data>
+  <data name="Status_Loading" xml:space="preserve"><value>Loading the document…</value></data>
+  <data name="Status_Empty" xml:space="preserve"><value>The PDF is not available yet.</value></data>
+  <data name="Status_Unsaved" xml:space="preserve"><value>Save the record to see its document.</value></data>
+  <data name="Status_Error" xml:space="preserve"><value>The document could not be loaded.</value></data>
+  <data name="Action_Retry" xml:space="preserve"><value>Try again</value></data>
+  <data name="Action_OpenInNewTab" xml:space="preserve"><value>Open in a new tab</value></data>
+  <data name="Action_Download" xml:space="preserve"><value>Download</value></data>
+</root>

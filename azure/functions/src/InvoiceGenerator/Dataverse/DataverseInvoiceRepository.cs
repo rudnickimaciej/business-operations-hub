@@ -4,6 +4,7 @@ using Microsoft.Crm.Sdk.Messages;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
+using RentMaszyny.Dataverse.Common.Notifications;
 using RentMaszyny.Dataverse.Model;
 
 namespace InvoiceGenerator.Dataverse;
@@ -35,7 +36,8 @@ public sealed class DataverseInvoiceRepository(IOrganizationServiceAsync2 servic
                 cr679_invoice.Fields.cr679_netamount,
                 cr679_invoice.Fields.cr679_vatrate,
                 cr679_invoice.Fields.cr679_vatamount,
-                cr679_invoice.Fields.cr679_grossamount),
+                cr679_invoice.Fields.cr679_grossamount,
+                cr679_invoice.Fields.OwnerId),
             Criteria = { Conditions = { new ConditionExpression(cr679_invoice.Fields.cr679_invoiceId, ConditionOperator.Equal, invoiceId) } },
         };
         var currency = query.AddLink(
@@ -68,7 +70,8 @@ public sealed class DataverseInvoiceRepository(IOrganizationServiceAsync2 servic
             invoice.cr679_vatrate,
             invoice.cr679_vatamount?.Value,
             invoice.cr679_grossamount?.Value,
-            row.GetAttributeValue<AliasedValue>($"{CurrencyAlias}.{TransactionCurrency.Fields.ISOCurrencyCode}")?.Value as string);
+            row.GetAttributeValue<AliasedValue>($"{CurrencyAlias}.{TransactionCurrency.Fields.ISOCurrencyCode}")?.Value as string,
+            AppNotificationBuilder.CanNotify(invoice.OwnerId) ? invoice.OwnerId.Id : null);
     }
 
     public async Task<IReadOnlyList<InvoiceLine>> GetOrderLinesAsync(Guid orderId, CancellationToken cancellationToken)

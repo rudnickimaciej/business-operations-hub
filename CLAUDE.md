@@ -65,8 +65,10 @@ pipelines/          Azure DevOps YAML pipelines (Power Platform Build Tools); se
 docs/decisions/     ADRs — read before changing architecture
 solutions/RentMaszyny/  Unpacked solution — THE single source of truth for all components
 webresources/       TypeScript source of JS web resources (webpack, Jest); constants in src/shared/schema.ts
+pcf/                PCF code components (React virtual controls, Fluent UI 9 from the platform), ADR-007
 config/             Deployment settings per environment (no secrets)
 shared/RentMaszyny.Dataverse.Model/  Early-bound Dataverse model (pac modelbuilder, net462;net8.0)
+shared/RentMaszyny.Dataverse.Common/ Hand-written helpers for functions and plug-ins (no I/O, no extra packages), e.g. app notifications
 scripts/            Repeatable PowerShell/pac scripts
 ```
 
@@ -102,7 +104,8 @@ alone is insufficient, plus cost, security and maintenance impact.
 - **Form scripts (TypeScript):** source is `webresources/`, never the JS in `solutions/` or in DEV. The pipeline
   builds and injects bundles into the solution; the JS copy in `solutions/` is only the last DEV snapshot.
   Entry files follow `src/<table>/<table>.<form>.ts` and export `onLoad` (bundle `cr679_<table><form>`, handler
-  `RentMaszyny.<table>.<form>.onLoad`); any other file is a module bundled into the entries that import it.
+  `RentMaszyny.<table>.<form>.onLoad`); command bar functions go to `src/<table>/<table>.ribbon.ts` (bundle
+  `cr679_<table>ribbon`, `RentMaszyny.<table>.ribbon.<function>`). Any other file is a module bundled into the entries.
   Use table/column names from `schema.ts`, and cover logic with Jest tests in `webresources/tests/` (mirrors `src/`). Client-side validation is UX only, not enforcement.
 - **C# against Dataverse:** use the early-bound model in `shared/` (`Entity.Fields.*`, typed properties), never
   column names as strings. Choice values use the generated enums; their member names come from the English (1033)

@@ -1,14 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RibbonDiffXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <CustomActions />
+  <CustomActions>
+    <CustomAction Id="new.cr679.cr679_order.IssueInvoice.Button.CustomAction" Location="Mscrm.Form.cr679_order.MainTab.Save.Controls._children" Sequence="70">
+      <CommandUIDefinition>
+        <Button Alt="$LocLabels:cr679.cr679_order.IssueInvoice.Button.Alt" Command="cr679.cr679_order.IssueInvoice.Command" Id="cr679.cr679_order.IssueInvoice.Button" LabelText="$LocLabels:cr679.cr679_order.IssueInvoice.Button.LabelText" Sequence="70" TemplateAlias="o1" ToolTipTitle="$LocLabels:cr679.cr679_order.IssueInvoice.Button.ToolTipTitle" ToolTipDescription="$LocLabels:cr679.cr679_order.IssueInvoice.Button.ToolTipDescription" ModernImage="DocumentAdd" />
+      </CommandUIDefinition>
+    </CustomAction>
+    <CustomAction Id="new.cr679.cr679_order.IssueInvoice.MyButton.CustomAction" Location="Mscrm.Form.cr679_order.MainTab.Save.Controls._children" Sequence="58">
+      <CommandUIDefinition>
+        <Button Id="cr679.cr679_order.IssueInvoice.MyButton" LabelText="$LocLabels:cr679.cr679_order.IssueInvoice.MyButton.LabelText" Sequence="58" TemplateAlias="o1" />
+      </CommandUIDefinition>
+    </CustomAction>
+  </CustomActions>
   <Templates>
     <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
   </Templates>
-  <CommandDefinitions />
+  <CommandDefinitions>
+    <CommandDefinition Id="cr679.cr679_order.IssueInvoice.Command">
+      <EnableRules>
+        <EnableRule Id="cr679.cr679_order.IssueInvoice.EnableRule" />
+      </EnableRules>
+      <DisplayRules>
+        <DisplayRule Id="cr679.cr679_order.IssueInvoice.DisplayRule" />
+      </DisplayRules>
+      <Actions>
+        <JavaScriptFunction FunctionName="RentMaszyny.order.ribbon.createInvoice" Library="$webresource:cr679_orderribbon">
+          <CrmParameter Value="PrimaryControl" />
+        </JavaScriptFunction>
+      </Actions>
+    </CommandDefinition>
+  </CommandDefinitions>
   <RuleDefinitions>
     <TabDisplayRules />
-    <DisplayRules />
-    <EnableRules />
+    <DisplayRules>
+      <DisplayRule Id="cr679.cr679_order.IssueInvoice.DisplayRule">
+        <FormStateRule State="Create" InvertResult="true" />
+      </DisplayRule>
+    </DisplayRules>
+    <EnableRules>
+      <EnableRule Id="cr679.cr679_order.IssueInvoice.EnableRule">
+        <CustomRule FunctionName="RentMaszyny.order.ribbon.canCreateInvoice" Library="$webresource:cr679_orderribbon" Default="false">
+          <CrmParameter Value="PrimaryControl" />
+        </CustomRule>
+      </EnableRule>
+    </EnableRules>
   </RuleDefinitions>
-  <LocLabels />
+  <LocLabels>
+    <LocLabel Id="cr679.cr679_order.IssueInvoice.Button.Alt">
+      <Titles>
+        <Title description="Issue Invoice" languagecode="1033" />
+        <Title description="Wystaw fakturę" languagecode="1045" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="cr679.cr679_order.IssueInvoice.Button.LabelText">
+      <Titles>
+        <Title description="Issue Invoice" languagecode="1033" />
+        <Title description="Wystaw fakturę" languagecode="1045" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="cr679.cr679_order.IssueInvoice.Button.ToolTipDescription">
+      <Titles>
+        <Title description="Creates the invoice for this completed order and starts the PDF generation." languagecode="1033" />
+        <Title description="Tworzy fakturę dla zakończonego zamówienia i zleca wygenerowanie PDF." languagecode="1045" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="cr679.cr679_order.IssueInvoice.Button.ToolTipTitle">
+      <Titles>
+        <Title description="Issue Invoice" languagecode="1033" />
+        <Title description="Wystaw fakturę" languagecode="1045" />
+      </Titles>
+    </LocLabel>
+    <LocLabel Id="cr679.cr679_order.IssueInvoice.MyButton.LabelText">
+      <Titles>
+        <Title description="MyButton" languagecode="1033" />
+      </Titles>
+    </LocLabel>
+  </LocLabels>
 </RibbonDiffXml>

@@ -10,7 +10,7 @@ A private person's invoice has no buyer NIP.
 ## Flow
 
 ```text
-Order form: "Wystaw fakturę" (Power Fx command)
+Order form: "Wystaw fakturę" (command bar, order.ribbon.ts), enabled for a completed order without an invoice
   └─ creates cr679_invoice: status Requested, snapshot of customer data and amounts, cr679_requestedon = now
        └─ Dataverse Service Endpoint (async step) ──> Service Bus queue "invoice-requests"
             └─ Azure Function InvoiceGenerator
@@ -19,11 +19,14 @@ Order form: "Wystaw fakturę" (Power Fx command)
                  2. status = Generating
                  3. read order items, render PDF (QuestPDF), upload to cr679_document
                  4. status = Generated, cr679_generatedon = now
+                 5. in-app notification to the invoice owner: "Faktura … jest gotowa" (shared AppNotificationBuilder)
                  on error: retry (Service Bus); last attempt → status Failed, cr679_errormessage, cr679_applicationlog
+                 every Failed → in-app notification to the owner with the reason; team owners get none
                  bad data (no status, no order, items ≠ net amount) → status Failed at once, no retry
             └─ Flow "Invoice - Create e-mail when PDF is generated" (status changed to Generated)
                  draft e-mail with the PDF to the customer's primary contact (or the private person), see below
 Invoice form: status in the header; banner from invoice.main.ts (error text when Failed, "in progress" when Requested/Generating)
+Invoice form, tab "Dokument": PCF RentMaszyny.InvoicePdfViewer shows the PDF, reloads when the status changes (ADR-007)
 New invoice form: invoice.main.ts fills empty issue date (today), due date (issue date + payment term, follows the
   issue date until edited) and VAT rate from the environment variables; missing configuration → warning, fields left empty
 Invoice form, order selected: net amount = sum of the order's active items (read-only field, so the PDF lines add up);
@@ -105,6 +108,7 @@ Shared technical log for flows, the Azure Function and scripts. `createdon` / `c
 | `cr679_InvoiceSeller` | Environment variable (JSON: `name`, `address`, `nip`, `bankAccount`, optional `logo`) | fictional company in the default value |
 | `cr679_logo` | Web resource (PNG/JPG), named in `logo` above | seller logo in the PDF header, scaled into 180 × 60 pt |
 | Service Bus queue + SAS key | Service Endpoint | per environment, set after import |
+| In-app notifications | App setting of Rent-Maszyny (`AllowNotificationsEarlyAccess`) | on, in the solution |
 | `cr679_dataverse` | Connection reference (Dataverse) | DEV: owner's connection; TST: a connection must be created and mapped at import |
 | Invoice e-mail | E-mail templates (contact, PL 1045 and EN 1033) | in the solution |
 

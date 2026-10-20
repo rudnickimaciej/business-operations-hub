@@ -116,6 +116,15 @@ export const Complaint = {
   },
 } as const;
 
+/** Values of cr679_order.cr679_status. */
+export const OrderStatus = {
+  Inquiry: 630100000,
+  Confirmed: 630100001,
+  InProgress: 630100002,
+  Completed: 630100003,
+  Settled: 630100004,
+} as const;
+
 /** Values of cr679_complaint.statuscode. */
 export const ComplaintStatus = {
   New: 1,

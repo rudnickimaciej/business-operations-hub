@@ -3,7 +3,10 @@ using RentMaszyny.Dataverse.Model;
 
 namespace InvoiceGenerator.Invoices;
 
-/// <summary>Invoice header as stored in Dataverse. Customer data and amounts are a snapshot taken at issue time.</summary>
+/// <summary>
+/// Invoice header as stored in Dataverse. Customer data and amounts are a snapshot taken at issue time.
+/// <paramref name="OwnerUserId"/> is the owning user; null when a team owns the invoice.
+/// </summary>
 public sealed record InvoiceRecord(
     Guid Id,
     string? Number,
@@ -19,7 +22,8 @@ public sealed record InvoiceRecord(
     decimal? VatRate,
     decimal? VatAmount,
     decimal? GrossAmount,
-    string? CurrencyCode);
+    string? CurrencyCode,
+    Guid? OwnerUserId = null);
 
 public sealed record InvoiceLine(string Description, decimal NetAmount);
 

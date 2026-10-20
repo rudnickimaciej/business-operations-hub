@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{0cedff65-53c9-f111-a05a-000d3ab9a8f4}</WebResourceId>
+  <Name>cr679_orderribbon</Name>
+  <DisplayName>Order Ribbon</DisplayName>
+  <Description>Built from webresources/src/order/order.ribbon.ts. Do not edit in DEV.</Description>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/cr679_orderribbon0CEDFF65-53C9-F111-A05A-000D3AB9A8F4</FileName>
+</WebResource>

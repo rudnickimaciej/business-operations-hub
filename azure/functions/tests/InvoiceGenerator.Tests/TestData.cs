@@ -6,6 +6,7 @@ namespace InvoiceGenerator.Tests;
 internal static class TestData
 {
     public static readonly Guid InvoiceId = Guid.Parse("9ba1a68a-afc0-f111-aaad-6045bddce132");
+    public static readonly Guid OwnerId = Guid.Parse("5630d081-56b0-f011-bbd2-000d3ab50637");
     public static readonly Guid OrderId = Guid.Parse("11111111-2222-3333-4444-555555555555");
 
     public static readonly Seller Seller = new("Wypożyczalnia Maszyn Test Sp. z o.o.", "ul. Testowa 1, 00-001 Warszawa", "5270123459", "00 1111 2222 3333 4444 5555 6666");
@@ -29,7 +30,8 @@ internal static class TestData
         VatRate: 23m,
         VatAmount: 805m,
         GrossAmount: 4305m,
-        CurrencyCode: "PLN");
+        CurrencyCode: "PLN",
+        OwnerUserId: OwnerId);
 
     public static IReadOnlyList<InvoiceLine> Lines() =>
     [
